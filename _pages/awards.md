@@ -13,7 +13,7 @@ redirect_from:
 * **Integrated Strategic Plan Star Award**, *Stanford Medicine* (2019) - Established to recognize individuals whose work embodies Stanford Medicine’s three strategic priorities: being value focused, digitally driven, and “uniquely Stanford”
 * **Community Impact Award**, *Stanford University* (2019) - Recognizes graduate students who have enhanced the Stanford Community through leadership, advocacy, or service
 * **Ruth L. Kirschstein Pre-doctoral National Research Service Award (F31)**, *National Institutes of Health* (2019) - Fellowship awarded to provide predoctoral individuals with supervised research training in specified health and health-related areas leading toward the research doctoral degree
-* **Point Graduate Student Scholarship**, *Point Foundation* (2020) - Awarded to LGBTQ-identifying graduate students for distinction in three areas: leadership, scholarship, and activism
+* **Point Graduate Student Scholarship**, [*Point Foundation*](https://pointfoundation.org/) (2020) - Awarded to LGBTQ-identifying graduate students for distinction in three areas: leadership, scholarship, and activism
 
 **Undergraduate**
 
