@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-Hello, and welcome to my personal website! My name is Timothy, and I'm an MD/PhD student studying cancer biology and biomedical informatics at the Stanford University School of Medicine. This website serves as a brief introduction to me and the work I do scientifically and professionally. Also, if you're here because you're thinking about hiring me, free to check out my cv [here](https://github.com/keyes-timothy/misc/blob/master/tkeyes_cv.pdf). 
+Hello, and welcome to my personal website! My name is Timothy, and I'm an MD/PhD student studying cancer biology and biomedical informatics at the Stanford University School of Medicine. This website serves as a brief introduction to me and the work I do scientifically and professionally. (Also, if you're here because you're thinking about hiring me, free to check out my cv [here](https://github.com/keyes-timothy/misc/blob/master/tkeyes_cv.pdf).)
 
 Currently, I'm in the middle of the PhD years of my MD/PhD program as a joint member of [Kara Davis's laboratory](https://med.stanford.edu/kldavislab/people.html) in the Department of Pediatrics and [Garry Nolan's Laboratory](http://web.stanford.edu/group/nolan/) in the Department of Pathology here at Stanford. 
 
