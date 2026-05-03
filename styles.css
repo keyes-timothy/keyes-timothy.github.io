@@ -29,6 +29,10 @@
   margin-left: 0;
 }
 
+body.quarto-dark .profile-card .role {
+  color: rgba(255,255,255,0.78);
+}
+
 @media (max-width: 768px) {
   .profile-card {
     margin-bottom: 1rem;
