@@ -10,7 +10,7 @@
 <atom:link href="https://keyes-timothy.github.io/blog.xml" rel="self" type="application/rss+xml"/>
 <description>Personal website of Timothy Keyes — Data Scientist at Stanford Health Care and MD/PhD Candidate at Stanford Medicine.</description>
 <generator>quarto-1.9.37</generator>
-<lastBuildDate>Tue, 06 Jan 2026 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 03 May 2026 00:00:00 GMT</lastBuildDate>
 <item>
   <title>Welcome</title>
   <link>https://keyes-timothy.github.io/posts/2026-01-06-welcome.html</link>
@@ -20,14 +20,14 @@
 
 
 
-<p>This is a placeholder post while I migrate my site to Quarto.</p>
+<p>Welcome to my blog. This is where I’ll post thoughts about medicine, AI, and life as I finish my clinical training and figure out what comes next.</p>
 
 
 
  ]]></description>
   <category>site</category>
   <guid>https://keyes-timothy.github.io/posts/2026-01-06-welcome.html</guid>
-  <pubDate>Tue, 06 Jan 2026 00:00:00 GMT</pubDate>
+  <pubDate>Sun, 03 May 2026 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
