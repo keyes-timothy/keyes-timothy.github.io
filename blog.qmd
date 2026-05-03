@@ -8,5 +8,4 @@ listing:
     feed: true
 ---
 
-Here's where I'll post updates. (Placeholder for now.)
 

@@ -3,7 +3,16 @@ title: "Talks & Presentations"
 toc: true
 ---
 
-## Conference Talks
+## Upcoming
+
+### From chats to workflows to "agents": Demystifying LLM jargon by example
+**posit::conf 2026** | Houston, TX | September 15–16, 2026
+
+If the phrase "agentic AI" has ever made you scratch your head (or roll your eyes), this talk is for you. The AI field is awash in jargon that sounds precise but isn't — and when every technology is branded as an "agent" or "agentic," it's pretty hard to know what anyone is talking about. So, let's fix that. In this gentle, no-experience-required introduction to LLM systems, I'll demystify the jargon by building up from first principles. Using a single running example — turning messy clinical notes into a structured summary — we'll walk through four levels of LLM system design: chats, workflows, agents, and multi-agent systems. You'll leave with a better understanding of agentic design patterns and how to try them out for yourself.
+
+---
+
+## Past
 
 ### Trust, but Verify: Lessons from Deploying LLMs in a Large Health System
 **posit::conf 2025** | Atlanta, GA

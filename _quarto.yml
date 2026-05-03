@@ -3,6 +3,7 @@ project:
     render:
         - "*.qmd"
         - "!README.md"
+        - "!cv-pdf.qmd"
 
 website: 
     title: "Timothy Keyes"

@@ -3,6 +3,8 @@ title: "CV"
 toc: true
 ---
 
+<a href="files/timothy_keyes_cv.pdf" class="btn btn-outline-primary btn-sm mb-3" download><i class="bi bi-download me-1"></i>Download CV (PDF)</a>
+
 ```{r}
 #| label: setup
 #| echo: false
@@ -317,8 +319,8 @@ media |>
 
 **Healthcare Data & Governance**: Epic EHR data, FHIR, clinical workflow integration, AI governance, model lifecycle management, clinical operations analytics, human-in-the-loop workflow design
 
-**Programming & Data Science**: Python, R, SQL, Bash, pandas, scikit-learn, XGBoost, PyTorch, tidyverse, tidymodels, Bioconductor, Shiny, Quarto
+**Programming & Data Science**: Python, R, SQL, Bash, pandas, scikit-learn, XGBoost, PyTorch, tidyverse, tidymodels, Bioconductor, Shiny
 
-**Platforms & Tools**: Databricks, Azure OpenAI, LiteLLM, FastAPI, Pydantic, Git, Docker, Epic, MCP
+**Platforms & Tools**: Databricks, Azure OpenAI, LiteLLM, FastAPI, Pydantic, Git, Docker, Epic, MCP, Quarto
 
 **Biomedical Domains**: clinical machine learning, LLMs in health care, single-cell analysis, mass cytometry, computational cancer biology, pediatric leukemia

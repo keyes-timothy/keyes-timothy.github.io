@@ -35,7 +35,9 @@ toc: false
 </ul>
 :::
 
-I'm a senior data scientist at Stanford Health Care and MD/PhD candidate in Stanford's Medical Scientist Training Program (MSTP). I build and deploy clinical AI systems — from LLM-powered chart abstraction to agentic tumor board preparation — and study how to deploy them safely. My work spans applied machine learning, single-cell biology, and medical education. 
+I'm a senior data scientist at Stanford Health Care and MD/PhD candidate in Stanford's Medical Scientist Training Program (MSTP). I build, deploy, and monitor clinical AI systems — from LLM-powered chart abstraction to agentic tumor board preparation — and study how to do this safely at scale. My work spans applied machine learning, single-cell biology, and medical education.
+
+**Currently:** finishing clinical clerkships, building on top of [ChatEHR](https://arxiv.org/abs/2602.00074), and writing up work on applications of agentic AI in clinical workflows.
 
 [Read more →](bio.html)
 

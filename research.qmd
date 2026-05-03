@@ -11,9 +11,15 @@ My current work at Stanford Health Care focuses on building, deploying, and moni
 
 I contribute across the ChatEHR ecosystem---from evaluation and design recommendations for clinician-facing experiences to building automated and "agentic" workflows for specific chart review and abstraction tasks. These include workflows to identify patients who may benefit from a palliative medicine consult, detect post-operative surgical-site infections, triage surgical patients for co-management, and generate case summaries for tumor board conferences.
 
-I've also led efforts around **continuous monitoring of deployed AI systems**---developing frameworks for what to measure, how often to measure it, who responds, and what "actionable" looks like in practice. This work has been described in several recent publications, including our paper on [monitoring deployed AI systems](https://arxiv.org/abs/2512.09048) and the [ChatEHR adoption paper](https://arxiv.org/abs/2602.00074).
+I've also led efforts around **continuous monitoring of deployed AI systems**---developing frameworks for what to measure, how often to measure it, who responds, and what "actionable" looks like in practice. This work has been described in several recent publications:
 
-Related work includes contributions to **MedHELM**, a holistic evaluation framework for LLMs on medical tasks, and **MedAgentBrief**, a multi-step workflow for generating factual clinical summaries.
+- **[Monitoring Deployed AI Systems in Health Care](https://arxiv.org/abs/2512.09048)** --- A framework for continuous monitoring of clinical AI. *Preprint* (2025).
+
+- **[ChatEHR: Deployment and Evaluation of an EHR-integrated LLM-Powered Tool](https://arxiv.org/abs/2602.00074)** --- Adoption and evaluation of Stanford Health Care's clinical AI platform. *Preprint* (2026).
+
+- **[MedHELM](https://www.nature.com/articles/s41591-025-04151-2)** --- Holistic evaluation of large language models for medical tasks. *Nature Medicine* (2025).
+
+- **[MedAgentBrief](https://arxiv.org/abs/2504.14556)** --- A multi-step workflow for generating source-grounded clinical summaries. *Preprint* (2025).
 
 ## Computational Cancer Biology
 

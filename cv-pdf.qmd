@@ -1,0 +1,181 @@
+---
+title: "Timothy Keyes"
+subtitle: "Curriculum Vitae"
+format:
+  typst:
+    font-size: 10pt
+    margin:
+      top: 0.75in
+      bottom: 0.75in
+      left: 0.75in
+      right: 0.75in
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r}
+#| label: setup
+options(bitmapType = "cairo")
+library(readr)
+library(dplyr)
+library(tidyr)
+library(stringr)
+library(purrr)
+library(glue)
+library(knitr)
+knitr::opts_chunk$set(dev = "png", fig.width = 6, fig.height = 4)
+```
+
+tkeyes\@stanford.edu · [keyes-timothy.github.io](https://keyes-timothy.github.io) · [GitHub](https://github.com/keyes-timothy) · [Google Scholar](https://scholar.google.com/citations?user=ZzAOZ1QAAAAJ&hl=en) · [LinkedIn](https://www.linkedin.com/in/timothy-keyes/)
+
+## Education
+
+```{r}
+#| label: education
+#| results: asis
+education <- read_csv("data/cv_education.csv", show_col_types = FALSE)
+
+education |>
+  pmap_chr(function(degree, institution, location, status, details) {
+    detail_line <- if (!is.na(details) && nchar(trimws(details)) > 0) {
+      parts <- str_split(details, ";\\s*")[[1]] |> trimws()
+      parts <- parts[nchar(parts) > 0]
+      paste0("\n    - ", paste(parts, collapse = "\n    - "))
+    } else {
+      ""
+    }
+    glue("**{degree}** | {institution}, {location} | *{status}*{detail_line}")
+  }) |>
+  paste(collapse = "\n\n") |>
+  cat()
+```
+
+## Experience
+
+```{r}
+#| label: experience
+#| results: asis
+experience <- read_csv("data/cv_experience.csv", show_col_types = FALSE)
+
+experience |>
+  pmap_chr(function(title, organization, location, status, details) {
+    detail_line <- if (!is.na(details) && nchar(trimws(details)) > 0) {
+      parts <- str_split(details, ";\\s*")[[1]] |> trimws()
+      parts <- parts[nchar(parts) > 0]
+      paste0("\n    - ", paste(parts, collapse = "\n    - "))
+    } else {
+      ""
+    }
+    glue("**{title}** | {organization}, {location} | *{status}*{detail_line}")
+  }) |>
+  paste(collapse = "\n\n") |>
+  cat()
+```
+
+## Publications
+
+```{r}
+#| label: publications
+#| results: asis
+pubs <- read_csv("data/publications.csv", show_col_types = FALSE) |>
+  mutate(
+    across(where(is.character), \(.x) replace_na(.x, "")),
+    year = suppressWarnings(as.integer(year)),
+    co_author_count = suppressWarnings(as.integer(co_author_count)),
+    co_author_start = suppressWarnings(as.integer(co_author_start)),
+    position_rank = case_when(
+      author_position %in% c("first", "co_first") ~ 1L,
+      author_position %in% c("second", "co_second") ~ 2L,
+      TRUE ~ 3L
+    )
+  ) |>
+  arrange(desc(year), position_rank, authors)
+
+pubs |>
+  pmap_chr(function(year, authors, journal, title, abstract, citation, link,
+                    file_name, preferred, author_position, co_author_count,
+                    co_author_start, position_rank, topic) {
+    # Apply co-authorship markers
+    marker <- ""
+    n_marked <- 0L
+    if (!is.na(author_position) && author_position == "co_first") {
+      marker <- "\u2020"
+      n_marked <- if (!is.na(co_author_count) && co_author_count > 0) as.integer(co_author_count) else 2L
+    } else if (!is.na(author_position) && author_position == "co_second") {
+      marker <- "\u2021"
+      n_marked <- if (!is.na(co_author_count) && co_author_count > 0) as.integer(co_author_count) else 2L
+    }
+
+    start_pos <- if (!is.na(co_author_start) && co_author_start > 0) as.integer(co_author_start) else 1L
+
+    if (nchar(marker) > 0 && n_marked > 0) {
+      author_parts <- str_split(authors, ",\\s*")[[1]]
+      end_pos <- min(start_pos + n_marked - 1L, length(author_parts))
+      for (i in start_pos:end_pos) {
+        author_parts[i] <- paste0(author_parts[i], marker)
+      }
+      authors_display <- paste(author_parts, collapse = ", ")
+    } else {
+      authors_display <- authors
+    }
+
+    # Bold Timothy Keyes
+    authors_display <- str_replace_all(authors_display, "Timothy Keyes", "**Timothy Keyes**")
+
+    glue("{authors_display}. {title}. *{journal}* ({year}).")
+  }) |>
+  paste0("- ", x = _) |>
+  paste(collapse = "\n") |>
+  cat()
+```
+
+## Awards & Honors
+
+```{r}
+#| label: awards
+#| results: asis
+awards <- read_csv("data/cv_awards.csv", show_col_types = FALSE) |>
+  mutate(sort_year = as.integer(str_extract(year, "\\d{4}"))) |>
+  arrange(desc(sort_year)) |>
+  select(-sort_year)
+
+awards |>
+  pmap_chr(function(award, organization, year, details) {
+    glue("- **{award}**, {organization} ({year})")
+  }) |>
+  paste(collapse = "\n") |>
+  cat()
+```
+
+## Media & Press
+
+```{r}
+#| label: media
+#| results: asis
+media <- read_csv("data/cv_media.csv", show_col_types = FALSE) |>
+  mutate(across(where(is.character), \(.x) replace_na(.x, ""))) |>
+  arrange(desc(year))
+
+media |>
+  pmap_chr(function(year, type, outlet, title, link) {
+    glue("- {title}. {type} --- {outlet} ({year})")
+  }) |>
+  paste(collapse = "\n") |>
+  cat()
+```
+
+## Skills
+
+**Clinical AI & LLM Systems**: EHR-integrated AI applications, agentic and multi-agent workflow design, LLM evaluation, retrieval-augmented generation (RAG), clinical summarization, post-deployment monitoring
+
+**Machine Learning & Statistics**: supervised learning, calibration, bootstrap inference, survival analysis, class imbalance adjustment, clustering, gradient boosting, deep learning, tabular foundation models (tabPFN)
+
+**Healthcare Data & Governance**: Epic EHR data, FHIR, clinical workflow integration, AI governance, model lifecycle management, clinical operations analytics, human-in-the-loop workflow design
+
+**Programming & Data Science**: Python, R, SQL, Bash, pandas, scikit-learn, XGBoost, PyTorch, tidyverse, tidymodels, Bioconductor, Shiny
+
+**Platforms & Tools**: Databricks, Azure OpenAI, LiteLLM, FastAPI, Pydantic, Git, Docker, Epic, MCP, Quarto
+
+**Biomedical Domains**: clinical machine learning, LLMs in health care, single-cell analysis, mass cytometry, computational cancer biology, pediatric leukemia
