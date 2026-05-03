@@ -17,6 +17,9 @@ _coauthor_network_preview.png
 site_libs/
 blog-listing.json
 blog.feed-full-staged
+cv-pdf.pdf
+cv-pdf.typ
+Rplots*.pdf
 
 # OS files
 .DS_Store

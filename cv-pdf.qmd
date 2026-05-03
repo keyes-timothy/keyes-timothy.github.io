@@ -1,14 +1,13 @@
 ---
-title: "Timothy Keyes"
-subtitle: "Curriculum Vitae"
 format:
   typst:
     font-size: 10pt
     margin:
-      top: 0.75in
-      bottom: 0.75in
+      top: 0.6in
+      bottom: 0.6in
       left: 0.75in
       right: 0.75in
+    include-in-header: cv-template.typ
 execute:
   echo: false
   warning: false
@@ -17,7 +16,7 @@ execute:
 
 ```{r}
 #| label: setup
-options(bitmapType = "cairo")
+options(device = pdf)
 library(readr)
 library(dplyr)
 library(tidyr)
@@ -25,8 +24,21 @@ library(stringr)
 library(purrr)
 library(glue)
 library(knitr)
-knitr::opts_chunk$set(dev = "png", fig.width = 6, fig.height = 4)
+knitr::opts_chunk$set(dev = "pdf")
+
+truncate_authors <- function(authors, max_authors = 6, self = "Timothy Keyes") {
+  parts <- str_split(authors, ",\\s*")[[1]]
+  if (length(parts) <= max_authors) return(authors)
+  self_idx <- which(str_detect(parts, fixed(self)))
+  keep <- parts[1:max_authors]
+  if (length(self_idx) > 0 && self_idx[1] > max_authors) {
+    keep[max_authors] <- parts[self_idx[1]]
+  }
+  paste0(paste(keep, collapse = ", "), ", et al.")
+}
 ```
+
+# Timothy Keyes — Curriculum Vitae
 
 tkeyes\@stanford.edu · [keyes-timothy.github.io](https://keyes-timothy.github.io) · [GitHub](https://github.com/keyes-timothy) · [Google Scholar](https://scholar.google.com/citations?user=ZzAOZ1QAAAAJ&hl=en) · [LinkedIn](https://www.linkedin.com/in/timothy-keyes/)
 
@@ -37,19 +49,18 @@ tkeyes\@stanford.edu · [keyes-timothy.github.io](https://keyes-timothy.github.i
 #| results: asis
 education <- read_csv("data/cv_education.csv", show_col_types = FALSE)
 
-education |>
-  pmap_chr(function(degree, institution, location, status, details) {
-    detail_line <- if (!is.na(details) && nchar(trimws(details)) > 0) {
-      parts <- str_split(details, ";\\s*")[[1]] |> trimws()
-      parts <- parts[nchar(parts) > 0]
-      paste0("\n    - ", paste(parts, collapse = "\n    - "))
-    } else {
-      ""
+for (i in seq_len(nrow(education))) {
+  row <- education[i, ]
+  cat(glue("**{row$degree}** — {row$institution}, {row$location} (*{row$status}*)"), "\n\n")
+  if (!is.na(row$details) && nchar(trimws(row$details)) > 0) {
+    parts <- str_split(row$details, ";\\s*")[[1]] |> trimws()
+    parts <- parts[nchar(parts) > 0]
+    for (p in parts) {
+      cat(glue("- {p}"), "\n")
     }
-    glue("**{degree}** | {institution}, {location} | *{status}*{detail_line}")
-  }) |>
-  paste(collapse = "\n\n") |>
-  cat()
+    cat("\n")
+  }
+}
 ```
 
 ## Experience
@@ -59,22 +70,23 @@ education |>
 #| results: asis
 experience <- read_csv("data/cv_experience.csv", show_col_types = FALSE)
 
-experience |>
-  pmap_chr(function(title, organization, location, status, details) {
-    detail_line <- if (!is.na(details) && nchar(trimws(details)) > 0) {
-      parts <- str_split(details, ";\\s*")[[1]] |> trimws()
-      parts <- parts[nchar(parts) > 0]
-      paste0("\n    - ", paste(parts, collapse = "\n    - "))
-    } else {
-      ""
+for (i in seq_len(nrow(experience))) {
+  row <- experience[i, ]
+  cat(glue("**{row$title}** — {row$organization}, {row$location} (*{row$status}*)"), "\n\n")
+  if (!is.na(row$details) && nchar(trimws(row$details)) > 0) {
+    parts <- str_split(row$details, ";\\s*")[[1]] |> trimws()
+    parts <- parts[nchar(parts) > 0]
+    for (p in parts) {
+      cat(glue("- {p}"), "\n")
     }
-    glue("**{title}** | {organization}, {location} | *{status}*{detail_line}")
-  }) |>
-  paste(collapse = "\n\n") |>
-  cat()
+    cat("\n")
+  }
+}
 ```
 
 ## Publications
+
+†Co-first author · ‡Co-second author
 
 ```{r}
 #| label: publications
@@ -93,42 +105,45 @@ pubs <- read_csv("data/publications.csv", show_col_types = FALSE) |>
   ) |>
   arrange(desc(year), position_rank, authors)
 
-pubs |>
-  pmap_chr(function(year, authors, journal, title, abstract, citation, link,
-                    file_name, preferred, author_position, co_author_count,
-                    co_author_start, position_rank, topic) {
-    # Apply co-authorship markers
+years <- unique(pubs$year)
+
+for (yr in years) {
+  cat("\n### ", yr, "\n\n", sep = "")
+
+  yr_pubs <- pubs |> filter(year == yr)
+
+  for (j in seq_len(nrow(yr_pubs))) {
+    row <- yr_pubs[j, ]
+    authors <- row$authors
     marker <- ""
     n_marked <- 0L
-    if (!is.na(author_position) && author_position == "co_first") {
+
+    if (!is.na(row$author_position) && row$author_position == "co_first") {
       marker <- "\u2020"
-      n_marked <- if (!is.na(co_author_count) && co_author_count > 0) as.integer(co_author_count) else 2L
-    } else if (!is.na(author_position) && author_position == "co_second") {
+      n_marked <- if (!is.na(row$co_author_count) && row$co_author_count > 0) as.integer(row$co_author_count) else 2L
+    } else if (!is.na(row$author_position) && row$author_position == "co_second") {
       marker <- "\u2021"
-      n_marked <- if (!is.na(co_author_count) && co_author_count > 0) as.integer(co_author_count) else 2L
+      n_marked <- if (!is.na(row$co_author_count) && row$co_author_count > 0) as.integer(row$co_author_count) else 2L
     }
 
-    start_pos <- if (!is.na(co_author_start) && co_author_start > 0) as.integer(co_author_start) else 1L
+    start_pos <- if (!is.na(row$co_author_start) && row$co_author_start > 0) as.integer(row$co_author_start) else 1L
 
     if (nchar(marker) > 0 && n_marked > 0) {
       author_parts <- str_split(authors, ",\\s*")[[1]]
       end_pos <- min(start_pos + n_marked - 1L, length(author_parts))
-      for (i in start_pos:end_pos) {
-        author_parts[i] <- paste0(author_parts[i], marker)
+      for (k in start_pos:end_pos) {
+        author_parts[k] <- paste0(author_parts[k], marker)
       }
-      authors_display <- paste(author_parts, collapse = ", ")
-    } else {
-      authors_display <- authors
+      authors <- paste(author_parts, collapse = ", ")
     }
 
-    # Bold Timothy Keyes
-    authors_display <- str_replace_all(authors_display, "Timothy Keyes", "**Timothy Keyes**")
+    authors <- truncate_authors(authors)
+    authors <- str_replace_all(authors, "Timothy Keyes", "**Timothy Keyes**")
 
-    glue("{authors_display}. {title}. *{journal}* ({year}).")
-  }) |>
-  paste0("- ", x = _) |>
-  paste(collapse = "\n") |>
-  cat()
+    cat(glue("- {authors}. {row$title}. *{row$journal}*."), "\n")
+  }
+  cat("\n")
+}
 ```
 
 ## Awards & Honors
@@ -141,12 +156,10 @@ awards <- read_csv("data/cv_awards.csv", show_col_types = FALSE) |>
   arrange(desc(sort_year)) |>
   select(-sort_year)
 
-awards |>
-  pmap_chr(function(award, organization, year, details) {
-    glue("- **{award}**, {organization} ({year})")
-  }) |>
-  paste(collapse = "\n") |>
-  cat()
+for (i in seq_len(nrow(awards))) {
+  row <- awards[i, ]
+  cat(glue("- **{row$award}**, {row$organization} ({row$year})"), "\n")
+}
 ```
 
 ## Media & Press
@@ -158,24 +171,37 @@ media <- read_csv("data/cv_media.csv", show_col_types = FALSE) |>
   mutate(across(where(is.character), \(.x) replace_na(.x, ""))) |>
   arrange(desc(year))
 
-media |>
-  pmap_chr(function(year, type, outlet, title, link) {
-    glue("- {title}. {type} --- {outlet} ({year})")
-  }) |>
-  paste(collapse = "\n") |>
-  cat()
+for (i in seq_len(nrow(media))) {
+  row <- media[i, ]
+  cat(glue("- **{row$title}** — {row$type}, {row$outlet} ({row$year})"), "\n")
+}
+```
+
+## Selected Talks
+
+```{r}
+#| label: talks
+#| results: asis
+talks <- read_csv("data/talks.csv", show_col_types = FALSE) |>
+  mutate(across(where(is.character), \(.x) replace_na(.x, ""))) |>
+  arrange(desc(as.Date(date)))
+
+for (i in seq_len(nrow(talks))) {
+  row <- talks[i, ]
+  cat(glue("- **{row$title}**. {row$venue}, {row$location}."), "\n")
+}
 ```
 
 ## Skills
 
-**Clinical AI & LLM Systems**: EHR-integrated AI applications, agentic and multi-agent workflow design, LLM evaluation, retrieval-augmented generation (RAG), clinical summarization, post-deployment monitoring
+**Clinical AI & LLM Systems:** EHR-integrated AI, agentic workflow design, LLM evaluation, RAG, clinical summarization, post-deployment monitoring
 
-**Machine Learning & Statistics**: supervised learning, calibration, bootstrap inference, survival analysis, class imbalance adjustment, clustering, gradient boosting, deep learning, tabular foundation models (tabPFN)
+**Machine Learning & Statistics:** Supervised learning, calibration, bootstrap inference, survival analysis, clustering, gradient boosting, deep learning, tabPFN
 
-**Healthcare Data & Governance**: Epic EHR data, FHIR, clinical workflow integration, AI governance, model lifecycle management, clinical operations analytics, human-in-the-loop workflow design
+**Healthcare Data & Governance:** Epic EHR data, FHIR, clinical workflow integration, AI governance, model lifecycle management, clinical operations analytics
 
-**Programming & Data Science**: Python, R, SQL, Bash, pandas, scikit-learn, XGBoost, PyTorch, tidyverse, tidymodels, Bioconductor, Shiny
+**Programming & Data Science:** Python, R, SQL, Bash, pandas, scikit-learn, XGBoost, PyTorch, tidyverse, tidymodels, Bioconductor, Shiny
 
-**Platforms & Tools**: Databricks, Azure OpenAI, LiteLLM, FastAPI, Pydantic, Git, Docker, Epic, MCP, Quarto
+**Platforms & Tools:** Databricks, Azure OpenAI, LiteLLM, FastAPI, Pydantic, Git, Docker, Epic, MCP, Quarto
 
-**Biomedical Domains**: clinical machine learning, LLMs in health care, single-cell analysis, mass cytometry, computational cancer biology, pediatric leukemia
+**Biomedical Domains:** Clinical ML, LLMs in health care, single-cell analysis, mass cytometry, computational cancer biology, pediatric leukemia

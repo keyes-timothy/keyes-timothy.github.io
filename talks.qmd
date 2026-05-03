@@ -3,39 +3,73 @@ title: "Talks & Presentations"
 toc: true
 ---
 
-## Upcoming
+```{r}
+#| label: setup
+#| echo: false
+#| message: false
+#| warning: false
 
-### From chats to workflows to "agents": Demystifying LLM jargon by example
-**posit::conf 2026** | Houston, TX | September 15–16, 2026
+library(readr)
+library(dplyr)
+library(tidyr)
+library(stringr)
+library(glue)
+library(purrr)
 
-If the phrase "agentic AI" has ever made you scratch your head (or roll your eyes), this talk is for you. The AI field is awash in jargon that sounds precise but isn't — and when every technology is branded as an "agent" or "agentic," it's pretty hard to know what anyone is talking about. So, let's fix that. In this gentle, no-experience-required introduction to LLM systems, I'll demystify the jargon by building up from first principles. Using a single running example — turning messy clinical notes into a structured summary — we'll walk through four levels of LLM system design: chats, workflows, agents, and multi-agent systems. You'll leave with a better understanding of agentic design patterns and how to try them out for yourself.
+talks <- read_csv("data/talks.csv", show_col_types = FALSE) |>
+  mutate(
+    across(where(is.character), \(.x) replace_na(.x, "")),
+    date = as.Date(date)
+  )
 
----
+upcoming <- 
+    talks |> 
+    filter(status == "upcoming") |> 
+    arrange(date)
 
-## Past
+past <- 
+    talks |> 
+    filter(status == "past") |> 
+    arrange(desc(date))
 
-### Trust, but Verify: Lessons from Deploying LLMs in a Large Health System
-**posit::conf 2025** | Atlanta, GA
+render_talk <- function(title, venue, location, date, status, description, video_url) {
+  cat(glue("### {title}"), "\n")
+  cat(glue("**{venue}** | {location}"), "\n\n")
+  cat(description, "\n\n")
+  if (nchar(video_url) > 0) {
+    cat(glue(
+      '<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin-top: 1rem;">',
+      '<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: 12px;" src="{video_url}" title="{title}" allowfullscreen></iframe>',
+      '</div>'
+    ), "\n\n")
+  }
+  cat("---\n\n")
+}
+```
 
-Large language models (LLMs) are transforming how data practitioners work with unstructured text data. However, in high-stakes domains like medicine, we need to ensure that "hallucinated" clinical details don't mislead clinicians.
+```{r}
+#| label: upcoming
+#| echo: false
+#| results: asis
 
-This talk presents a framework for evaluating and monitoring LLM systems, drawing from a real-world deployment at Stanford Health Care. I describe how we built and assessed an LLM-powered system for real-time, automated chart abstraction within patients' electronic health records, focusing on methods for measuring accuracy, consistency, and safety. Additionally, I discuss how open-source tools like Chatlas and Quarto powered the work across our team's combined Python- and R-based workflows.
+if (nrow(upcoming) > 0) {
+  cat("## Upcoming\n\n")
+  upcoming |> 
+    pwalk(render_talk)
+}
+```
 
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin-top: 1rem;">
-<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: 12px;" src="https://www.youtube.com/embed/HYQaZTLb2Co" title="Trust, but Verify: Lessons from Deploying LLMs in a Large Health System" allowfullscreen></iframe>
-</div>
+```{r}
+#| label: past
+#| echo: false
+#| results: asis
 
----
 
-### tidytof: An R Package to Predict Patient Outcomes from Single-Cell Data Using Tidy Data Principles
-**R/Medicine 2021** | Virtual
-
-An introduction to `{tidytof}`, a grammar for single-cell data analysis built on tidy data principles. The talk covers background on how single-cell databases can be analyzed for flexibility and reproducibility, a deep dive into the `{tidytof}` package, and lessons learned from building tidy tools to answer clinical questions with single-cell data.
-
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin-top: 1rem;">
-<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: 12px;" src="https://www.youtube.com/embed/5NhpC836aSc" title="tidytof: An R Package for Single-Cell Data Analysis" allowfullscreen></iframe>
-</div>
-
----
+if (nrow(past) > 0) {
+  cat("## Past\n\n")
+  past |> 
+    pwalk(render_talk)
+}
+```
 
 *If you'd like me to present at your event, please [get in touch](mailto:tkeyes@stanford.edu).*
