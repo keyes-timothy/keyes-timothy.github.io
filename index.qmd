@@ -75,6 +75,7 @@ nodes <- tribble(
   "Data Integration",          "single_cell",
   "Leukemia",                  "single_cell",
   "Immunology",                "single_cell",
+  "Bioinformatics",            "single_cell",
   "Precision Medicine",        "clinical_ai",
   # Open source cluster (5 nodes)
   "Open Source",               "software",
@@ -117,7 +118,7 @@ edges <- tribble(
   "Statistics",             "AI Monitoring",
   "Leukemia",               "Tumor Boards",
   # Single-cell internal edges
-  "Single-Cell Biology",    "ML",
+  "Single-Cell Biology",    "Bioinformatics",
   "Single-Cell Biology",    "CyTOF",
   "Single-Cell Biology",    "scRNA-seq",
   "Single-Cell Biology",    "Data Integration",
@@ -127,13 +128,15 @@ edges <- tribble(
   "Leukemia",               "Immunology",
   "CyTOF",                  "Data Integration",
   "scRNA-seq",              "Data Integration",
+  "Bioinformatics",         "ML",
+  "Bioinformatics",         "Data Integration",
   # Precision Medicine bridges clinical AI and single-cell
   "Precision Medicine",     "CDS",
-  "Precision Medicine",     "Single-Cell Biology",
+  "Precision Medicine",     "Bioinformatics",
   "Precision Medicine",     "Leukemia",
   "Clinical AI",            "Precision Medicine",
   # Open source internal edges
-  "Single-Cell Biology",    "Tidy Data",
+  "Bioinformatics",         "Tidy Data",
   "Open Source",            "Tidy Data",
   "Open Source",            "R",
   "Open Source",            "Bioconductor",
