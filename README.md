@@ -104,7 +104,7 @@ The interactive force-directed network on `index.qmd` is built with `visNetwork`
 | `link` | URL to the paper |
 | `file_name` | PDF filename in `files/papers/` (optional) |
 | `preferred` | `TRUE` if shown in CV's "Selected Publications" |
-| `author_position` | `first`, `co_first`, `co_second`, or `middle` |
+| `author_position` | `first`, `co_first`, `second`, `co_second`, or `middle` |
 | `co_author_count` | Number of co-first/co-second authors |
 | `co_author_start` | 1-based index of first co-author in the author list |
 | `topic` | `Clinical AI`, `Single-Cell Biology`, or `Medical Education` |
