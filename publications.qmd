@@ -1,0 +1,244 @@
+---
+title: "Publications"
+toc: true
+---
+
+```{r}
+#| label: setup
+#| echo: false
+#| message: false
+#| warning: false
+
+# ---- Load required packages ----
+library(readr)
+library(dplyr)
+library(tidyr)
+library(stringr)
+library(purrr)
+library(glue)
+library(htmltools)
+```
+
+```{r}
+#| label: read-data
+#| echo: false
+#| message: false
+#| warning: false
+
+# ---- Read and prepare publication data ----
+publications <-
+  read_csv("data/publications.csv", show_col_types = FALSE) |>
+  mutate(
+    across(where(is.character), \(.x) replace_na(.x, "")),
+    preferred = str_to_lower(as.character(preferred)) %in%
+      c("true", "t", "1", "yes", "y"),
+    year = suppressWarnings(as.integer(year)),
+    co_author_count = suppressWarnings(as.integer(co_author_count)),
+    co_author_start = suppressWarnings(as.integer(co_author_start)),
+    position_rank = case_when(
+      author_position %in% c("first", "co_first") ~ 1L,
+      author_position %in% c("second", "co_second") ~ 2L,
+      TRUE ~ 3L
+    )
+  ) |>
+  arrange(desc(year), position_rank, authors)
+```
+
+```{r}
+#| label: helpers
+#| echo: false
+
+# ---- Helper functions ----
+
+has_text <- function(x) {
+  !is.na(x) && nchar(trimws(x)) > 0
+}
+
+bold_my_name <- function(x) {
+  name_patterns <- c(
+    "Timothy J\\. Keyes", "Timothy Keyes",
+    "Timothy J Keyes", "Keyes, Timothy"
+  )
+  result <- x
+  for (pattern in name_patterns) {
+    result <- str_replace_all(result, pattern, \(.m) paste0("**", .m, "**"))
+  }
+  result
+}
+
+#' Render a single publication card
+render_pub_md <- function(
+    title, authors, journal, year, citation, link, file_name,
+    abstract, preferred, author_position, co_author_count,
+    co_author_start, position_rank, topic
+) {
+  # ---- Title ----
+  title_md <- if (has_text(link)) {
+    glue("[{title}]({link}){{target='_blank'}}")
+  } else {
+    glue("**{title}**")
+  }
+
+  # ---- Co-authorship markers ----
+  marker <- ""
+  n_marked <- 0L
+  if (has_text(author_position) && author_position == "co_first") {
+    marker <- "\u2020"
+    n_marked <- if (!is.na(co_author_count) && co_author_count > 0) {
+      as.integer(co_author_count)
+    } else {
+      2L
+    }
+  } else if (has_text(author_position) && author_position == "co_second") {
+    marker <- "\u2021"
+    n_marked <- if (!is.na(co_author_count) && co_author_count > 0) {
+      as.integer(co_author_count)
+    } else {
+      2L
+    }
+  }
+  start_pos <- if (!is.na(co_author_start) && co_author_start > 0) {
+    as.integer(co_author_start)
+  } else {
+    1L
+  }
+
+  if (nchar(marker) > 0 && n_marked > 0) {
+    author_parts <- str_split(authors, ",\\s*")[[1]]
+    end_pos <- min(start_pos + n_marked - 1L, length(author_parts))
+    for (i in start_pos:end_pos) {
+      author_parts[i] <- paste0(author_parts[i], marker)
+    }
+    authors_display <- paste(author_parts, collapse = ", ")
+  } else {
+    authors_display <- authors
+  }
+
+  authors_md <- bold_my_name(htmlEscape(authors_display))
+
+  # ---- Metadata line ----
+  meta_parts <- c()
+  if (has_text(journal)) meta_parts <- c(meta_parts, glue("*{journal}*"))
+  if (!is.na(year)) meta_parts <- c(meta_parts, as.character(year))
+  meta_md <- paste(meta_parts, collapse = " \u00b7 ")
+
+  # ---- Buttons ----
+  buttons <- c()
+  if (has_text(file_name)) {
+    buttons <- c(buttons, glue(
+      "<a class='btn btn-sm btn-outline-primary' ",
+      "href='files/papers/{file_name}' target='_blank'>",
+      "<i class='bi bi-file-pdf'></i> PDF</a>",
+      .sep = ""
+    ))
+  }
+  if (has_text(link)) {
+    buttons <- c(buttons, glue(
+      "<a class='btn btn-sm btn-outline-secondary' ",
+      "href='{htmlEscape(link)}' target='_blank'>",
+      "<i class='bi bi-link-45deg'></i> Link</a>",
+      .sep = ""
+    ))
+  }
+  if (has_text(citation)) {
+    escaped_for_js <- citation |>
+      str_replace_all("'", "\\\\'") |>
+      str_replace_all('"', '\\\\"')
+    buttons <- c(buttons, glue(
+      "<button class='btn btn-sm btn-outline-secondary copy-cite-btn' ",
+      "onclick=\"navigator.clipboard.writeText('{escaped_for_js}').then(",
+      "()=>{{this.textContent='Copied!';setTimeout(()=>{{",
+      "this.innerHTML='<i class=&quot;bi bi-clipboard&quot;></i> Cite';",
+      "}},1500)}})\" title='Copy citation'>",
+      "<i class='bi bi-clipboard'></i> Cite</button>",
+      .sep = ""
+    ))
+  }
+  buttons_md <- paste(buttons, collapse = " ")
+
+  # ---- Abstract ----
+  abstract_md <- if (has_text(abstract)) {
+    glue(
+      "\n<details><summary>Abstract</summary>\n",
+      "{htmlEscape(abstract)}\n",
+      "</details>",
+      .sep = ""
+    )
+  } else {
+    ""
+  }
+
+  # ---- Card ----
+  glue(
+    "::: {{.card .mb-3}}\n",
+    "::: {{.card-body}}\n",
+    "#### {title_md}\n\n",
+    "{authors_md}\n\n",
+    "{meta_md}\n\n",
+    "{buttons_md}\n",
+    "{abstract_md}\n",
+    ":::\n",
+    ":::\n",
+    .sep = ""
+  )
+}
+
+#' Render a filtered set of publications as cards
+render_topic_cards <- function(data) {
+  data |>
+    pmap_chr(render_pub_md) |>
+    walk(\(.card) cat(.card, "\n\n"))
+}
+```
+
+<small>† co-first author &nbsp; ‡ co-second author</small>
+
+::: {.panel-tabset}
+
+## <i class="bi bi-journal-text"></i> All
+
+```{r}
+#| label: tab-all
+#| results: asis
+#| echo: false
+
+render_topic_cards(publications)
+```
+
+## <i class="bi bi-robot"></i> Clinical AI
+
+```{r}
+#| label: tab-clinical-ai
+#| results: asis
+#| echo: false
+
+publications |>
+  filter(topic == "Clinical AI") |>
+  render_topic_cards()
+```
+
+## <i class="bi bi-diagram-3-fill"></i> Single-Cell Biology
+
+```{r}
+#| label: tab-single-cell
+#| results: asis
+#| echo: false
+
+publications |>
+  filter(topic == "Single-Cell Biology") |>
+  render_topic_cards()
+```
+
+## <i class="bi bi-mortarboard-fill"></i> Medical Education
+
+```{r}
+#| label: tab-med-ed
+#| results: asis
+#| echo: false
+
+publications |>
+  filter(topic == "Medical Education") |>
+  render_topic_cards()
+```
+
+:::

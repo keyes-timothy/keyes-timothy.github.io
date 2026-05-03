@@ -1,0 +1,23 @@
+# Quarto output
+_site/
+/.quarto/
+
+# R artifacts
+.Rhistory
+.RData
+.Rproj.user/
+*_cache/
+*_files/
+
+# Archive (old Jekyll site)
+_archive/
+
+# Preview and build artifacts
+_coauthor_network_preview.png
+site_libs/
+blog-listing.json
+blog.feed-full-staged
+
+# OS files
+.DS_Store
+Thumbs.db

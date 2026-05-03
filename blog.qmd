@@ -1,0 +1,12 @@
+---
+title: "Blog"
+listing: 
+    contents: posts
+    sort: "date desc"
+    type: default
+    categories: true
+    feed: true
+---
+
+Here's where I'll post updates. (Placeholder for now.)
+

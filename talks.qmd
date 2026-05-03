@@ -1,0 +1,32 @@
+---
+title: "Talks & Presentations"
+toc: true
+---
+
+## Conference Talks
+
+### Trust, but Verify: Lessons from Deploying LLMs in a Large Health System
+**posit::conf 2025** | Atlanta, GA
+
+Large language models (LLMs) are transforming how data practitioners work with unstructured text data. However, in high-stakes domains like medicine, we need to ensure that "hallucinated" clinical details don't mislead clinicians.
+
+This talk presents a framework for evaluating and monitoring LLM systems, drawing from a real-world deployment at Stanford Health Care. I describe how we built and assessed an LLM-powered system for real-time, automated chart abstraction within patients' electronic health records, focusing on methods for measuring accuracy, consistency, and safety. Additionally, I discuss how open-source tools like Chatlas and Quarto powered the work across our team's combined Python- and R-based workflows.
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin-top: 1rem;">
+<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: 12px;" src="https://www.youtube.com/embed/HYQaZTLb2Co" title="Trust, but Verify: Lessons from Deploying LLMs in a Large Health System" allowfullscreen></iframe>
+</div>
+
+---
+
+### tidytof: An R Package to Predict Patient Outcomes from Single-Cell Data Using Tidy Data Principles
+**R/Medicine 2021** | Virtual
+
+An introduction to `{tidytof}`, a grammar for single-cell data analysis built on tidy data principles. The talk covers background on how single-cell databases can be analyzed for flexibility and reproducibility, a deep dive into the `{tidytof}` package, and lessons learned from building tidy tools to answer clinical questions with single-cell data.
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin-top: 1rem;">
+<iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; border-radius: 12px;" src="https://www.youtube.com/embed/5NhpC836aSc" title="tidytof: An R Package for Single-Cell Data Analysis" allowfullscreen></iframe>
+</div>
+
+---
+
+*If you'd like me to present at your event, please [get in touch](mailto:tkeyes@stanford.edu).*

@@ -1,0 +1,325 @@
+---
+title: "Timothy Keyes"
+aliases:
+  - /about/
+  - /about.html
+toc: false
+---
+
+::: {.column-margin}
+<div class="profile-card">
+  <img src="images/profile.png" alt="Timothy Keyes" class="profile-photo rounded-circle shadow mb-3">
+  <div class="name h5 mb-1">Timothy Keyes</div>
+  <div class="role"><strong>Data Scientist</strong></div>
+  <div class="role">Stanford Health Care</div>
+  <div class="role mt-1"><strong>MD/PhD Candidate</strong></div>
+  <div class="role mb-3">Stanford Medicine</div>
+</div>
+
+<ul class="list-unstyled">
+  <li class="mb-1"><i class="bi bi-geo-alt me-2"></i>Palo Alto, California</li>
+  <li class="mb-1"><i class="bi bi-linkedin me-2"></i><a href="https://www.linkedin.com/in/timothy-keyes/" target="_blank" rel="noopener">LinkedIn</a></li>
+  <li class="mb-1">
+    <span class="me-2" style="font-size: 1.1em;">🦋</span><a href="https://bsky.app/profile/timothykeyes.bsky.social" target="_blank" rel="noopener">Bluesky</a>
+  </li>
+  <li class="mb-1"><i class="bi bi-github me-2"></i><a href="https://github.com/keyes-timothy" target="_blank" rel="noopener">GitHub</a></li>
+  <li class="mb-1"><i class="bi bi-mortarboard me-2"></i><a href="https://scholar.google.com/citations?user=ZzAOZ1QAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a></li>
+  <li class="mb-1">
+    <span class="me-1 align-text-top">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="11" fill="#A6CE39"></circle>
+        <text x="7" y="16" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" fill="#ffffff">iD</text>
+      </svg>
+    </span>
+    <a href="https://orcid.org/0000-0003-0423-9679" target="_blank" rel="noopener">ORCID</a>
+  </li>
+</ul>
+:::
+
+I'm a senior data scientist at Stanford Health Care and MD/PhD candidate in Stanford's Medical Scientist Training Program (MSTP). I build and deploy clinical AI systems — from LLM-powered chart abstraction to agentic tumor board preparation — and study how to deploy them safely. My work spans applied machine learning, single-cell biology, and medical education. 
+
+[Read more →](bio.html)
+
+```{r}
+#| label: network-viz
+#| echo: false
+#| message: false
+#| warning: false
+
+# ---- Interactive research interest network ----
+library(visNetwork)
+library(tibble)
+library(dplyr)
+
+# ---- Define nodes: central node + domain clusters ----
+nodes <- tribble(
+  ~name,                       ~group,
+  # Clinical AI cluster
+  "Clinical AI",               "clinical_ai",
+  "LLMs",                      "clinical_ai",
+  "EHR Data",                  "clinical_ai",
+  "AI Monitoring",             "clinical_ai",
+  "Agentic AI",                "clinical_ai",
+  "NLP",                       "clinical_ai",
+  "CDS",                       "clinical_ai",
+  "AI Governance",             "clinical_ai",
+  "Patient Triage",            "clinical_ai",
+  "Tumor Boards",              "clinical_ai",
+  "Statistics",                "clinical_ai",
+  # Single-cell cluster (9 nodes)
+  "Single-Cell Biology",       "single_cell",
+  "ML",                        "clinical_ai",
+  "CyTOF",                     "single_cell",
+  "DL",                        "clinical_ai",
+  "scRNA-seq",                 "single_cell",
+  "Data Integration",          "single_cell",
+  "Leukemia",                  "single_cell",
+  "Immunology",                "single_cell",
+  "Precision Medicine",        "clinical_ai",
+  # Open source cluster (5 nodes)
+  "Open Source",               "software",
+  "Tidy Data",                 "software",
+  "R",                         "software",
+  "Bioconductor",              "software",
+  "Data Visualization",        "software",
+  "Python",                    "software",
+  # Medical education cluster (6 nodes)
+  "Medical Education",         "med_ed",
+  "Curriculum Design",         "med_ed",
+  "Health Equity",             "med_ed",
+  "Program Evaluation",        "med_ed",
+  "CME",                       "med_ed",
+  "Student Advocacy",          "med_ed"
+)
+
+# ---- Define edges ----
+edges <- tribble(
+  ~from,                    ~to,
+  # Clinical AI internal edges
+  "Clinical AI",            "LLMs",
+  "Clinical AI",            "EHR Data",
+  "Clinical AI",            "AI Monitoring",
+  "Clinical AI",            "Agentic AI",
+  "Clinical AI",            "NLP",
+  "Clinical AI",            "CDS",
+  "Clinical AI",            "AI Governance",
+  "Clinical AI",            "Patient Triage",
+  "Clinical AI",            "Tumor Boards",
+  "Clinical AI",            "Statistics",
+  "Clinical AI",            "ML",
+  "LLMs",                   "Agentic AI",
+  "LLMs",                   "NLP",
+  "NLP",                    "EHR Data",
+  "AI Monitoring",          "AI Governance",
+  "Patient Triage",         "CDS",
+  "Tumor Boards",           "Agentic AI",
+  "Tumor Boards",           "CDS",
+  "Statistics",             "AI Monitoring",
+  "Leukemia",               "Tumor Boards",
+  # Single-cell internal edges
+  "Single-Cell Biology",    "ML",
+  "Single-Cell Biology",    "CyTOF",
+  "Single-Cell Biology",    "scRNA-seq",
+  "Single-Cell Biology",    "Data Integration",
+  "Single-Cell Biology",    "Immunology",
+  "ML",                     "DL",
+  "Leukemia",               "Immunology",
+  "CyTOF",                  "Data Integration",
+  "scRNA-seq",              "Data Integration",
+  # Precision Medicine bridges clinical AI and single-cell
+  "Precision Medicine",     "CDS",
+  "Precision Medicine",     "Single-Cell Biology",
+  "Precision Medicine",     "Leukemia",
+  "Clinical AI",            "Precision Medicine",
+  # Open source internal edges
+  "Single-Cell Biology",    "Tidy Data",
+  "Open Source",            "Tidy Data",
+  "Open Source",            "R",
+  "Open Source",            "Bioconductor",
+  "R",                     "Bioconductor",
+  "Open Source",            "Data Visualization",
+  "Tidy Data",              "CyTOF",
+  "Tidy Data",              "Bioconductor",
+  "Tidy Data",              "R",
+  "Data Visualization",     "R",
+  "Data Visualization",     "Python",
+  # Medical education internal edges
+  "Medical Education",      "Curriculum Design",
+  "Medical Education",      "Health Equity",
+  "Medical Education",      "Program Evaluation",
+  "Medical Education",      "CME",
+  "Medical Education",      "Student Advocacy",
+  "CME",                    "Curriculum Design",
+  "Program Evaluation",     "CME",
+  "Student Advocacy",       "Health Equity",
+  "Program Evaluation",     "Statistics",
+  "Program Evaluation",     "AI Monitoring",
+  "Program Evaluation",     "AI Governance",
+  "R",                      "Statistics",
+  "R",                      "LLMs",
+  "Python",                 "Statistics",
+  "Python",                 "LLMs",
+  "Python",                 "Agentic AI",
+  "Open Source",            "Python",
+  # Cross-cluster bridge edges
+  "ML",                     "AI Monitoring",
+  "ML",                     "Statistics",
+  "DL",                     "LLMs"
+)
+
+# ---- Color palette (Stanford-inspired) ----
+group_colors <- c(
+  "clinical_ai" = "#007C92",
+  "single_cell" = "#E04F39",
+  "software"    = "#53B17A",
+  "med_ed"      = "#B26F16"
+)
+
+# Hub nodes are larger and bold
+hub_nodes <- c("Clinical AI", "Single-Cell Biology", "Open Source",
+               "Medical Education")
+
+# ---- Build visNetwork node data frame ----
+vis_nodes <- nodes |>
+  mutate(
+    id = row_number(),
+    label = if_else(name %in% hub_nodes, name, ""),
+    color = group_colors[group],
+    size = if_else(name %in% hub_nodes, 35, 18),
+    font.size = if_else(name %in% hub_nodes, 60, 52),
+    font.bold = name %in% hub_nodes,
+    font.color = group_colors[group],
+    font.strokeWidth = 1,
+    font.strokeColor = "#ffffff",
+    borderWidth = 1,
+    borderWidthSelected = 2,
+    shadow = TRUE
+  )
+
+# ---- Build visNetwork edge data frame ----
+vis_edges <- edges |>
+  left_join(vis_nodes |> select(id, name), by = c("from" = "name")) |>
+  rename(from_id = id) |>
+  left_join(vis_nodes |> select(id, name), by = c("to" = "name")) |>
+  rename(to_id = id) |>
+  transmute(from = from_id, to = to_id, color = "rgba(150,150,150,0.3)")
+
+# ---- Render interactive network ----
+visNetwork(
+  vis_nodes,
+  vis_edges,
+    height = "80vh",
+  width = "100%"
+) |>
+  visPhysics(
+    solver = "forceAtlas2Based",
+    forceAtlas2Based = list(
+      gravitationalConstant = -40,
+      centralGravity = 0.005,
+      springLength = 120,
+      springConstant = 0.04,
+      avoidOverlap = 0.5
+    ),
+    stabilization = list(iterations = 200)
+  ) |>
+  visInteraction(
+    hover = TRUE,
+    tooltipDelay = 0,
+    tooltipStay = 0,
+    navigationButtons = FALSE,
+    zoomView = FALSE,
+    dragNodes = TRUE
+  ) |>
+  visOptions(
+    highlightNearest = FALSE,
+    nodesIdSelection = FALSE
+  ) |>
+  visLayout(randomSeed = 42) |>
+  visEvents(
+    hoverNode = "function(params) {
+      var network = this;
+      var nodeId = params.node;
+      var connectedNodeIds = network.getConnectedNodes(nodeId);
+      var connectedEdgeIds = network.getConnectedEdges(nodeId);
+      var activeSet = new Set(connectedNodeIds);
+      activeSet.add(nodeId);
+
+      var allNodes = network.body.data.nodes;
+      var nodeUpdates = [];
+      allNodes.forEach(function(node) {
+        var isActive = activeSet.has(node.id);
+        var origColor = node.origColor || node.color;
+        // Store original color on first hover
+        if (!node.origColor) {
+          nodeUpdates.push({ id: node.id, origColor: origColor });
+        }
+        if (isActive) {
+          nodeUpdates.push({
+            id: node.id,
+            color: origColor,
+            label: node.name,
+            font: { color: origColor, strokeWidth: 1, strokeColor: '#ffffff',
+                    size: node.font.size || 40, bold: node.font.bold || false }
+          });
+        } else {
+          nodeUpdates.push({
+            id: node.id,
+            color: 'rgba(200,200,200,0.3)',
+            label: node.font.bold ? node.name : '',
+            font: { color: node.font.bold ? 'rgba(180,180,180,0.5)' : 'rgba(0,0,0,0)',
+                    strokeWidth: node.font.bold ? 1 : 0,
+                    strokeColor: node.font.bold ? 'rgba(255,255,255,0.3)' : 'rgba(0,0,0,0)',
+                    size: node.font.size || 40, bold: node.font.bold || false }
+          });
+        }
+      });
+      allNodes.update(nodeUpdates);
+
+      // Dim all edges, brighten connected ones
+      var allEdges = network.body.data.edges;
+      var edgeSet = new Set(connectedEdgeIds);
+      var edgeUpdates = [];
+      allEdges.forEach(function(edge) {
+        edgeUpdates.push({
+          id: edge.id,
+          color: edgeSet.has(edge.id) ? 'rgba(100,100,100,0.6)' : 'rgba(200,200,200,0.08)'
+        });
+      });
+      allEdges.update(edgeUpdates);
+    }",
+    doubleClick = "function() { this.fit(); }",
+    blurNode = "function(params) {
+      var network = this;
+      var allNodes = network.body.data.nodes;
+      var nodeUpdates = [];
+      allNodes.forEach(function(node) {
+        var origColor = node.origColor || node.color;
+        nodeUpdates.push({
+          id: node.id,
+          color: origColor,
+          label: node.font.bold ? node.name : '',
+          font: { color: node.font.bold ? origColor : 'rgba(0,0,0,0)',
+                  strokeWidth: node.font.bold ? 1 : 0,
+                  strokeColor: node.font.bold ? '#ffffff' : 'rgba(0,0,0,0)',
+                  size: node.font.size || 40, bold: node.font.bold || false }
+        });
+      });
+      allNodes.update(nodeUpdates);
+
+      // Restore all edges
+      var allEdges = network.body.data.edges;
+      var edgeUpdates = [];
+      allEdges.forEach(function(edge) {
+        edgeUpdates.push({ id: edge.id, color: 'rgba(150,150,150,0.3)' });
+      });
+      allEdges.update(edgeUpdates);
+    }"
+  )
+```
+
+<p class="text-center"><small class="text-muted">Hover to explore my interests · Drag to rearrange · Double-click to reset</small></p>
+
+## Contact
+
+- Email: [tkeyes@stanford.edu](mailto:tkeyes@stanford.edu)
+- GitHub: [keyes-timothy](https://github.com/keyes-timothy)

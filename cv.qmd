@@ -1,0 +1,324 @@
+---
+title: "CV"
+toc: true
+---
+
+```{r}
+#| label: setup
+#| echo: false
+#| message: false
+#| warning: false
+
+# ---- Load required packages ----
+library(readr)
+library(dplyr)
+library(tidyr)
+library(stringr)
+library(purrr)
+library(glue)
+```
+
+```{r}
+#| label: cv-helpers
+#| echo: false
+
+# ---- Helper: check if a string has meaningful content ----
+has_text_cv <- function(x) {
+  !is.na(x) && nchar(trimws(x)) > 0
+}
+
+#' Render a timeline-style CV entry (education or experience)
+#'
+#' Produces an HTML div with a colored left border, showing the degree/title,
+#' institution, location, year range, and optional details.
+#'
+#' @param main Character. Primary label (e.g. degree or job title).
+#' @param sub Character. Secondary label (e.g. institution name).
+#' @param location Character. City/state.
+#' @param years Character. Formatted year range string.
+#' @param details Character. Optional additional details.
+#' @return HTML string for a single timeline entry.
+render_entry <- function(main, sub, location, years, details = "") {
+  # Only show the details div if there's actual content
+
+  details_html <- if (!is.na(details) && nchar(trimws(details)) > 0) {
+    # Split on semicolons and render each part as a separate line
+    parts <- str_split(details, ";\\s*")[[1]]
+    parts <- trimws(parts)
+    parts <- parts[nchar(parts) > 0]
+    lines <- paste(parts, collapse = "<br>")
+    glue("<div class='cv-details'>{lines}</div>")
+  } else {
+    ""
+  }
+
+  glue(
+    "<div class='cv-entry'>",
+    "<div class='cv-entry-header'>",
+    "<strong>{main}</strong>",
+    "<span class='cv-years'>{years}</span>",
+    "</div>",
+    "<div class='cv-entry-sub-row'>",
+    "<span class='cv-entry-sub'>{sub}</span>",
+    "<span class='cv-location'>{location}</span>",
+    "</div>",
+    "{details_html}",
+    "</div>"
+  )
+}
+
+#' Render a compact award/honor entry
+#'
+#' @param award Character. Award name.
+#' @param organization Character. Granting organization.
+#' @param year Character. Year awarded.
+#' @param details Character. Optional description.
+#' @return HTML string for a single award entry.
+render_award <- function(award, organization, year, details = "") {
+  # If details exist, wrap in a clickable <details>/<summary> element;
+  # otherwise, render a simple non-interactive line.
+  has_details <- !is.na(details) && nchar(trimws(details)) > 0
+
+  if (has_details) {
+    glue(
+      "<details class='cv-award'>",
+      "<summary class='cv-award-summary'>",
+      "<span class='cv-award-title'>{award}</span>",
+      "<span class='cv-award-org-inline'>{organization}</span>",
+      "<span class='cv-years'>{year}</span>",
+      "</summary>",
+      "<div class='cv-award-details'>{details}</div>",
+      "</details>"
+    )
+  } else {
+    glue(
+      "<div class='cv-award'>",
+      "<div class='cv-award-summary'>",
+      "<span class='cv-award-title'>{award}</span>",
+      "<span class='cv-award-org-inline'>{organization}</span>",
+      "<span class='cv-years'>{year}</span>",
+      "</div>",
+      "</div>"
+    )
+  }
+}
+```
+
+## Education
+
+```{r}
+#| label: education
+#| echo: false
+#| results: asis
+
+# ---- Read and render education entries ----
+# Source: data/cv_education.csv (degree, institution, location, years, details)
+education <- read_csv("data/cv_education.csv", show_col_types = FALSE)
+
+education |>
+  pmap_chr(
+    function(degree, institution, location, status, details) {
+      render_entry(degree, institution, location, status, details)
+    }
+  ) |>
+  walk(\(.html) cat(.html, "\n\n"))
+```
+
+## Experience
+
+```{r}
+#| label: experience
+#| echo: false
+#| results: asis
+
+# ---- Read and render work experience entries ----
+# Source: data/cv_experience.csv
+experience <- read_csv("data/cv_experience.csv", show_col_types = FALSE)
+
+experience |>
+  pmap_chr(
+    function(title, organization, location, status, details) {
+      render_entry(title, organization, location, status, details)
+    }
+  ) |>
+  walk(\(.html) cat(.html, "\n\n"))
+```
+
+## Selected Publications
+
+```{r}
+#| label: cv-publications
+#| echo: false
+#| results: asis
+
+# ---- Read publication data and render selected publications ----
+# Uses the same CSV as the Publications page, filtered to preferred == TRUE.
+# Includes co-authorship markers (dagger/double-dagger) and name bolding.
+pubs <-
+  read_csv("data/publications.csv", show_col_types = FALSE) |>
+  mutate(
+    across(where(is.character), \(.x) replace_na(.x, "")),
+    preferred = str_to_lower(as.character(preferred)) %in%
+      c("true", "t", "1", "yes", "y"),
+    year = suppressWarnings(as.integer(year)),
+    co_author_count = suppressWarnings(as.integer(co_author_count)),
+    co_author_start = suppressWarnings(as.integer(co_author_start)),
+    # Sorting rank: first/co-first = 1, co-second = 2, middle = 3
+    position_rank = case_when(
+      author_position %in% c("first", "co_first") ~ 1L,
+      author_position %in% c("second", "co_second") ~ 2L,
+      TRUE ~ 3L
+    )
+  ) |>
+  filter(preferred) |>
+  arrange(desc(year), position_rank, authors)
+
+pubs |>
+  pmap_chr(
+    function(
+      year, authors, journal, title, abstract, citation, link,
+      file_name, preferred, author_position, co_author_count,
+      co_author_start, position_rank, topic
+    ) {
+      # ---- Apply co-authorship markers to author names ----
+      marker <- ""
+      n_marked <- 0L
+
+      if (has_text_cv(author_position) && author_position == "co_first") {
+        marker <- "\u2020"
+        n_marked <- if (!is.na(co_author_count) && co_author_count > 0) {
+          as.integer(co_author_count)
+        } else {
+          2L
+        }
+      } else if (has_text_cv(author_position) && author_position == "co_second") {
+        marker <- "\u2021"
+        n_marked <- if (!is.na(co_author_count) && co_author_count > 0) {
+          as.integer(co_author_count)
+        } else {
+          2L
+        }
+      }
+
+      start_pos <- if (!is.na(co_author_start) && co_author_start > 0) {
+        as.integer(co_author_start)
+      } else {
+        1L
+      }
+
+      if (nchar(marker) > 0 && n_marked > 0) {
+        author_parts <- str_split(authors, ",\\s*")[[1]]
+        end_pos <- min(start_pos + n_marked - 1L, length(author_parts))
+        for (i in start_pos:end_pos) {
+          author_parts[i] <- paste0(author_parts[i], marker)
+        }
+        authors_display <- paste(author_parts, collapse = ", ")
+      } else {
+        authors_display <- authors
+      }
+
+      # Bold "Timothy Keyes" in the display string
+      authors_display <- str_replace_all(
+        authors_display,
+        "Timothy Keyes",
+        "<strong>Timothy Keyes</strong>"
+      )
+
+      # Build linked title
+      title_html <- if (has_text_cv(link)) {
+        glue("<a href='{link}' target='_blank'>{title}</a>")
+      } else {
+        title
+      }
+
+      # Assemble compact publication entry
+      glue(
+        "<div class='cv-pub'>",
+        "<div class='cv-pub-title'>{title_html}</div>",
+        "<div class='cv-pub-meta'>",
+        "{authors_display}. <em>{journal}</em> ({year}).",
+        "</div>",
+        "</div>"
+      )
+    }
+  ) |>
+  walk(\(.html) cat(.html, "\n\n"))
+```
+
+<p style="margin-top: 0.5rem;">
+<a href="publications.html">&rarr; View full publication list</a>
+</p>
+
+## Awards & Honors
+
+```{r}
+#| label: awards
+#| echo: false
+#| results: asis
+
+# ---- Read and render awards ----
+# Source: data/cv_awards.csv
+awards <- read_csv("data/cv_awards.csv", show_col_types = FALSE) |>
+  mutate(sort_year = as.integer(str_extract(year, "\\d{4}"))) |>
+  arrange(desc(sort_year)) |>
+  select(-sort_year)
+
+awards |>
+  pmap_chr(
+    function(award, organization, year, details) {
+      render_award(award, organization, year, details)
+    }
+  ) |>
+  walk(\(.html) cat(.html, "\n\n"))
+```
+
+## Media & Press
+
+```{r}
+#| label: media
+#| echo: false
+#| results: asis
+
+# ---- Read and render media/press entries ----
+# Source: data/cv_media.csv (year, type, outlet, title, link)
+media <-
+  read_csv("data/cv_media.csv", show_col_types = FALSE) |>
+  mutate(across(where(is.character), \(.x) replace_na(.x, ""))) |>
+  arrange(desc(year))
+
+media |>
+  pmap_chr(
+    function(year, type, outlet, title, link) {
+      # Link the title if a URL is available
+      title_html <- if (has_text_cv(link)) {
+        glue("<a href='{link}' target='_blank'>{title}</a>")
+      } else {
+        title
+      }
+
+      glue(
+        "<div class='cv-award'>",
+        "<div class='cv-award-header'>",
+        "<strong>{title_html}</strong>",
+        "</div>",
+        "<div class='cv-award-org'>{type} \u2014 {outlet} ({year})</div>",
+        "</div>"
+      )
+    }
+  ) |>
+  walk(\(.html) cat(.html, "\n\n"))
+```
+
+## Skills
+
+**Clinical AI & LLM Systems**: EHR-integrated AI applications, agentic and multi-agent workflow design, LLM evaluation, retrieval-augmented generation (RAG), clinical summarization, post-deployment monitoring
+
+**Machine Learning & Statistics**: supervised learning, calibration, bootstrap inference, survival analysis, class imbalance adjustment, clustering, gradient boosting, deep learning, tabular foundation models (tabPFN)
+
+**Healthcare Data & Governance**: Epic EHR data, FHIR, clinical workflow integration, AI governance, model lifecycle management, clinical operations analytics, human-in-the-loop workflow design
+
+**Programming & Data Science**: Python, R, SQL, Bash, pandas, scikit-learn, XGBoost, PyTorch, tidyverse, tidymodels, Bioconductor, Shiny, Quarto
+
+**Platforms & Tools**: Databricks, Azure OpenAI, LiteLLM, FastAPI, Pydantic, Git, Docker, Epic, MCP
+
+**Biomedical Domains**: clinical machine learning, LLMs in health care, single-cell analysis, mass cytometry, computational cancer biology, pediatric leukemia

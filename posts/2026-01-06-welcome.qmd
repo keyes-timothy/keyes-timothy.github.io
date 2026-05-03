@@ -1,0 +1,7 @@
+---
+title: "Welcome"
+date: 2026-01-06
+categories: [site]
+---
+
+This is a placeholder post while I migrate my site to Quarto.

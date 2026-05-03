@@ -1,0 +1,16 @@
+---
+title: "Bio"
+toc: false
+---
+
+I'm an MD/PhD student at Stanford School of Medicine, currently completing my clinical clerkships. For the past two years, I've also worked as a data scientist on Stanford Health Care's Technology & Digital Solutions (TDS) team. This page is an introduction to me and the work I do across medicine, machine learning, and clinical AI. You can also browse my **[CV](cv.html)** and **[publications](publications.html)**.
+
+I came to Stanford to join its Medical Scientist Training Program (MSTP) and recently completed my PhD in computational cancer biology, applying machine learning to high-dimensional single-cell data in pediatric leukemia to identify disease-associated cell populations. Over the course of my graduate work, my interests broadened from model development in the laboratory to the harder problem of how machine learning systems actually function in clinical settings — questions about deployment, evaluation, monitoring, and governance that are difficult to study from outside an operating health system.
+
+That interest led me to an embedded role on Stanford Health Care's clinical AI team, where I have spent the past two years helping to build, deploy, evaluate, and monitor LLM-powered tools used by clinicians across the health system. The experience has shaped my view that the gap between a working model and a working clinical tool is substantial, and that closing it is a discipline in its own right.
+
+A central focus of that work has been Stanford Health Care's LLM-powered clinical AI platform, **[ChatEHR](https://arxiv.org/abs/2602.00074)**. I contribute across several domains as a full-stack data scientist: evaluating model behavior, designing clinician-facing experiences, developing agentic workflows for chart review and abstraction, and helping translate technical systems into tools that can run in production. I have helped build and evaluate automations for tasks such as identifying patients who may benefit from specialty consults, screening surgical patients for elevated perioperative risk, supporting tumor board preparation, and detecting post-operative surgical-site infections.
+
+My broader interest is in the practical work of making AI useful in health care: deciding which clinical problems are worth solving, designing systems that fit into real workflows, measuring whether they are safe and effective, and building governance structures that allow them to improve over time. Much of my work focuses on the space between model development and clinical impact — evaluation, monitoring, implementation, and the design choices that determine whether an AI system actually helps the people it is meant to support.
+
+I am now completing my clinical training while working toward a faculty career in academic medicine or a director-level role in industry at the intersection of clinical medicine, machine learning, and health system operations. If you are working on related problems, please feel free to [contact me](mailto:tkeyes@stanford.edu).

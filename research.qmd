@@ -1,0 +1,38 @@
+---
+title: "Research"
+toc: true
+---
+
+My research spans clinical AI systems, computational cancer biology, open-source bioinformatics, and medical education. Below is a summary of the major threads of my work.
+
+## Clinical AI & LLM Evaluation
+
+My current work at Stanford Health Care focuses on building, deploying, and monitoring AI systems that operate in real clinical environments. A central project is **ChatEHR**, Stanford Health Care's proprietary LLM-powered clinical AI platform, which enables both interactive and automated use of large language models with full patient timelines in the electronic health record.
+
+I contribute across the ChatEHR ecosystem---from evaluation and design recommendations for clinician-facing experiences to building automated and "agentic" workflows for specific chart review and abstraction tasks. These include workflows to identify patients who may benefit from a palliative medicine consult, detect post-operative surgical-site infections, triage surgical patients for co-management, and generate case summaries for tumor board conferences.
+
+I've also led efforts around **continuous monitoring of deployed AI systems**---developing frameworks for what to measure, how often to measure it, who responds, and what "actionable" looks like in practice. This work has been described in several recent publications, including our paper on [monitoring deployed AI systems](https://arxiv.org/abs/2512.09048) and the [ChatEHR adoption paper](https://arxiv.org/abs/2602.00074).
+
+Related work includes contributions to **MedHELM**, a holistic evaluation framework for LLMs on medical tasks, and **MedAgentBrief**, a multi-step workflow for generating factual clinical summaries.
+
+## Computational Cancer Biology
+
+During my PhD in the laboratories of [Kara Davis](https://med.stanford.edu/kldavislab.html) (Department of Pediatrics) and [Garry Nolan](http://web.stanford.edu/group/nolan/) (Department of Pathology) at Stanford, I focused on applying machine learning to high-dimensional single-cell data in the context of **pediatric leukemia**.
+
+Using mass cytometry (CyTOF) and other single-cell technologies, I built predictive models of patient outcomes that operate at the time of diagnosis. This work involved generalized linear models, various forms of clustering, deep learning, and a method for deconvolving lineage-specific and cancer-specific features in single-cell data to improve relapse prediction in pediatric acute myeloid leukemia.
+
+A key output of this work was the development of **[tidytof](https://keyes-timothy.github.io/tidytof/)**, an R package providing a user-friendly, tidy interface for scalable and reproducible analysis of high-dimensional cytometry data.
+
+## Open-Source Bioinformatics
+
+I'm deeply committed to building open-source tools that make computational biology more accessible and reproducible:
+
+- **[tidytof](https://keyes-timothy.github.io/tidytof/)** --- An R/Bioconductor package for high-dimensional cytometry data analysis using tidy data principles. Published in *Bioinformatics Advances* (2023).
+
+- **[tidyomics](https://www.nature.com/articles/s41592-024-02299-2)** --- A software ecosystem bridging Bioconductor to the tidy R paradigm, enabling streamlined analysis of multi-omic data. I'm a co-first author on the *Nature Methods* paper (2024) describing this ecosystem, which we demonstrated by analyzing 7.5 million cells from the Human Cell Atlas.
+
+- **[CytofIn](https://doi.org/10.1038/s41467-022-28484-5)** --- A data integration strategy for combining public mass cytometry datasets using generalized anchors, published in *Nature Communications* (2022).
+
+## Medical Education
+
+I was a founding member of the **[Medical Student Pride Alliance (MSPA)](https://www.medpride.org/)**, a 501(c)(3) non-profit advocating for diversity, equity, and inclusion for LGBTQ+ medical students across the United States. In my role as MSPA's resident data scientist, I analyzed and visualized data guiding strategic decision-making and academic publications.
