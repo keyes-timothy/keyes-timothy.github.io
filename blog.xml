@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Timothy Keyes</title>
+<link>https://keyes-timothy.github.io/blog.html</link>
+<atom:link href="https://keyes-timothy.github.io/blog.xml" rel="self" type="application/rss+xml"/>
+<description>Personal website of Timothy Keyes — Data Scientist at Stanford Health Care and MD/PhD Candidate at Stanford Medicine.</description>
+<generator>quarto-1.5.54</generator>
+<lastBuildDate>Tue, 06 Jan 2026 08:00:00 GMT</lastBuildDate>
+<item>
+  <title>Welcome</title>
+  <link>https://keyes-timothy.github.io/posts/2026-01-06-welcome.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>This is a placeholder post while I migrate my site to Quarto.</p>
+
+
+
+ ]]></description>
+  <category>site</category>
+  <guid>https://keyes-timothy.github.io/posts/2026-01-06-welcome.html</guid>
+  <pubDate>Tue, 06 Jan 2026 08:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>
