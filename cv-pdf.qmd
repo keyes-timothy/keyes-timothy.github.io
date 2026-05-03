@@ -53,7 +53,9 @@ for (i in seq_len(nrow(education))) {
   row <- education[i, ]
   cat(glue("**{row$degree}** — {row$institution}, {row$location} (*{row$status}*)"), "\n\n")
   if (!is.na(row$details) && nchar(trimws(row$details)) > 0) {
-    parts <- str_split(row$details, ";\\s*")[[1]] |> trimws()
+    parts <-
+      str_split(row$details, ";\\s*")[[1]] |>
+      trimws()
     parts <- parts[nchar(parts) > 0]
     for (p in parts) {
       cat(glue("- {p}"), "\n")
@@ -74,7 +76,9 @@ for (i in seq_len(nrow(experience))) {
   row <- experience[i, ]
   cat(glue("**{row$title}** — {row$organization}, {row$location} (*{row$status}*)"), "\n\n")
   if (!is.na(row$details) && nchar(trimws(row$details)) > 0) {
-    parts <- str_split(row$details, ";\\s*")[[1]] |> trimws()
+    parts <-
+      str_split(row$details, ";\\s*")[[1]] |>
+      trimws()
     parts <- parts[nchar(parts) > 0]
     for (p in parts) {
       cat(glue("- {p}"), "\n")
@@ -91,7 +95,8 @@ for (i in seq_len(nrow(experience))) {
 ```{r}
 #| label: publications
 #| results: asis
-pubs <- read_csv("data/publications.csv", show_col_types = FALSE) |>
+pubs <-
+  read_csv("data/publications.csv", show_col_types = FALSE) |>
   mutate(
     across(where(is.character), \(.x) replace_na(.x, "")),
     year = suppressWarnings(as.integer(year)),
@@ -110,7 +115,9 @@ years <- unique(pubs$year)
 for (yr in years) {
   cat("\n### ", yr, "\n\n", sep = "")
 
-  yr_pubs <- pubs |> filter(year == yr)
+  yr_pubs <-
+    pubs |>
+    filter(year == yr)
 
   for (j in seq_len(nrow(yr_pubs))) {
     row <- yr_pubs[j, ]
@@ -151,7 +158,8 @@ for (yr in years) {
 ```{r}
 #| label: awards
 #| results: asis
-awards <- read_csv("data/cv_awards.csv", show_col_types = FALSE) |>
+awards <-
+  read_csv("data/cv_awards.csv", show_col_types = FALSE) |>
   mutate(sort_year = as.integer(str_extract(year, "\\d{4}"))) |>
   arrange(desc(sort_year)) |>
   select(-sort_year)
@@ -167,7 +175,8 @@ for (i in seq_len(nrow(awards))) {
 ```{r}
 #| label: media
 #| results: asis
-media <- read_csv("data/cv_media.csv", show_col_types = FALSE) |>
+media <-
+  read_csv("data/cv_media.csv", show_col_types = FALSE) |>
   mutate(across(where(is.character), \(.x) replace_na(.x, ""))) |>
   arrange(desc(year))
 
@@ -182,7 +191,8 @@ for (i in seq_len(nrow(media))) {
 ```{r}
 #| label: talks
 #| results: asis
-talks <- read_csv("data/talks.csv", show_col_types = FALSE) |>
+talks <-
+  read_csv("data/talks.csv", show_col_types = FALSE) |>
   mutate(across(where(is.character), \(.x) replace_na(.x, ""))) |>
   arrange(desc(as.Date(date)))
 

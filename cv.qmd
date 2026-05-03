@@ -260,7 +260,8 @@ pubs |>
 
 # ---- Read and render awards ----
 # Source: data/cv_awards.csv
-awards <- read_csv("data/cv_awards.csv", show_col_types = FALSE) |>
+awards <-
+  read_csv("data/cv_awards.csv", show_col_types = FALSE) |>
   mutate(sort_year = as.integer(str_extract(year, "\\d{4}"))) |>
   arrange(desc(sort_year)) |>
   select(-sort_year)

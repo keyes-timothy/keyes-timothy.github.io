@@ -188,7 +188,8 @@ hub_nodes <- c("Clinical AI", "Single-Cell Biology", "Open Source",
                "Medical Education")
 
 # ---- Build visNetwork node data frame ----
-vis_nodes <- nodes |>
+vis_nodes <-
+  nodes |>
   mutate(
     id = row_number(),
     label = if_else(name %in% hub_nodes, name, ""),
@@ -205,7 +206,8 @@ vis_nodes <- nodes |>
   )
 
 # ---- Build visNetwork edge data frame ----
-vis_edges <- edges |>
+vis_edges <-
+  edges |>
   left_join(vis_nodes |> select(id, name), by = c("from" = "name")) |>
   rename(from_id = id) |>
   left_join(vis_nodes |> select(id, name), by = c("to" = "name")) |>

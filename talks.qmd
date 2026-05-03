@@ -16,7 +16,8 @@ library(stringr)
 library(glue)
 library(purrr)
 
-talks <- read_csv("data/talks.csv", show_col_types = FALSE) |>
+talks <-
+  read_csv("data/talks.csv", show_col_types = FALSE) |>
   mutate(
     across(where(is.character), \(.x) replace_na(.x, "")),
     date = as.Date(date)
