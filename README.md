@@ -11,7 +11,7 @@ Personal website of Timothy Keyes — built with [Quarto](https://quarto.org/) a
 ```
 keyes-timothy.github.io/
 ├── _quarto.yml              # Site configuration (navbar, theme, metadata)
-├── index.qmd                # Landing page (bio paragraph + interactive visNetwork graph)
+├── index.qmd                # Landing page (short bio paragraph + interactive visNetwork graph)
 ├── bio.qmd                  # Full multi-paragraph bio
 ├── cv.qmd                   # CV (programmatic from CSVs)
 ├── publications.qmd         # Publications (tabbed by topic, from CSV)
@@ -20,7 +20,6 @@ keyes-timothy.github.io/
 ├── blog.qmd                 # Blog listing page
 ├── styles.css               # Custom CSS for all pages
 ├── data/                    # Data files read by R during rendering
-│   ├── about.md             # (Legacy) about text
 │   ├── publications.csv     # All publications with topic/preferred columns
 │   ├── cv_education.csv     # Education entries (degree, institution, status)
 │   ├── cv_experience.csv    # Work experience (title, org, status)
