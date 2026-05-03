@@ -1,5 +1,8 @@
 project: 
     type: website
+    render:
+        - "*.qmd"
+        - "!README.md"
 
 website: 
     title: "Timothy Keyes"
