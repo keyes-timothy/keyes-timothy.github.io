@@ -5,27 +5,35 @@ toc: true
 
 My research spans clinical AI systems, computational cancer biology, open-source bioinformatics, and medical education. Below is a summary of the major threads of my work.
 
-## Clinical AI & LLM Evaluation
+## Clinical AI Systems
 
-My current work at Stanford Health Care focuses on building, deploying, and monitoring AI systems that operate in real clinical environments. A central project is **ChatEHR**, Stanford Health Care's proprietary LLM-powered clinical AI platform, which enables both interactive and automated use of large language models with full patient timelines in the electronic health record.
+My current work at Stanford Health Care focuses on the design, engineering, deployment, evaluation, monitoring, and governance of AI systems embedded in clinical workflows. I am particularly interested in the infrastructure and engineering practices required to translate promising prototypes into durable clinical systems.
 
-I contribute across the ChatEHR ecosystem---from evaluation and design recommendations for clinician-facing experiences to building automated and "agentic" workflows for specific chart review and abstraction tasks. These include workflows to identify patients who may benefit from a palliative medicine consult, detect post-operative surgical-site infections, triage surgical patients for co-management, and generate case summaries for tumor board conferences.
+### Clinical AI platforms and infrastructure
 
-I've also led efforts around **continuous monitoring of deployed AI systems**---developing frameworks for what to measure, how often to measure it, who responds, and what "actionable" looks like in practice. This work has been described in several recent publications:
+A central project is **ChatEHR**, Stanford Health Care's proprietary LLM-powered clinical AI platform, which supports both interactive and automated use of large language models with longitudinal patient data from the electronic health record. My work includes EHR integration, model and tool interfaces, clinician-facing application design, and the production infrastructure needed to operate these systems reliably.
 
-- **[Monitoring Deployed AI Systems in Health Care](https://arxiv.org/abs/2512.09048)** --- A framework for continuous monitoring of clinical AI. *Preprint* (2025).
+### Agentic workflows and harness engineering
 
-- **[ChatEHR: Deployment and Evaluation of an EHR-integrated LLM-Powered Tool](https://arxiv.org/abs/2602.00074)** --- Adoption and evaluation of Stanford Health Care's clinical AI platform. *Preprint* (2026).
+I design and evaluate workflows that coordinate models, clinical data, and tools for specific chart review and abstraction tasks. This includes decisions about tool use, progressive disclosure of context, orchestration, and when deterministic versus agentic harness patterns are appropriate. Applications include identifying patients who may benefit from a palliative medicine consult, detecting post-operative surgical-site infections, triaging surgical patients for co-management, and preparing case summaries for tumor board conferences.
 
-- **[MedHELM](https://www.nature.com/articles/s41591-025-04151-2)** --- Holistic evaluation of large language models for medical tasks. *Nature Medicine* (2025).
+### Evaluation, monitoring, and governance
 
-- **[MedAgentBrief](https://arxiv.org/abs/2504.14556)** --- A multi-step workflow for generating source-grounded clinical summaries. *Preprint* (2025).
+My work also includes **model and system evaluation** and **continuous monitoring of deployed AI systems**---developing frameworks for what to measure, how often to measure it, who responds, and what "actionable" looks like in practice. This spans pre-deployment evaluation through real-world clinical assessment and post-deployment oversight, with attention to system integrity, performance, and impact. Related work includes:
+
+- **[Why and How to Monitor Deployed AI Systems in Health Care](https://doi.org/10.1056/CAT.25.0372)** --- A framework for continuous monitoring of clinical AI. *NEJM Catalyst Innovations in Care Delivery* (2026).
+
+- **[Adoption and Use of LLMs at an Academic Medical Center](https://arxiv.org/abs/2602.00074)** --- Adoption and evaluation of Stanford Health Care's clinical AI platform. *Preprint* (2026).
+
+- **[MedHELM](https://www.nature.com/articles/s41591-025-04151-2)** --- Holistic evaluation of large language models for medical tasks. *Nature Medicine* (2026).
+
+- **[Physician-Reported Safety Outcomes of AI-Generated Hospital Course Summaries](https://doi.org/10.1001/jamanetworkopen.2026.16556)** --- Prospective evaluation of MedAgentBrief in clinical use. *JAMA Network Open* (2026).
 
 ## Computational Cancer Biology
 
 During my PhD in the laboratories of [Kara Davis](https://med.stanford.edu/kldavislab.html) (Department of Pediatrics) and [Garry Nolan](http://web.stanford.edu/group/nolan/) (Department of Pathology) at Stanford, I focused on applying machine learning to high-dimensional single-cell data in the context of **pediatric leukemia**.
 
-Using mass cytometry (CyTOF) and other single-cell technologies, I built predictive models of patient outcomes that operate at the time of diagnosis. This work involved generalized linear models, various forms of clustering, deep learning, and a method for deconvolving lineage-specific and cancer-specific features in single-cell data to improve relapse prediction in pediatric acute myeloid leukemia.
+Using mass cytometry (CyTOF) and other single-cell technologies, I built predictive models of patient outcomes that operate at the time of diagnosis. In collaboration with Erin Craig, Robert Tibshirani, and colleagues, I helped develop **[mixture modeling for multiple-instance learning (MMIL)](https://www.science.org/doi/10.1126/sciadv.adv5019)**, a statistical framework that identifies disease-relevant cells using patient-level labels when cell-level labels are unavailable. Applied to acute leukemia, MMIL distinguished leukemia cells from nonleukemic cells---including rare measurable residual disease---and identified biologically relevant features with performance approaching that of a hematopathologist.
 
 A key output of this work was the development of **[tidytof](https://keyes-timothy.github.io/tidytof/)**, an R package providing a user-friendly, tidy interface for scalable and reproducible analysis of high-dimensional cytometry data.
 

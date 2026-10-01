@@ -314,7 +314,7 @@ media |>
 
 ## Skills
 
-**Clinical AI & LLM Systems**: EHR-integrated AI applications, agentic and multi-agent workflow design, LLM evaluation, retrieval-augmented generation (RAG), clinical summarization, post-deployment monitoring
+**Clinical AI Systems**: EHR-integrated AI applications, agentic workflow design, LLM evaluation, retrieval-augmented generation (RAG), clinical summarization, post-deployment monitoring
 
 **Machine Learning & Statistics**: supervised learning, calibration, bootstrap inference, survival analysis, class imbalance adjustment, clustering, gradient boosting, deep learning, tabular foundation models (tabPFN)
 

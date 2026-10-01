@@ -58,7 +58,7 @@ Running `quarto render` builds all `.qmd` files into HTML in `_site/`. The site 
 | **CV** | `cv.qmd` | `cv_education.csv`, `cv_experience.csv`, `publications.csv`, `cv_awards.csv`, `cv_media.csv` | `readr`, `dplyr`, `tidyr`, `stringr`, `purrr`, `glue` |
 | **Publications** | `publications.qmd` | `publications.csv` | `readr`, `dplyr`, `tidyr`, `stringr`, `purrr`, `glue`, `htmltools` |
 | **Research** | `research.qmd` | None | — |
-| **Talks** | `talks.qmd` | None | — |
+| **Talks** | `talks.qmd` | `talks.csv` | `readr`, `dplyr`, `tidyr`, `stringr`, `glue`, `purrr` |
 | **Blog** | `blog.qmd` + `posts/*.qmd` | None | — |
 
 ### Landing page graph (visNetwork)
@@ -74,7 +74,7 @@ The interactive force-directed network on `index.qmd` is built with `visNetwork`
 
 ### CV page rendering
 
-`cv.qmd` reads 5 CSV files and renders each section programmatically:
+`cv.qmd` reads 5 CV-related CSV files and renders each section programmatically:
 - **Education/Experience:** `render_entry()` function produces timeline-style HTML divs with colored left borders. Uses `status` column (Current/Former/Conferred/Expected) instead of year ranges.
 - **Selected Publications:** Filters `publications.csv` to `preferred == TRUE`, applies co-authorship markers (†/‡), bolds "Timothy Keyes", and links titles.
 - **Awards:** Sorted reverse-chronologically. Clickable `<details>` elements for awards with descriptions.
@@ -138,6 +138,20 @@ The interactive force-directed network on `index.qmd` is built with `visNetwork`
 | `year` | Year(s) awarded |
 | `details` | Description (optional; renders as expandable) |
 
+### `data/talks.csv`
+
+| Column | Description |
+|--------|-------------|
+| `title` | Talk title |
+| `venue` | Conference, seminar, or event name |
+| `location` | City/state or virtual location |
+| `date` | Talk date |
+| `status` | `upcoming` or `past` |
+| `description` | Short talk summary |
+| `video_url` | Optional embeddable video URL |
+| `link_url` | Optional external link (for example, a repo or slides) |
+| `link_label` | Label shown for `link_url` |
+
 ### `data/cv_media.csv`
 
 | Column | Description |
@@ -196,6 +210,12 @@ quarto render index.qmd
 3. Set `preferred = TRUE` if it should appear in the CV's Selected Publications
 4. Optionally add a PDF to `files/papers/` and set `file_name`
 5. Commit and push
+
+### Add or update a talk
+1. Add or edit a row in `data/talks.csv`
+2. Set `status` to `upcoming` or `past`
+3. Use `video_url` for an embeddable recording and `link_url`/`link_label` for a repo, slides, or other external resource
+4. Commit and push
 
 ### Add a new blog post
 1. Create `posts/YYYY-MM-DD-title.qmd` with YAML frontmatter

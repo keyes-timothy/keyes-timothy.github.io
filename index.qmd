@@ -10,7 +10,7 @@ toc: false
 <div class="profile-card">
   <img src="images/profile.png" alt="Timothy Keyes" class="profile-photo rounded-circle shadow mb-3">
   <div class="name h5 mb-1">Timothy Keyes</div>
-  <div class="role"><strong>Data Scientist</strong></div>
+  <div class="role"><strong>Senior Data Scientist</strong></div>
   <div class="role">Stanford Health Care</div>
   <div class="role mt-1"><strong>MD/PhD Candidate</strong></div>
   <div class="role mb-3">Stanford Medicine</div>
@@ -35,9 +35,9 @@ toc: false
 </ul>
 :::
 
-I'm a senior data scientist at Stanford Health Care and MD/PhD candidate in Stanford's Medical Scientist Training Program (MSTP). I build, deploy, and monitor clinical AI systems — from LLM-powered chart abstraction to agentic tumor board preparation — and study how to do this safely at scale. My work spans applied machine learning, single-cell biology, and medical education.
+I'm an MD/PhD candidate in Stanford's Medical Scientist Training Program (MSTP) and a senior data scientist at Stanford Health Care, working at the intersection of clinical medicine and AI systems. I design, deploy, evaluate, and study AI-enabled clinical workflows, with particular interests in agentic systems, clinical AI infrastructure, and the engineering and governance needed to use these systems safely at scale. I have helped design, deploy, and monitor nine production AI systems currently in use at Stanford Health Care. My current work builds on earlier research in applied machine learning, single-cell biology, and open-source bioinformatics.
 
-**Currently:** finishing clinical clerkships, building on top of [ChatEHR](https://arxiv.org/abs/2602.00074), and writing up work on applications of agentic AI in clinical workflows.
+**Currently:** completing clinical clerkships, developing agentic clinical AI systems and infrastructure, and studying how AI-enabled workflows should be engineered, evaluated, deployed, monitored, and integrated into clinical practice.
 
 [Read more →](bio.html)
 

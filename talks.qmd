@@ -33,10 +33,24 @@ past <-
     filter(status == "past") |> 
     arrange(desc(date))
 
-render_talk <- function(title, venue, location, date, status, description, video_url) {
+render_talk <- function(
+  title, 
+  venue, 
+  location, 
+  date, 
+  status, 
+  description, 
+  video_url,
+  link_url = "", 
+  link_label = ""
+) {
   cat(glue("### {title}"), "\n")
   cat(glue("**{venue}** | {location}"), "\n\n")
   cat(description, "\n\n")
+  if (nchar(link_url) > 0) {
+    label <- if (nchar(link_label) > 0) link_label else "External link"
+    cat(glue("[{label}]({link_url}){{target='_blank'}}"), "\n\n")
+  }
   if (nchar(video_url) > 0) {
     cat(glue(
       '<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin-top: 1rem;">',

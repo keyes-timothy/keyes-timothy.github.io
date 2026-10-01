@@ -6,6 +6,7 @@ _site/
 .Rhistory
 .RData
 .Rproj.user/
+.posit/
 *_cache/
 *_files/
 
