@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -39,14 +42,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-4897d45d2f75ed4f519693be625836c5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-e6ec55d50a8571276e9da61ff62941ed.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-4897d45d2f75ed4f519693be625836c5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-55617497126496852ff9f5a59253c640.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-90b0ccabdf50233fb893b00cd6e33405.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-55617497126496852ff9f5a59253c640.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -482,10 +485,18 @@ Investigated effects of physical activity and norepinephrine signaling on astroc
 <h2 class="anchored" data-anchor-id="selected-publications">Selected Publications</h2>
 <div class="cv-pub">
 <div class="cv-pub-title">
-<a href="https://arxiv.org/abs/2603.17234" target="_blank">Deployment and Evaluation of an EHR-integrated, Large Language Model-Powered Tool to Triage Surgical Patients</a>
+<a href="https://doi.org/10.1001/jamanetworkopen.2026.29579" target="_blank">An Electronic Health Record–Integrated, Large Language Model–Powered Tool to Triage Surgical Patients</a>
 </div>
 <div class="cv-pub-meta">
-<strong>Timothy Keyes</strong>†, Jane Wang†, April S. Liang, Stephen P. Ma, Jason Shen, Jerry Liu, Nerissa Ambers, Abby Pandya, Rita Pandya, Jason Hom, Natasha Steele, Jonathan H. Chen, Kevin Schulman. <em>arXiv</em> (2026).
+Jane Wang†, <strong>Timothy Keyes</strong>†, April S. Liang, Stephen P. Ma, Jason Shen, Jerry Liu, Nerissa Ambers, Abby Pandya, Rita Pandya, Jason Hom, Natasha Steele, Jonathan H. Chen, Kevin Schulman. <em>JAMA Network Open</em> (2026).
+</div>
+</div>
+<div class="cv-pub">
+<div class="cv-pub-title">
+<a href="https://doi.org/10.1056/CAT.25.0372" target="_blank">Why and How to Monitor Deployed AI Systems in Health Care</a>
+</div>
+<div class="cv-pub-meta">
+<strong>Timothy Keyes</strong>†, Alison Callahan†, Abby S. Pandya†, Nerissa Ambers, Juan M. Banda, Miguel Fuentes, Carlene Lugtu, Pranav Masariya, Srikar Nallan, Connor O’Brien, Thomas Wang, Emily Alsentzer, Jonathan H. Chen, Dev Dash, Matthew A. Eisenberg, Patricia Garcia, Nikesh Kotecha, Anurang Revri, Michael A. Pfeffer, Nigam H. Shah, Sneha S. Jain. <em>NEJM Catalyst Innovations in Care Delivery</em> (2026).
 </div>
 </div>
 <div class="cv-pub">
@@ -506,18 +517,10 @@ Investigated effects of physical activity and norepinephrine signaling on astroc
 </div>
 <div class="cv-pub">
 <div class="cv-pub-title">
-<a href="https://arxiv.org/abs/2602.00074" target="_blank">Adoption and Use of LLMs at an Academic Medical Center</a>
+<a href="https://doi.org/10.1001/jamanetworkopen.2026.16556" target="_blank">Physician-Reported Safety Outcomes of AI-Generated Hospital Course Summaries</a>
 </div>
 <div class="cv-pub-meta">
-Nigam H. Shah, Nerissa Ambers, Abby Pandya, <strong>Timothy Keyes</strong>, Juan M. Banda, Srikar Nallan, Carlene Lugtu, Artem A. Trotsyuk, Suhana Bedi, Alyssa Unell, Miguel Fuentes, Francois Grolleau, Sneha S. Jain, Jonathan Chen, Dev Dash, Danton Char, et al.. <em>arXiv</em> (2026).
-</div>
-</div>
-<div class="cv-pub">
-<div class="cv-pub-title">
-<a href="https://arxiv.org/abs/2512.09048" target="_blank">Monitoring Deployed AI Systems in Health Care</a>
-</div>
-<div class="cv-pub-meta">
-<strong>Timothy Keyes</strong>†, Alison Callahan†, Abby S. Pandya†, Nerissa Ambers, Juan M. Banda, Miguel Fuentes, Carlene Lugtu, Pranav Masariya, Srikar Nallan, Connor O’Brien, Thomas Wang, Emily Alsentzer, Jonathan H. Chen, Dev Dash, Matthew A. Eisenberg, Patricia Garcia, Nikesh Kotecha, Anurang Revri, Michael A. Pfeffer, Nigam H. Shah, Sneha S. Jain. <em>arXiv</em> (2025).
+Francois Grolleau, April S. Liang‡, <strong>Timothy Keyes</strong>‡, Stephen P. Ma, Thomas Lew, Tridu R. Huynh, Natasha Steele, Philip Chung, Paige Qin, Gowri Chandra, Stephanie F. Wang, Evan Mullen, Lauren Carpenter, Mita Hoppenfeld, Matthew Morrin, Baffour A. Kyerematen, Nerissa Ambers, Nikesh Kotecha, Emily Alsentzer, Jason Hom, Nigam H. Shah, Kevin Schulman, Jonathan H. Chen. <em>JAMA Network Open</em> (2026).
 </div>
 </div>
 <div class="cv-pub">
@@ -716,7 +719,7 @@ Blog Post — Stanford Medicine Scope Blog (2019)
 </section>
 <section id="skills" class="level2">
 <h2 class="anchored" data-anchor-id="skills">Skills</h2>
-<p><strong>Clinical AI &amp; LLM Systems</strong>: EHR-integrated AI applications, agentic and multi-agent workflow design, LLM evaluation, retrieval-augmented generation (RAG), clinical summarization, post-deployment monitoring</p>
+<p><strong>Clinical AI Systems</strong>: EHR-integrated AI applications, agentic workflow design, LLM evaluation, retrieval-augmented generation (RAG), clinical summarization, post-deployment monitoring</p>
 <p><strong>Machine Learning &amp; Statistics</strong>: supervised learning, calibration, bootstrap inference, survival analysis, class imbalance adjustment, clustering, gradient boosting, deep learning, tabular foundation models (tabPFN)</p>
 <p><strong>Healthcare Data &amp; Governance</strong>: Epic EHR data, FHIR, clinical workflow integration, AI governance, model lifecycle management, clinical operations analytics, human-in-the-loop workflow design</p>
 <p><strong>Programming &amp; Data Science</strong>: Python, R, SQL, Bash, pandas, scikit-learn, XGBoost, PyTorch, tidyverse, tidymodels, Bioconductor, Shiny</p>

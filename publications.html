@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -39,14 +42,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-4897d45d2f75ed4f519693be625836c5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-e6ec55d50a8571276e9da61ff62941ed.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-4897d45d2f75ed4f519693be625836c5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-55617497126496852ff9f5a59253c640.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-90b0ccabdf50233fb893b00cd6e33405.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-55617497126496852ff9f5a59253c640.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -345,16 +348,30 @@ ul.task-list li input[type="checkbox"] {
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="card mb-3">
-<section id="deployment-and-evaluation-of-an-ehr-integrated-large-language-model-powered-tool-to-triage-surgical-patients" class="level4 card-body">
-<h4 class="anchored" data-anchor-id="deployment-and-evaluation-of-an-ehr-integrated-large-language-model-powered-tool-to-triage-surgical-patients"><a href="https://arxiv.org/abs/2603.17234" target="_blank">Deployment and Evaluation of an EHR-integrated, Large Language Model-Powered Tool to Triage Surgical Patients</a></h4>
-<p><strong>Timothy Keyes</strong>†, Jane Wang†, April S. Liang, Stephen P. Ma, Jason Shen, Jerry Liu, Nerissa Ambers, Abby Pandya, Rita Pandya, Jason Hom, Natasha Steele, Jonathan H. Chen, Kevin Schulman</p>
-<p><em>arXiv</em> · 2026</p>
-<a class="btn btn-sm btn-outline-primary" href="files/papers/scm_navigator.pdf" target="_blank"><i class="bi bi-file-pdf"></i> PDF</a> <a class="btn btn-sm btn-outline-secondary" href="https://arxiv.org/abs/2603.17234" target="_blank"><i class="bi bi-link-45deg"></i> Link</a> <button class="btn btn-sm btn-outline-secondary copy-cite-btn" onclick="navigator.clipboard.writeText('Wang J, Keyes T, Liang AS, Ma SP, Shen J, Liu J, Ambers N, Pandya A, Pandya R, Hom J, Steele N, Chen JH, Schulman K. Deployment and Evaluation of an EHR-integrated, Large Language Model-Powered Tool to Triage Surgical Patients. arXiv. 2026. arXiv:2603.17234.').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.innerHTML='<i class=&quot;bi bi-clipboard&quot;></i> Cite';},1500)})" title="Copy citation"><i class="bi bi-clipboard"></i> Cite</button>
+<section id="an-electronic-health-recordintegrated-large-language-modelpowered-tool-to-triage-surgical-patients" class="level4 card-body">
+<h4 class="anchored" data-anchor-id="an-electronic-health-recordintegrated-large-language-modelpowered-tool-to-triage-surgical-patients"><a href="https://doi.org/10.1001/jamanetworkopen.2026.29579" target="_blank">An Electronic Health Record–Integrated, Large Language Model–Powered Tool to Triage Surgical Patients</a></h4>
+<p>Jane Wang†, <strong>Timothy Keyes</strong>†, April S. Liang, Stephen P. Ma, Jason Shen, Jerry Liu, Nerissa Ambers, Abby Pandya, Rita Pandya, Jason Hom, Natasha Steele, Jonathan H. Chen, Kevin Schulman</p>
+<p><em>JAMA Network Open</em> · 2026</p>
+<a class="btn btn-sm btn-outline-primary" href="files/papers/scm_navigator.pdf" target="_blank"><i class="bi bi-file-pdf"></i> PDF</a> <a class="btn btn-sm btn-outline-secondary" href="https://doi.org/10.1001/jamanetworkopen.2026.29579" target="_blank"><i class="bi bi-link-45deg"></i> Link</a> <button class="btn btn-sm btn-outline-secondary copy-cite-btn" onclick="navigator.clipboard.writeText('Wang J, Keyes T, Liang AS, Ma SP, Shen J, Liu J, Ambers N, Pandya A, Pandya R, Hom J, Steele N, Chen JH, Schulman K. An Electronic Health Record–Integrated, Large Language Model–Powered Tool to Triage Surgical Patients. JAMA Netw Open. 2026;9(8):e2629579. doi:10.1001/jamanetworkopen.2026.29579.').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.innerHTML='<i class=&quot;bi bi-clipboard&quot;></i> Cite';},1500)})" title="Copy citation"><i class="bi bi-clipboard"></i> Cite</button>
 <details>
 <summary>
 Abstract
 </summary>
 Surgical co-management (SCM) is an evidence-based model in which hospitalists jointly manage medically complex perioperative patients alongside surgical teams. Despite its clinical and financial value, SCM is limited by the need to manually identify eligible patients. To determine whether SCM triage can be automated, we conducted a prospective, unblinded study at Stanford Health Care in which an LLM-based, electronic health record (EHR)-integrated triage tool (SCM Navigator) provided SCM recommendations followed by physician review. Using pre-operative documentation, structured data, and clinical criteria for perioperative morbidity, SCM Navigator categorized patients as appropriate, not appropriate, or possibly appropriate for SCM. Faculty indicated their clinical judgment and provided free-text feedback when they disagreed. Sensitivity, specificity, positive predictive value, and negative predictive value were measured using physician determinations as a reference. Free-text reasons were thematically categorized, and manual chart review was conducted on all false-negative cases and 30 randomly selected cases from the largest false-positive category. Since deployment, 6,193 cases have been triaged, of which 1,582 (23%) were recommended for hospitalist consultation. SCM Navigator displayed high sensitivity (0.94, 95% CI 0.91-0.96) and moderate specificity (0.74, 95% CI 0.71-0.77). Post-hoc chart review suggested most discrepancies reflect modifiable gaps in clinical criteria, institutional workflow, or physician practice variability rather than LLM misclassification, which accounted for 2 of 19 (11%) false-negative cases. These findings demonstrate that an LLM-powered, EHR-integrated, human-in-the-loop AI system can accurately and safely triage surgical patients for SCM, and that AI-enabled screening tools can augment and potentially automate time-intensive clinical workflows.
+</details>
+</section>
+</div>
+<div class="card mb-3">
+<section id="why-and-how-to-monitor-deployed-ai-systems-in-health-care" class="level4 card-body">
+<h4 class="anchored" data-anchor-id="why-and-how-to-monitor-deployed-ai-systems-in-health-care"><a href="https://doi.org/10.1056/CAT.25.0372" target="_blank">Why and How to Monitor Deployed AI Systems in Health Care</a></h4>
+<p><strong>Timothy Keyes</strong>†, Alison Callahan†, Abby S. Pandya†, Nerissa Ambers, Juan M. Banda, Miguel Fuentes, Carlene Lugtu, Pranav Masariya, Srikar Nallan, Connor O’Brien, Thomas Wang, Emily Alsentzer, Jonathan H. Chen, Dev Dash, Matthew A. Eisenberg, Patricia Garcia, Nikesh Kotecha, Anurang Revri, Michael A. Pfeffer, Nigam H. Shah, Sneha S. Jain</p>
+<p><em>NEJM Catalyst Innovations in Care Delivery</em> · 2026</p>
+<a class="btn btn-sm btn-outline-primary" href="files/papers/monitoring_deployed_systems_in_health_care.pdf" target="_blank"><i class="bi bi-file-pdf"></i> PDF</a> <a class="btn btn-sm btn-outline-secondary" href="https://doi.org/10.1056/CAT.25.0372" target="_blank"><i class="bi bi-link-45deg"></i> Link</a> <button class="btn btn-sm btn-outline-secondary copy-cite-btn" onclick="navigator.clipboard.writeText('Keyes T, Callahan A, Pandya AS, Ambers N, Banda JM, Fuentes M, et al. Why and How to Monitor Deployed AI Systems in Health Care. NEJM Catal Innov Care Deliv. 2026;7(6):CAT250372. doi:10.1056/CAT.25.0372.').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.innerHTML='<i class=&quot;bi bi-clipboard&quot;></i> Cite';},1500)})" title="Copy citation"><i class="bi bi-clipboard"></i> Cite</button>
+<details>
+<summary>
+Abstract
+</summary>
+Post-deployment monitoring of artificial intelligence (AI) systems in health care is essential to ensure their safety, quality, and sustained benefit-and to support governance decisions about which systems to update, modify, or decommission. Motivated by these needs, we developed a framework for monitoring deployed AI systems grounded in the mandate to take specific actions when they fail to behave as intended. This framework, which is now actively used at Stanford Health Care, is organized around three complementary principles: system integrity, performance, and impact. System integrity monitoring focuses on maximizing system uptime, detecting runtime errors, and identifying when changes to the surrounding IT ecosystem have unintended effects. Performance monitoring focuses on maintaining accurate system behavior in the face of changing health care practices (and thus input data) over time. Impact monitoring assesses whether a deployed system continues to have value in the form of benefit to clinicians and patients. Drawing on examples of deployed AI systems at our academic medical center, we provide practical guidance for creating monitoring plans based on these principles that specify which metrics to measure, when those metrics should be reviewed, who is responsible for acting when metrics change, and what concrete follow-up actions should be taken-for both traditional and generative AI. We also discuss challenges to implementing this framework, including the effort and cost of monitoring for health systems with limited resources and the difficulty of incorporating data-driven monitoring practices into complex organizations where conflicting priorities and definitions of success often coexist. This framework offers a practical template and starting point for health systems seeking to ensure that AI deployments remain safe and effective over time.
 </details>
 </section>
 </div>
@@ -387,11 +404,25 @@ Tumor boards are multidisciplinary conferences dedicated to producing actionable
 </section>
 </div>
 <div class="card mb-3">
-<section id="medagentbrief-for-hospital-course-summarization-safety-use-and-discharge-documentation-burden" class="level4 card-body">
-<h4 class="anchored" data-anchor-id="medagentbrief-for-hospital-course-summarization-safety-use-and-discharge-documentation-burden"><a href="https://www.medrxiv.org/content/10.64898/2026.02.05.26345607v2" target="_blank">MedAgentBrief for Hospital Course Summarization: Safety, Use, and Discharge Documentation Burden</a></h4>
-<p>Francois Grolleau, <strong>Timothy Keyes</strong>‡, April S. Liang‡, Stephen P. Ma, Thomas Lew, Tridu R. Huynh, Natasha Steele, Philip Chung, Paige Qin, Gowri Chandra, Stephanie F. Wang, Evan Mullen, Lauren Carpenter, Mita Hoppenfeld, Matthew Morrin, Baffour A. Kyerematen, Nerissa Ambers, Nikesh Kotecha, Emily Alsentzer, Jason Hom, Nigam H. Shah, Kevin Schulman, Jonathan H. Chen</p>
-<p><em>medRxiv</em> · 2026</p>
-<a class="btn btn-sm btn-outline-primary" href="files/papers/med_agent_brief.pdf" target="_blank"><i class="bi bi-file-pdf"></i> PDF</a> <a class="btn btn-sm btn-outline-secondary" href="https://www.medrxiv.org/content/10.64898/2026.02.05.26345607v2" target="_blank"><i class="bi bi-link-45deg"></i> Link</a> <button class="btn btn-sm btn-outline-secondary copy-cite-btn" onclick="navigator.clipboard.writeText('Grolleau F, Liang AS, Keyes T, Ma SP, Lew T, Huynh TR, et al. MedAgentBrief for Hospital Course Summarization: Safety, Use, and Discharge Documentation Burden. medRxiv. 2026. doi:10.64898/2026.02.05.26345607.').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.innerHTML='<i class=&quot;bi bi-clipboard&quot;></i> Cite';},1500)})" title="Copy citation"><i class="bi bi-clipboard"></i> Cite</button>
+<section id="use-of-a-large-language-model-integrated-within-the-electronic-medical-record-for-the-evaluation-of-surgical-site-infections-northern-california-2025" class="level4 card-body">
+<h4 class="anchored" data-anchor-id="use-of-a-large-language-model-integrated-within-the-electronic-medical-record-for-the-evaluation-of-surgical-site-infections-northern-california-2025"><a href="https://doi.org/10.1017/ice.2026.10432" target="_blank">Use of a large language model integrated within the electronic medical record for the evaluation of surgical site infections – Northern California, 2025</a></h4>
+<p>Eugenia Miranti, <strong>Timothy Keyes</strong>, Alvaro Ayala, Nerissa Ambers, Gina Newman, Elmer de Leon, Erika Paola Viana-Cardenas, Wajeeha Tariq, Mindy Sampson, and Jorge L. Salinas</p>
+<p><em>Infection Control &amp; Hospital Epidemiology</em> · 2026</p>
+<a class="btn btn-sm btn-outline-primary" href="files/papers/ssi.pdf" target="_blank"><i class="bi bi-file-pdf"></i> PDF</a> <a class="btn btn-sm btn-outline-secondary" href="https://doi.org/10.1017/ice.2026.10432" target="_blank"><i class="bi bi-link-45deg"></i> Link</a> <button class="btn btn-sm btn-outline-secondary copy-cite-btn" onclick="navigator.clipboard.writeText('Miranti E, Keyes T, Ayala A, et al. Use of a large language model integrated within the electronic medical record for the evaluation of surgical site infections – Northern California, 2025. Infect Control Hosp Epidemiol. 2026;47(6):633-635. doi:10.1017/ice.2026.10432.').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.innerHTML='<i class=&quot;bi bi-clipboard&quot;></i> Cite';},1500)})" title="Copy citation"><i class="bi bi-clipboard"></i> Cite</button>
+<details>
+<summary>
+Abstract
+</summary>
+<p>Our study evaluated a large language model (gpt-4o-mini) for surgical site infection (SSI) adjudication, achieving 100% sensitivity but 69.4% specificity. While reducing the manual screening workload by 66%, the agent generated many false positives, underscoring the need for refined models to improve specificity without compromising accuracy.</p>
+</details>
+</section>
+</div>
+<div class="card mb-3">
+<section id="physician-reported-safety-outcomes-of-ai-generated-hospital-course-summaries" class="level4 card-body">
+<h4 class="anchored" data-anchor-id="physician-reported-safety-outcomes-of-ai-generated-hospital-course-summaries"><a href="https://doi.org/10.1001/jamanetworkopen.2026.16556" target="_blank">Physician-Reported Safety Outcomes of AI-Generated Hospital Course Summaries</a></h4>
+<p>Francois Grolleau, April S. Liang‡, <strong>Timothy Keyes</strong>‡, Stephen P. Ma, Thomas Lew, Tridu R. Huynh, Natasha Steele, Philip Chung, Paige Qin, Gowri Chandra, Stephanie F. Wang, Evan Mullen, Lauren Carpenter, Mita Hoppenfeld, Matthew Morrin, Baffour A. Kyerematen, Nerissa Ambers, Nikesh Kotecha, Emily Alsentzer, Jason Hom, Nigam H. Shah, Kevin Schulman, Jonathan H. Chen</p>
+<p><em>JAMA Network Open</em> · 2026</p>
+<a class="btn btn-sm btn-outline-primary" href="files/papers/med_agent_brief.pdf" target="_blank"><i class="bi bi-file-pdf"></i> PDF</a> <a class="btn btn-sm btn-outline-secondary" href="https://doi.org/10.1001/jamanetworkopen.2026.16556" target="_blank"><i class="bi bi-link-45deg"></i> Link</a> <button class="btn btn-sm btn-outline-secondary copy-cite-btn" onclick="navigator.clipboard.writeText('Grolleau F, Liang AS, Keyes T, Ma SP, Lew T, Huynh TR, et al. Physician-Reported Safety Outcomes of AI-Generated Hospital Course Summaries. JAMA Netw Open. 2026;9(5):e2616556. doi:10.1001/jamanetworkopen.2026.16556.').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.innerHTML='<i class=&quot;bi bi-clipboard&quot;></i> Cite';},1500)})" title="Copy citation"><i class="bi bi-clipboard"></i> Cite</button>
 <details>
 <summary>
 Abstract
@@ -403,6 +434,34 @@ Abstract
 <p>Main Outcomes and Measures The primary outcome was physician-reported potential for and severity of harm from unedited summaries (AHRQ Common Format Harm Scale). Secondary outcomes included utilization rate, error types (omissions, inaccuracies, hallucinations), time spent in discharge summaries (EHR logs), and changes in cognitive burden (NASA Task Load Index [NASA-TLX]) and burnout (Stanford Professional Fulfillment Index [PFI] Work Exhaustion Scale).</p>
 <p>Results The system generated 1274 summaries. Of 384 discharges, physicians utilized AI content in 219 (57%) cases. Feedback on 100 summaries (40.2%) noted omissions (25%) and inaccuracies (20%) but rare hallucinations (2%). Physicians rated 88% of unedited summaries as having no harm potential and 1% as likely to cause moderate harm; no severe harm was reported. Physician burnout scores decreased significantly (1.75 vs 1.20; P = .03). Time savings were heterogeneous: 71% of physicians saw reductions in median documentation time (up to 2.9 minutes).</p>
 Conclusions and Relevance An LLM-based agentic workflow produced hospital course summaries that were frequently utilized with mild to minimal risk of harm identified. The intervention was associated with a significant reduction in physician burnout, supporting the viability of AI summarization to mitigate documentation burden.
+</details>
+</section>
+</div>
+<div class="card mb-3">
+<section id="automating-clinical-history-extraction-for-flow-cytometry-panel-selection-using-an-ehr-integrated-large-language-model" class="level4 card-body">
+<h4 class="anchored" data-anchor-id="automating-clinical-history-extraction-for-flow-cytometry-panel-selection-using-an-ehr-integrated-large-language-model"><a href="https://doi.org/10.1002/cyto.b.70051" target="_blank">Automating clinical history extraction for flow cytometry panel selection using an EHR-integrated large language model</a></h4>
+<p>Rebecca Rojansky, <strong>Timothy Keyes</strong>, Jean Oak</p>
+<p><em>Cytometry Part B: Clinical Cytometry</em> · 2026</p>
+<a class="btn btn-sm btn-outline-secondary" href="https://doi.org/10.1002/cyto.b.70051" target="_blank"><i class="bi bi-link-45deg"></i> Link</a> <button class="btn btn-sm btn-outline-secondary copy-cite-btn" onclick="navigator.clipboard.writeText('Rojansky R, Keyes T, Oak J. Automating clinical history extraction for flow cytometry panel selection using an EHR-integrated large language model. Cytometry B Clin Cytom. Published online July 10, 2026. doi:10.1002/cyto.b.70051.').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.innerHTML='<i class=&quot;bi bi-clipboard&quot;></i> Cite';},1500)})" title="Copy citation"><i class="bi bi-clipboard"></i> Cite</button>
+<details>
+<summary>
+Abstract
+</summary>
+Flow cytometry immunophenotyping is essential for diagnosing hematologic malignancies, but accurate antibody panel selection depends on clinical context that is often fragmented across the electronic health record (EHR). At our institution, clinical laboratory scientists (CLS) use a standardized decision-tree algorithm incorporating specimen characteristics, laboratory values, and prior diagnoses to select panels. This process requires manual review and synthesis of longitudinal clinical documentation and remains time-intensive. We evaluated whether ChatEHR—an institutionally developed, EHR-integrated large language model (LLM) platform—could automate clinical history extraction and support flow cytometry panel selection across 100 cases. Performance was compared with the current CLS-driven workflow using hematopathologist-reviewed panel selections as the reference standard. ChatEHR achieved comparable accuracy to CLS in extracting and categorizing prior hematologic diagnoses (78% vs.&nbsp;78%). Average processing time was 20.3 s for ChatEHR versus 41 s for manual review, corresponding to an estimated annual reduction of approximately 120 staff hours. Direct panel selection accuracy was lower for ChatEHR (47% vs.&nbsp;78%), primarily due to errors in deterministic protocol execution and structured data interpretation. Integration of LLM-based clinical history extraction with rules-based laboratory algorithms provides a practical hybrid workflow that preserves diagnostic reliability while reducing manual chart review burden.
+</details>
+</section>
+</div>
+<div class="card mb-3">
+<section id="using-secure-artificial-intelligence-agents-integrated-within-the-electronic-medical-record-for-the-evaluation-of-blood-culture-appropriatenessnorthern-california-2025" class="level4 card-body">
+<h4 class="anchored" data-anchor-id="using-secure-artificial-intelligence-agents-integrated-within-the-electronic-medical-record-for-the-evaluation-of-blood-culture-appropriatenessnorthern-california-2025"><a href="https://doi.org/10.1017/ice.2025.10349" target="_blank">Using secure artificial intelligence agents integrated within the electronic medical record for the evaluation of blood culture appropriateness—Northern California, 2025</a></h4>
+<p>Guillermo Rodriguez-Nava, <strong>Timothy Keyes</strong>, Nerissa Ambers, Eugenia Miranti, Erika Paola Viana-Cardenas, Wajeeha Tariq, Mindy Marie Sampson, Jorge Luis Salinas</p>
+<p><em>Infection Control &amp; Hospital Epidemiology</em> · 2026</p>
+<a class="btn btn-sm btn-outline-primary" href="files/papers/blood_culture.pdf" target="_blank"><i class="bi bi-file-pdf"></i> PDF</a> <a class="btn btn-sm btn-outline-secondary" href="https://doi.org/10.1017/ice.2025.10349" target="_blank"><i class="bi bi-link-45deg"></i> Link</a> <button class="btn btn-sm btn-outline-secondary copy-cite-btn" onclick="navigator.clipboard.writeText('Rodriguez-Nava G, Keyes T, Ambers N, Miranti E, Viana-Cardenas EP, Tariq W, Sampson MM, Salinas JL. Using secure artificial intelligence agents integrated within the electronic medical record for the evaluation of blood culture appropriateness—Northern California, 2025. Infect Control Hosp Epidemiol. 2026;47(2):206-209. doi:10.1017/ice.2025.10349.').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.innerHTML='<i class=&quot;bi bi-clipboard&quot;></i> Cite';},1500)})" title="Copy citation"><i class="bi bi-clipboard"></i> Cite</button>
+<details>
+<summary>
+Abstract
+</summary>
+We evaluated large language model (LLM)-based agents integrated with the electronic medical record to assess blood culture appropriateness. While sensitivity was high, specificity remained low. Performance was shaped by prompt phrasing, sycophantic behavior, and semantic triggers, reflecting both the potential and limitations of LLMs in real-world clinical decision support.
 </details>
 </section>
 </div>
@@ -421,6 +480,48 @@ While large language models (LLMs) can support clinical documentation needs, sta
 </section>
 </div>
 <div class="card mb-3">
+<section id="holistic-evaluation-of-large-language-models-for-medical-tasks-with-medhelm" class="level4 card-body">
+<h4 class="anchored" data-anchor-id="holistic-evaluation-of-large-language-models-for-medical-tasks-with-medhelm"><a href="https://doi.org/10.1038/s41591-025-04151-2" target="_blank">Holistic evaluation of large language models for medical tasks with MedHELM</a></h4>
+<p>Suhana Bedi, Hejie Cui, Miguel Fuentes, Alyssa Unell, Michael Wornow, Juan M. Banda, Nikesh Kotecha, <strong>Timothy Keyes</strong>, Yifan Mai, Mert Oez, Hao Qiu, Shrey Jain, Leonardo Schettini, Mehr Kashyap, Jason Alan Fries, et al.</p>
+<p><em>Nature Medicine</em> · 2026</p>
+<a class="btn btn-sm btn-outline-primary" href="files/papers/medhelm.pdf" target="_blank"><i class="bi bi-file-pdf"></i> PDF</a> <a class="btn btn-sm btn-outline-secondary" href="https://doi.org/10.1038/s41591-025-04151-2" target="_blank"><i class="bi bi-link-45deg"></i> Link</a> <button class="btn btn-sm btn-outline-secondary copy-cite-btn" onclick="navigator.clipboard.writeText('Bedi S, Cui H, Fuentes M, Unell A, Wornow M, Banda JM, Kotecha N, Keyes T, et al. Holistic evaluation of large language models for medical tasks with MedHELM. Nat Med. 2026;32(3):943-951. doi:10.1038/s41591-025-04151-2.').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.innerHTML='<i class=&quot;bi bi-clipboard&quot;></i> Cite';},1500)})" title="Copy citation"><i class="bi bi-clipboard"></i> Cite</button>
+<details>
+<summary>
+Abstract
+</summary>
+<p>While large language models (LLMs) achieve near-perfect scores on medical licensing exams, these evaluations inadequately reflect the complexity and diversity of real-world clinical practice. Here we introduce MedHELM, an extensible evaluation framework with three contributions. First, a clinician-validated taxonomy organizing medical AI applications into five categories that mirror real clinical tasks–clinical decision support (diagnostic decisions, treatment planning), clinical note generation (visit documentation, procedure reports), patient communication (education materials, care instructions), medical research (literature analysis, clinical data analysis) and administration (scheduling, workflow coordination). These encompass 22 subcategories and 121 specific tasks reflecting daily medical practice. Second, a comprehensive benchmark suite of 37 evaluations covering all subcategories. Third, systematic comparison of nine frontier LLMs–Claude 3.5 Sonnet, Claude 3.7 Sonnet, DeepSeek R1, Gemini 1.5 Pro, Gemini 2.0 Flash, GPT-4o, GPT-4o mini, Llama 3.3 and o3-mini–using an automated LLM-jury evaluation method. Our LLM-jury uses multiple AI evaluators to assess model outputs against expert-defined criteria. Advanced reasoning models (DeepSeek R1, o3-mini) demonstrated superior performance with win rates of 66%, although Claude 3.5 Sonnet achieved comparable results at 15% lower computational cost. These results not only highlight current model capabilities but also demonstrate how MedHELM could enable evidence-based selection of medical AI systems for healthcare applications.</p>
+</details>
+</section>
+</div>
+<div class="card mb-3">
+<section id="a-primer-on-evaluation-methods-for-large-language-models-in-healthcare" class="level4 card-body">
+<h4 class="anchored" data-anchor-id="a-primer-on-evaluation-methods-for-large-language-models-in-healthcare"><a href="https://arxiv.org/abs/2609.14819" target="_blank">A primer on evaluation methods for large language models in healthcare</a></h4>
+<p>Suzannah E. McKinney, Phuc Vu, Samuel A. Justice, Christopher Humphries, Alyssa Pradhan, <strong>Timothy J. Keyes</strong>, Sarah F. Mercaldo, James M. Hillis</p>
+<p><em>arXiv</em> · 2026</p>
+<a class="btn btn-sm btn-outline-secondary" href="https://arxiv.org/abs/2609.14819" target="_blank"><i class="bi bi-link-45deg"></i> Link</a> <button class="btn btn-sm btn-outline-secondary copy-cite-btn" onclick="navigator.clipboard.writeText('McKinney SE, Vu P, Justice SA, Humphries C, Pradhan A, Keyes TJ, Mercaldo SF, Hillis JM. A primer on evaluation methods for large language models in healthcare. arXiv. 2026. arXiv:2609.14819.').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.innerHTML='<i class=&quot;bi bi-clipboard&quot;></i> Cite';},1500)})" title="Copy citation"><i class="bi bi-clipboard"></i> Cite</button>
+<details>
+<summary>
+Abstract
+</summary>
+Large language models (LLMs) have a growing range of applications in medicine, and their evaluation is critical for ensuring they provide benefit and not harm. This review covers four key areas of LLM evaluation: principles of study design, statistical methods, capability evaluation, and clinical context evaluation. Capability evaluation considers benchmarks including multiple-choice, agentic, and multi-turn benchmarks alongside operational metrics. Clinical context evaluation addresses the accuracy of free-text outputs through methods including human review and LLM-as-a-judge, as well as clinical trial approaches. The article emphasizes aligning evaluation methods with the research question.
+</details>
+</section>
+</div>
+<div class="card mb-3">
+<section id="challenges-in-ai-based-tumor-board-case-summarization-and-recommendations" class="level4 card-body">
+<h4 class="anchored" data-anchor-id="challenges-in-ai-based-tumor-board-case-summarization-and-recommendations"><a href="https://doi.org/10.21203/rs.3.rs-9916397/v1" target="_blank">Challenges in AI Based Tumor Board Case Summarization and Recommendations</a></h4>
+<p>Wen-wai Yim, Hendrik Damm, Tabea M. G. Pakull, Sam Preston, <strong>Timothy Keyes</strong>, Timothy J. Ellis-Caleo, Zhaoyi Sun, Meliha Yetisgen, Noel Codella, Mu Wei, Faraah Bekheet, Joel W. Neal, Nigam Shah, Bahadır Eryılmaz, Felix Nensa, Elisabeth Livingstone, Christoph M. Friedrich, Georg Lodde</p>
+<p><em>Research Square</em> · 2026</p>
+<a class="btn btn-sm btn-outline-secondary" href="https://doi.org/10.21203/rs.3.rs-9916397/v1" target="_blank"><i class="bi bi-link-45deg"></i> Link</a> <button class="btn btn-sm btn-outline-secondary copy-cite-btn" onclick="navigator.clipboard.writeText('Yim W, Damm H, Pakull TMG, Preston S, Keyes T, Ellis-Caleo TJ, et al. Challenges in AI Based Tumor Board Case Summarization and Recommendations. Research Square. 2026. doi:10.21203/rs.3.rs-9916397/v1.').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.innerHTML='<i class=&quot;bi bi-clipboard&quot;></i> Cite';},1500)})" title="Copy citation"><i class="bi bi-clipboard"></i> Cite</button>
+<details>
+<summary>
+Abstract
+</summary>
+Tumor boards assemble multiple cancer specialties to discuss oncologic care. This multi-institution study formalizes tumor board case summarization, options generation, and meeting-outcome prediction as AI problems and evaluates large language models across datasets from more than four medical institutions. Human-expert evaluations showed that models performed better on case summarization than on recommendation generation, and the study examined the limitations of reference-based automatic evaluation metrics.
+</details>
+</section>
+</div>
+<div class="card mb-3">
 <section id="dhodh-as-a-targetable-metabolic-achilles-heel-for-chemo-resistant-b-all" class="level4 card-body">
 <h4 class="anchored" data-anchor-id="dhodh-as-a-targetable-metabolic-achilles-heel-for-chemo-resistant-b-all"><a href="https://ashpublications.org/blood/article/doi/10.1182/blood.2025029264/566232/DHODH-as-a-Targetable-Metabolic-Achilles-Heel-for?guestAccessKey=" target="_blank">DHODH as a Targetable Metabolic Achilles’ Heel for chemo-resistant B-ALL</a></h4>
 <p>Yuxuan Liu, Haowen Jiang, Jingjing Liu, Lucille Stuani, Milton J Merchant, Astraea Jager, Abhishek Koladiya, Ti-Cheng Chang, Pablo Domizi, Jolanda Sarno, Ao Wang, <strong>Timothy Keyes</strong>, Dorra Jedoui, Jodie Meng, Felix Hartmann, Ruida Hou, Carol Fries, Chiara Pirillo, Qingsong Gao, Ilaria Iacobucci, Sean C Bendall, Min Huang, Norman J Lacayo, Kathleen M Sakamoto, Charles G Mullighan, Mignon L Loh, Jiyang Yu, Jun J Yang, Jiangbin Ye, and Kara L Davis</p>
@@ -431,20 +532,6 @@ While large language models (LLMs) can support clinical documentation needs, sta
 Abstract
 </summary>
 <p>Relapse remains a major barrier to survival in B-cell acute lymphoblastic leukemia (B-ALL). Both activation of B-cell signaling pathways and increased glucose consumption have been linked to chemo-resistance and relapse risk. Here, we connect these observations, showing that B-ALL cells with active signaling, marked by high phosphorylated ribosomal protein S6 (pS6+), are glucose dependent. Isotope tracing confirms that pS6+ cells are highly glycolytic and rely on glucose for de novo nucleotide synthesis. Uridine, but not other purines or pyrimidines, rescues pS6+ cells from glucose deprivation, highlighting uridine as essential for survival. Active mTOR signaling in pS6+ cells drives de novo pyrimidine synthesis by activating CAD (Carbamoyl phosphate synthetase 2, Aspartate transcarbamylase, and Dihydroorotase), which catalyzes the first steps of de novo pyrimidine synthesis. Inhibiting signaling abolishes glucose dependency and CAD phosphorylation. Primary pS6+ cells express high levels of pyrimidine synthesis proteins, including dihydroorotate dehydrogenase (DHODH), the rate-limiting enzyme in pyrimidine synthesis. Increased DHODH expression correlates with relapse and poor event-free survival. Most B-ALL molecular subtypes exhibit DHODH activity. BAY-2402234, a DHODH inhibitor, effectively kills pS6+ cells in vitro, with IC50 values correlating with pS6 signaling strength across 14 B-ALL patient-derived xenografts (PDX). In vivo, DHODH inhibition prolongs survival and reduces leukemia burden in pS6+ B-ALL models. These findings link active signaling to pyrimidine dependency and relapse risk, highlighting DHODH inhibition as a promising therapeutic strategy for chemo-resistant B-ALL.</p>
-</details>
-</section>
-</div>
-<div class="card mb-3">
-<section id="monitoring-deployed-ai-systems-in-health-care" class="level4 card-body">
-<h4 class="anchored" data-anchor-id="monitoring-deployed-ai-systems-in-health-care"><a href="https://arxiv.org/abs/2512.09048" target="_blank">Monitoring Deployed AI Systems in Health Care</a></h4>
-<p><strong>Timothy Keyes</strong>†, Alison Callahan†, Abby S. Pandya†, Nerissa Ambers, Juan M. Banda, Miguel Fuentes, Carlene Lugtu, Pranav Masariya, Srikar Nallan, Connor O’Brien, Thomas Wang, Emily Alsentzer, Jonathan H. Chen, Dev Dash, Matthew A. Eisenberg, Patricia Garcia, Nikesh Kotecha, Anurang Revri, Michael A. Pfeffer, Nigam H. Shah, Sneha S. Jain</p>
-<p><em>arXiv</em> · 2025</p>
-<a class="btn btn-sm btn-outline-primary" href="files/papers/monitoring_deployed_systems_in_health_care.pdf" target="_blank"><i class="bi bi-file-pdf"></i> PDF</a> <a class="btn btn-sm btn-outline-secondary" href="https://arxiv.org/abs/2512.09048" target="_blank"><i class="bi bi-link-45deg"></i> Link</a> <button class="btn btn-sm btn-outline-secondary copy-cite-btn" onclick="navigator.clipboard.writeText('Keyes T, Callahan A, Pandya AS, Ambers N, Banda JM, Fuentes M, et al. Monitoring Deployed AI Systems in Health Care. arXiv. 2025. arXiv:2512.09048.').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.innerHTML='<i class=&quot;bi bi-clipboard&quot;></i> Cite';},1500)})" title="Copy citation"><i class="bi bi-clipboard"></i> Cite</button>
-<details>
-<summary>
-Abstract
-</summary>
-Post-deployment monitoring of artificial intelligence (AI) systems in health care is essential to ensure their safety, quality, and sustained benefit-and to support governance decisions about which systems to update, modify, or decommission. Motivated by these needs, we developed a framework for monitoring deployed AI systems grounded in the mandate to take specific actions when they fail to behave as intended. This framework, which is now actively used at Stanford Health Care, is organized around three complementary principles: system integrity, performance, and impact. System integrity monitoring focuses on maximizing system uptime, detecting runtime errors, and identifying when changes to the surrounding IT ecosystem have unintended effects. Performance monitoring focuses on maintaining accurate system behavior in the face of changing health care practices (and thus input data) over time. Impact monitoring assesses whether a deployed system continues to have value in the form of benefit to clinicians and patients. Drawing on examples of deployed AI systems at our academic medical center, we provide practical guidance for creating monitoring plans based on these principles that specify which metrics to measure, when those metrics should be reviewed, who is responsible for acting when metrics change, and what concrete follow-up actions should be taken-for both traditional and generative AI. We also discuss challenges to implementing this framework, including the effort and cost of monitoring for health systems with limited resources and the difficulty of incorporating data-driven monitoring practices into complex organizations where conflicting priorities and definitions of success often coexist. This framework offers a practical template and starting point for health systems seeking to ensure that AI deployments remain safe and effective over time.
 </details>
 </section>
 </div>
@@ -463,20 +550,6 @@ In single-cell datasets, patient labels indicating disease status (e.g., sick or
 </section>
 </div>
 <div class="card mb-3">
-<section id="use-of-a-large-language-model-integrated-within-the-electronic-medical-record-for-the-evaluation-of-surgical-site-infections" class="level4 card-body">
-<h4 class="anchored" data-anchor-id="use-of-a-large-language-model-integrated-within-the-electronic-medical-record-for-the-evaluation-of-surgical-site-infections"><a href="https://www.cambridge.org/core/journals/infection-control-and-hospital-epidemiology/article/use-of-a-large-language-model-integrated-within-the-electronic-medical-record-for-the-evaluation-of-surgical-site-infections-northern-california-2025/F2AF14E965608BC25367474685DA3949" target="_blank">Use of a large language model integrated within the electronic medical record for the evaluation of surgical site infections</a></h4>
-<p>Eugenia Miranti, <strong>Timothy Keyes</strong>, Alvaro Ayala, Nerissa Ambers, Gina Newman, Elmer de Leon, Erika Paola Viana-Cardenas, Wajeeha Tariq, Mindy Sampson, and Jorge L. Salinas</p>
-<p><em>Infection Control &amp; Hospital Epidemiology</em> · 2025</p>
-<a class="btn btn-sm btn-outline-primary" href="files/papers/ssi.pdf" target="_blank"><i class="bi bi-file-pdf"></i> PDF</a> <a class="btn btn-sm btn-outline-secondary" href="https://www.cambridge.org/core/journals/infection-control-and-hospital-epidemiology/article/use-of-a-large-language-model-integrated-within-the-electronic-medical-record-for-the-evaluation-of-surgical-site-infections-northern-california-2025/F2AF14E965608BC25367474685DA3949" target="_blank"><i class="bi bi-link-45deg"></i> Link</a> <button class="btn btn-sm btn-outline-secondary copy-cite-btn" onclick="navigator.clipboard.writeText('Miranti E, Keyes T, Ayala A, et al. Use of a large language model integrated within the electronic medical record for the evaluation of surgical site infections -- Northern California, 2025. Infection Control &amp; Hospital Epidemiology. Published online 2026:1-3. doi:10.1017/ice.2026.10432').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.innerHTML='<i class=&quot;bi bi-clipboard&quot;></i> Cite';},1500)})" title="Copy citation"><i class="bi bi-clipboard"></i> Cite</button>
-<details>
-<summary>
-Abstract
-</summary>
-<p>Our study evaluated a large language model (gpt-4o-mini) for surgical site infection (SSI) adjudication, achieving 100% sensitivity but 69.4% specificity. While reducing the manual screening workload by 66%, the agent generated many false positives, underscoring the need for refined models to improve specificity without compromising accuracy.</p>
-</details>
-</section>
-</div>
-<div class="card mb-3">
 <section id="medfacteval-and-medagentbrief-a-framework-and-workflow-for-generating-and-evaluating-factual-clinical-summaries" class="level4 card-body">
 <h4 class="anchored" data-anchor-id="medfacteval-and-medagentbrief-a-framework-and-workflow-for-generating-and-evaluating-factual-clinical-summaries"><a href="https://psb.stanford.edu/psb-online/proceedings/psb26/" target="_blank">MedFactEval and MedAgentBrief: A Framework and Workflow for Generating and Evaluating Factual Clinical Summaries</a></h4>
 <p>Francois Grolleau, Emily Alsentzer, <strong>Timothy Keyes</strong>, Philip Chung, Akshay Swaminathan, Asad Aali, Jason Hom, Tridu Huynh, Thomas Lew, April S. Liang, Weihan Chu, Natasha Z. Steele, Christina F. Lin, Jingkun Yang, Kameron C. Black, Stephen P. Ma, Fateme N. Haredasht, Nigam H. Shah, Kevin Schulman, Jonathan H. Chen</p>
@@ -491,20 +564,6 @@ Evaluating factual accuracy in Large Language Model (LLM)-generated clinical tex
 </section>
 </div>
 <div class="card mb-3">
-<section id="using-secure-artificial-intelligence-agents-integrated-within-the-electronic-medical-record-for-the-evaluation-of-blood-culture-appropriateness" class="level4 card-body">
-<h4 class="anchored" data-anchor-id="using-secure-artificial-intelligence-agents-integrated-within-the-electronic-medical-record-for-the-evaluation-of-blood-culture-appropriateness"><a href="https://www.cambridge.org/core/journals/infection-control-and-hospital-epidemiology/article/using-secure-artificial-intelligence-agents-integrated-within-the-electronic-medical-record-for-the-evaluation-of-blood-culture-appropriatenessnorthern-california-2025/A6FB095CF7E65BE6EEDD0423709EEEC4?utm_campaign=shareaholic&amp;utm_medium=copy_link&amp;utm_source=bookmark" target="_blank">Using secure artificial intelligence agents integrated within the electronic medical record for the evaluation of blood culture appropriateness</a></h4>
-<p>Guillermo Rodriguez-Nava, <strong>Timothy Keyes</strong>, Nerissa Ambers, Eugenia Miranti, Erika Paola Viana-Cardenas, Wajeeha Tariq, Mindy Marie Sampson, Jorge Luis Salinas</p>
-<p><em>Infection Control &amp; Hospital Epidemiology</em> · 2025</p>
-<a class="btn btn-sm btn-outline-primary" href="files/papers/blood_culture.pdf" target="_blank"><i class="bi bi-file-pdf"></i> PDF</a> <a class="btn btn-sm btn-outline-secondary" href="https://www.cambridge.org/core/journals/infection-control-and-hospital-epidemiology/article/using-secure-artificial-intelligence-agents-integrated-within-the-electronic-medical-record-for-the-evaluation-of-blood-culture-appropriatenessnorthern-california-2025/A6FB095CF7E65BE6EEDD0423709EEEC4?utm_campaign=shareaholic&amp;utm_medium=copy_link&amp;utm_source=bookmark" target="_blank"><i class="bi bi-link-45deg"></i> Link</a> <button class="btn btn-sm btn-outline-secondary copy-cite-btn" onclick="navigator.clipboard.writeText('Rodriguez-Nava G, Keyes T, Ambers N, Miranti E, Viana-Cardenas EP, Tariq W, Sampson MM, Salinas JL. Using secure artificial intelligence agents integrated within the electronic medical record for the evaluation of blood culture appropriateness. Infect Control Hosp Epidemiol. 2025:1-4.').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.innerHTML='<i class=&quot;bi bi-clipboard&quot;></i> Cite';},1500)})" title="Copy citation"><i class="bi bi-clipboard"></i> Cite</button>
-<details>
-<summary>
-Abstract
-</summary>
-We evaluated large language model (LLM)-based agents integrated with the electronic medical record to assess blood culture appropriateness. While sensitivity was high, specificity remained low. Performance was shaped by prompt phrasing, sycophantic behavior, and semantic triggers, reflecting both the potential and limitations of LLMs in real-world clinical decision support.
-</details>
-</section>
-</div>
-<div class="card mb-3">
 <section id="target-product-profile-to-evaluate-the-clinical-utility-financial-impact-and-ethical-implications-of-an-ai-based-hcm-detection-model" class="level4 card-body">
 <h4 class="anchored" data-anchor-id="target-product-profile-to-evaluate-the-clinical-utility-financial-impact-and-ethical-implications-of-an-ai-based-hcm-detection-model"><a href="https://www.ahajournals.org/doi/10.1161/circ.152.suppl_3.4363340" target="_blank">Target Product Profile to Evaluate the Clinical Utility, Financial Impact, and Ethical Implications of an AI-Based HCM Detection Model</a></h4>
 <p>Shyon Parsa, <strong>Timothy Keyes</strong>, Dev Dash, Michelle Mello, Heidi Salisbury, Alison Callahan, Shinichi Goto, Michael Salerno, Victoria Parikh, Kenneth Mahaffey, Euan Ashley, Nigam Shah, Sneha Jain</p>
@@ -515,20 +574,6 @@ We evaluated large language model (LLM)-based agents integrated with the electro
 Abstract
 </summary>
 Hypertrophic cardiomyopathy (HCM) remains underdiagnosed despite effective therapies and accessible screening with electrocardiogram (ECG) and echocardiography. Multiple artificial intelligence (AI) tools show promise in identifying missed HCM cases; however, the path from a promising model to clinical impact remains unclear. Without clear performance thresholds and workflow integration parameters, health systems face uncertainty about which tool to adopt and how to responsibly deploy it. We propose the use of Target Product Profiles (TPPs), an extension of the Fair, Useful, Reliable (AI) Models (FURM) Assessment framework, to define the minimum and ideal requirements for AI tools while incorporating resource, financial, and ethical considerations under real-world constraints. We developed a TPP to guide evaluation of an AI-augmented program for improving HCM diagnosis. Using APLUS, a discrete-event simulation engine, we simulated an HCM screening workflow for 134,856 eligible patients within Stanford Health Care, a multi-hospital health system in California. The diagnostic workflow included primary care, echocardiography, triage, and HCM specialty clinic referral. We simulated multiple combinations of model sensitivity (0.5–0.975) and specificity (0.85–0.99), incorporating resource constraints (ex. HCM clinic capacity) and utility weights reflecting diagnostic delay, misdiagnosis, and mortality. Financial modeling included AI deployment costs and downstream care utilization. Ethical analysis was conducted through stakeholder interviews exploring issues such as perceived risks and benefits, equity, and patient consent. In our simulations, AI models with specificity &gt;=0.9 reduced HCM-related mortality using the proposed workflow, while lower specificity cutoffs overwhelmed referral capacity with false positive results (Figure 1). With a simulated 50% increase in HCM clinic capacity, a specificity of &gt;=0.85 was sufficient to achieve benefit. Financial models showed cost-effectiveness concentrated in true positive cases and a net positive effect for the hospital at low false-positive rates (Figure 2). Ethical review highlighted concerns and mitigation strategies around access disparities, patient anxiety from alerts, and subgroup representation. For HCM, a TPP integrating workflow modeling, financial constraints, and ethical insights may help clarify necessary performance metrics in context–offering a roadmap for actionable, deployment-ready AI-augmented programs.
-</details>
-</section>
-</div>
-<div class="card mb-3">
-<section id="holistic-evaluation-of-large-language-models-for-medical-tasks-with-medhelm" class="level4 card-body">
-<h4 class="anchored" data-anchor-id="holistic-evaluation-of-large-language-models-for-medical-tasks-with-medhelm"><a href="https://www.nature.com/articles/s41591-025-04151-2" target="_blank">Holistic evaluation of large language models for medical tasks with MedHELM</a></h4>
-<p>Suhana Bedi, Hejie Cui, Miguel Fuentes, Alyssa Unell, Michael Wornow, Juan M. Banda, Nikesh Kotecha, <strong>Timothy Keyes</strong>, Yifan Mai, Mert Oez, Hao Qiu, Shrey Jain, Leonardo Schettini, Mehr Kashyap, Jason Alan Fries, et al.</p>
-<p><em>Nature Medicine</em> · 2025</p>
-<a class="btn btn-sm btn-outline-primary" href="files/papers/medhelm.pdf" target="_blank"><i class="bi bi-file-pdf"></i> PDF</a> <a class="btn btn-sm btn-outline-secondary" href="https://www.nature.com/articles/s41591-025-04151-2" target="_blank"><i class="bi bi-link-45deg"></i> Link</a> <button class="btn btn-sm btn-outline-secondary copy-cite-btn" onclick="navigator.clipboard.writeText('Bedi S, Cui H, Fuentes M, Unell A, Wornow M, Banda JM, Kotecha N, Keyes T, et al. MedHELM: Holistic Evaluation of Large Language Models for Medical Tasks. arXiv. 2025. arXiv:2505.23802.').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.innerHTML='<i class=&quot;bi bi-clipboard&quot;></i> Cite';},1500)})" title="Copy citation"><i class="bi bi-clipboard"></i> Cite</button>
-<details>
-<summary>
-Abstract
-</summary>
-<p>While large language models (LLMs) achieve near-perfect scores on medical licensing exams, these evaluations inadequately reflect the complexity and diversity of real-world clinical practice. Here we introduce MedHELM, an extensible evaluation framework with three contributions. First, a clinician-validated taxonomy organizing medical AI applications into five categories that mirror real clinical tasks–clinical decision support (diagnostic decisions, treatment planning), clinical note generation (visit documentation, procedure reports), patient communication (education materials, care instructions), medical research (literature analysis, clinical data analysis) and administration (scheduling, workflow coordination). These encompass 22 subcategories and 121 specific tasks reflecting daily medical practice. Second, a comprehensive benchmark suite of 37 evaluations covering all subcategories. Third, systematic comparison of nine frontier LLMs–Claude 3.5 Sonnet, Claude 3.7 Sonnet, DeepSeek R1, Gemini 1.5 Pro, Gemini 2.0 Flash, GPT-4o, GPT-4o mini, Llama 3.3 and o3-mini–using an automated LLM-jury evaluation method. Our LLM-jury uses multiple AI evaluators to assess model outputs against expert-defined criteria. Advanced reasoning models (DeepSeek R1, o3-mini) demonstrated superior performance with win rates of 66%, although Claude 3.5 Sonnet achieved comparable results at 15% lower computational cost. These results not only highlight current model capabilities but also demonstrate how MedHELM could enable evidence-based selection of medical AI systems for healthcare applications.</p>
 </details>
 </section>
 </div>
@@ -776,16 +821,30 @@ We discovered functional lymphatic vessels lining the dural sinuses. The discove
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <div class="card mb-3">
-<section id="deployment-and-evaluation-of-an-ehr-integrated-large-language-model-powered-tool-to-triage-surgical-patients-1" class="level4 card-body">
-<h4 class="anchored" data-anchor-id="deployment-and-evaluation-of-an-ehr-integrated-large-language-model-powered-tool-to-triage-surgical-patients-1"><a href="https://arxiv.org/abs/2603.17234" target="_blank">Deployment and Evaluation of an EHR-integrated, Large Language Model-Powered Tool to Triage Surgical Patients</a></h4>
-<p><strong>Timothy Keyes</strong>†, Jane Wang†, April S. Liang, Stephen P. Ma, Jason Shen, Jerry Liu, Nerissa Ambers, Abby Pandya, Rita Pandya, Jason Hom, Natasha Steele, Jonathan H. Chen, Kevin Schulman</p>
-<p><em>arXiv</em> · 2026</p>
-<a class="btn btn-sm btn-outline-primary" href="files/papers/scm_navigator.pdf" target="_blank"><i class="bi bi-file-pdf"></i> PDF</a> <a class="btn btn-sm btn-outline-secondary" href="https://arxiv.org/abs/2603.17234" target="_blank"><i class="bi bi-link-45deg"></i> Link</a> <button class="btn btn-sm btn-outline-secondary copy-cite-btn" onclick="navigator.clipboard.writeText('Wang J, Keyes T, Liang AS, Ma SP, Shen J, Liu J, Ambers N, Pandya A, Pandya R, Hom J, Steele N, Chen JH, Schulman K. Deployment and Evaluation of an EHR-integrated, Large Language Model-Powered Tool to Triage Surgical Patients. arXiv. 2026. arXiv:2603.17234.').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.innerHTML='<i class=&quot;bi bi-clipboard&quot;></i> Cite';},1500)})" title="Copy citation"><i class="bi bi-clipboard"></i> Cite</button>
+<section id="an-electronic-health-recordintegrated-large-language-modelpowered-tool-to-triage-surgical-patients-1" class="level4 card-body">
+<h4 class="anchored" data-anchor-id="an-electronic-health-recordintegrated-large-language-modelpowered-tool-to-triage-surgical-patients-1"><a href="https://doi.org/10.1001/jamanetworkopen.2026.29579" target="_blank">An Electronic Health Record–Integrated, Large Language Model–Powered Tool to Triage Surgical Patients</a></h4>
+<p>Jane Wang†, <strong>Timothy Keyes</strong>†, April S. Liang, Stephen P. Ma, Jason Shen, Jerry Liu, Nerissa Ambers, Abby Pandya, Rita Pandya, Jason Hom, Natasha Steele, Jonathan H. Chen, Kevin Schulman</p>
+<p><em>JAMA Network Open</em> · 2026</p>
+<a class="btn btn-sm btn-outline-primary" href="files/papers/scm_navigator.pdf" target="_blank"><i class="bi bi-file-pdf"></i> PDF</a> <a class="btn btn-sm btn-outline-secondary" href="https://doi.org/10.1001/jamanetworkopen.2026.29579" target="_blank"><i class="bi bi-link-45deg"></i> Link</a> <button class="btn btn-sm btn-outline-secondary copy-cite-btn" onclick="navigator.clipboard.writeText('Wang J, Keyes T, Liang AS, Ma SP, Shen J, Liu J, Ambers N, Pandya A, Pandya R, Hom J, Steele N, Chen JH, Schulman K. An Electronic Health Record–Integrated, Large Language Model–Powered Tool to Triage Surgical Patients. JAMA Netw Open. 2026;9(8):e2629579. doi:10.1001/jamanetworkopen.2026.29579.').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.innerHTML='<i class=&quot;bi bi-clipboard&quot;></i> Cite';},1500)})" title="Copy citation"><i class="bi bi-clipboard"></i> Cite</button>
 <details>
 <summary>
 Abstract
 </summary>
 Surgical co-management (SCM) is an evidence-based model in which hospitalists jointly manage medically complex perioperative patients alongside surgical teams. Despite its clinical and financial value, SCM is limited by the need to manually identify eligible patients. To determine whether SCM triage can be automated, we conducted a prospective, unblinded study at Stanford Health Care in which an LLM-based, electronic health record (EHR)-integrated triage tool (SCM Navigator) provided SCM recommendations followed by physician review. Using pre-operative documentation, structured data, and clinical criteria for perioperative morbidity, SCM Navigator categorized patients as appropriate, not appropriate, or possibly appropriate for SCM. Faculty indicated their clinical judgment and provided free-text feedback when they disagreed. Sensitivity, specificity, positive predictive value, and negative predictive value were measured using physician determinations as a reference. Free-text reasons were thematically categorized, and manual chart review was conducted on all false-negative cases and 30 randomly selected cases from the largest false-positive category. Since deployment, 6,193 cases have been triaged, of which 1,582 (23%) were recommended for hospitalist consultation. SCM Navigator displayed high sensitivity (0.94, 95% CI 0.91-0.96) and moderate specificity (0.74, 95% CI 0.71-0.77). Post-hoc chart review suggested most discrepancies reflect modifiable gaps in clinical criteria, institutional workflow, or physician practice variability rather than LLM misclassification, which accounted for 2 of 19 (11%) false-negative cases. These findings demonstrate that an LLM-powered, EHR-integrated, human-in-the-loop AI system can accurately and safely triage surgical patients for SCM, and that AI-enabled screening tools can augment and potentially automate time-intensive clinical workflows.
+</details>
+</section>
+</div>
+<div class="card mb-3">
+<section id="why-and-how-to-monitor-deployed-ai-systems-in-health-care-1" class="level4 card-body">
+<h4 class="anchored" data-anchor-id="why-and-how-to-monitor-deployed-ai-systems-in-health-care-1"><a href="https://doi.org/10.1056/CAT.25.0372" target="_blank">Why and How to Monitor Deployed AI Systems in Health Care</a></h4>
+<p><strong>Timothy Keyes</strong>†, Alison Callahan†, Abby S. Pandya†, Nerissa Ambers, Juan M. Banda, Miguel Fuentes, Carlene Lugtu, Pranav Masariya, Srikar Nallan, Connor O’Brien, Thomas Wang, Emily Alsentzer, Jonathan H. Chen, Dev Dash, Matthew A. Eisenberg, Patricia Garcia, Nikesh Kotecha, Anurang Revri, Michael A. Pfeffer, Nigam H. Shah, Sneha S. Jain</p>
+<p><em>NEJM Catalyst Innovations in Care Delivery</em> · 2026</p>
+<a class="btn btn-sm btn-outline-primary" href="files/papers/monitoring_deployed_systems_in_health_care.pdf" target="_blank"><i class="bi bi-file-pdf"></i> PDF</a> <a class="btn btn-sm btn-outline-secondary" href="https://doi.org/10.1056/CAT.25.0372" target="_blank"><i class="bi bi-link-45deg"></i> Link</a> <button class="btn btn-sm btn-outline-secondary copy-cite-btn" onclick="navigator.clipboard.writeText('Keyes T, Callahan A, Pandya AS, Ambers N, Banda JM, Fuentes M, et al. Why and How to Monitor Deployed AI Systems in Health Care. NEJM Catal Innov Care Deliv. 2026;7(6):CAT250372. doi:10.1056/CAT.25.0372.').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.innerHTML='<i class=&quot;bi bi-clipboard&quot;></i> Cite';},1500)})" title="Copy citation"><i class="bi bi-clipboard"></i> Cite</button>
+<details>
+<summary>
+Abstract
+</summary>
+Post-deployment monitoring of artificial intelligence (AI) systems in health care is essential to ensure their safety, quality, and sustained benefit-and to support governance decisions about which systems to update, modify, or decommission. Motivated by these needs, we developed a framework for monitoring deployed AI systems grounded in the mandate to take specific actions when they fail to behave as intended. This framework, which is now actively used at Stanford Health Care, is organized around three complementary principles: system integrity, performance, and impact. System integrity monitoring focuses on maximizing system uptime, detecting runtime errors, and identifying when changes to the surrounding IT ecosystem have unintended effects. Performance monitoring focuses on maintaining accurate system behavior in the face of changing health care practices (and thus input data) over time. Impact monitoring assesses whether a deployed system continues to have value in the form of benefit to clinicians and patients. Drawing on examples of deployed AI systems at our academic medical center, we provide practical guidance for creating monitoring plans based on these principles that specify which metrics to measure, when those metrics should be reviewed, who is responsible for acting when metrics change, and what concrete follow-up actions should be taken-for both traditional and generative AI. We also discuss challenges to implementing this framework, including the effort and cost of monitoring for health systems with limited resources and the difficulty of incorporating data-driven monitoring practices into complex organizations where conflicting priorities and definitions of success often coexist. This framework offers a practical template and starting point for health systems seeking to ensure that AI deployments remain safe and effective over time.
 </details>
 </section>
 </div>
@@ -818,11 +877,25 @@ Tumor boards are multidisciplinary conferences dedicated to producing actionable
 </section>
 </div>
 <div class="card mb-3">
-<section id="medagentbrief-for-hospital-course-summarization-safety-use-and-discharge-documentation-burden-1" class="level4 card-body">
-<h4 class="anchored" data-anchor-id="medagentbrief-for-hospital-course-summarization-safety-use-and-discharge-documentation-burden-1"><a href="https://www.medrxiv.org/content/10.64898/2026.02.05.26345607v2" target="_blank">MedAgentBrief for Hospital Course Summarization: Safety, Use, and Discharge Documentation Burden</a></h4>
-<p>Francois Grolleau, <strong>Timothy Keyes</strong>‡, April S. Liang‡, Stephen P. Ma, Thomas Lew, Tridu R. Huynh, Natasha Steele, Philip Chung, Paige Qin, Gowri Chandra, Stephanie F. Wang, Evan Mullen, Lauren Carpenter, Mita Hoppenfeld, Matthew Morrin, Baffour A. Kyerematen, Nerissa Ambers, Nikesh Kotecha, Emily Alsentzer, Jason Hom, Nigam H. Shah, Kevin Schulman, Jonathan H. Chen</p>
-<p><em>medRxiv</em> · 2026</p>
-<a class="btn btn-sm btn-outline-primary" href="files/papers/med_agent_brief.pdf" target="_blank"><i class="bi bi-file-pdf"></i> PDF</a> <a class="btn btn-sm btn-outline-secondary" href="https://www.medrxiv.org/content/10.64898/2026.02.05.26345607v2" target="_blank"><i class="bi bi-link-45deg"></i> Link</a> <button class="btn btn-sm btn-outline-secondary copy-cite-btn" onclick="navigator.clipboard.writeText('Grolleau F, Liang AS, Keyes T, Ma SP, Lew T, Huynh TR, et al. MedAgentBrief for Hospital Course Summarization: Safety, Use, and Discharge Documentation Burden. medRxiv. 2026. doi:10.64898/2026.02.05.26345607.').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.innerHTML='<i class=&quot;bi bi-clipboard&quot;></i> Cite';},1500)})" title="Copy citation"><i class="bi bi-clipboard"></i> Cite</button>
+<section id="use-of-a-large-language-model-integrated-within-the-electronic-medical-record-for-the-evaluation-of-surgical-site-infections-northern-california-2025-1" class="level4 card-body">
+<h4 class="anchored" data-anchor-id="use-of-a-large-language-model-integrated-within-the-electronic-medical-record-for-the-evaluation-of-surgical-site-infections-northern-california-2025-1"><a href="https://doi.org/10.1017/ice.2026.10432" target="_blank">Use of a large language model integrated within the electronic medical record for the evaluation of surgical site infections – Northern California, 2025</a></h4>
+<p>Eugenia Miranti, <strong>Timothy Keyes</strong>, Alvaro Ayala, Nerissa Ambers, Gina Newman, Elmer de Leon, Erika Paola Viana-Cardenas, Wajeeha Tariq, Mindy Sampson, and Jorge L. Salinas</p>
+<p><em>Infection Control &amp; Hospital Epidemiology</em> · 2026</p>
+<a class="btn btn-sm btn-outline-primary" href="files/papers/ssi.pdf" target="_blank"><i class="bi bi-file-pdf"></i> PDF</a> <a class="btn btn-sm btn-outline-secondary" href="https://doi.org/10.1017/ice.2026.10432" target="_blank"><i class="bi bi-link-45deg"></i> Link</a> <button class="btn btn-sm btn-outline-secondary copy-cite-btn" onclick="navigator.clipboard.writeText('Miranti E, Keyes T, Ayala A, et al. Use of a large language model integrated within the electronic medical record for the evaluation of surgical site infections – Northern California, 2025. Infect Control Hosp Epidemiol. 2026;47(6):633-635. doi:10.1017/ice.2026.10432.').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.innerHTML='<i class=&quot;bi bi-clipboard&quot;></i> Cite';},1500)})" title="Copy citation"><i class="bi bi-clipboard"></i> Cite</button>
+<details>
+<summary>
+Abstract
+</summary>
+<p>Our study evaluated a large language model (gpt-4o-mini) for surgical site infection (SSI) adjudication, achieving 100% sensitivity but 69.4% specificity. While reducing the manual screening workload by 66%, the agent generated many false positives, underscoring the need for refined models to improve specificity without compromising accuracy.</p>
+</details>
+</section>
+</div>
+<div class="card mb-3">
+<section id="physician-reported-safety-outcomes-of-ai-generated-hospital-course-summaries-1" class="level4 card-body">
+<h4 class="anchored" data-anchor-id="physician-reported-safety-outcomes-of-ai-generated-hospital-course-summaries-1"><a href="https://doi.org/10.1001/jamanetworkopen.2026.16556" target="_blank">Physician-Reported Safety Outcomes of AI-Generated Hospital Course Summaries</a></h4>
+<p>Francois Grolleau, April S. Liang‡, <strong>Timothy Keyes</strong>‡, Stephen P. Ma, Thomas Lew, Tridu R. Huynh, Natasha Steele, Philip Chung, Paige Qin, Gowri Chandra, Stephanie F. Wang, Evan Mullen, Lauren Carpenter, Mita Hoppenfeld, Matthew Morrin, Baffour A. Kyerematen, Nerissa Ambers, Nikesh Kotecha, Emily Alsentzer, Jason Hom, Nigam H. Shah, Kevin Schulman, Jonathan H. Chen</p>
+<p><em>JAMA Network Open</em> · 2026</p>
+<a class="btn btn-sm btn-outline-primary" href="files/papers/med_agent_brief.pdf" target="_blank"><i class="bi bi-file-pdf"></i> PDF</a> <a class="btn btn-sm btn-outline-secondary" href="https://doi.org/10.1001/jamanetworkopen.2026.16556" target="_blank"><i class="bi bi-link-45deg"></i> Link</a> <button class="btn btn-sm btn-outline-secondary copy-cite-btn" onclick="navigator.clipboard.writeText('Grolleau F, Liang AS, Keyes T, Ma SP, Lew T, Huynh TR, et al. Physician-Reported Safety Outcomes of AI-Generated Hospital Course Summaries. JAMA Netw Open. 2026;9(5):e2616556. doi:10.1001/jamanetworkopen.2026.16556.').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.innerHTML='<i class=&quot;bi bi-clipboard&quot;></i> Cite';},1500)})" title="Copy citation"><i class="bi bi-clipboard"></i> Cite</button>
 <details>
 <summary>
 Abstract
@@ -834,6 +907,34 @@ Abstract
 <p>Main Outcomes and Measures The primary outcome was physician-reported potential for and severity of harm from unedited summaries (AHRQ Common Format Harm Scale). Secondary outcomes included utilization rate, error types (omissions, inaccuracies, hallucinations), time spent in discharge summaries (EHR logs), and changes in cognitive burden (NASA Task Load Index [NASA-TLX]) and burnout (Stanford Professional Fulfillment Index [PFI] Work Exhaustion Scale).</p>
 <p>Results The system generated 1274 summaries. Of 384 discharges, physicians utilized AI content in 219 (57%) cases. Feedback on 100 summaries (40.2%) noted omissions (25%) and inaccuracies (20%) but rare hallucinations (2%). Physicians rated 88% of unedited summaries as having no harm potential and 1% as likely to cause moderate harm; no severe harm was reported. Physician burnout scores decreased significantly (1.75 vs 1.20; P = .03). Time savings were heterogeneous: 71% of physicians saw reductions in median documentation time (up to 2.9 minutes).</p>
 Conclusions and Relevance An LLM-based agentic workflow produced hospital course summaries that were frequently utilized with mild to minimal risk of harm identified. The intervention was associated with a significant reduction in physician burnout, supporting the viability of AI summarization to mitigate documentation burden.
+</details>
+</section>
+</div>
+<div class="card mb-3">
+<section id="automating-clinical-history-extraction-for-flow-cytometry-panel-selection-using-an-ehr-integrated-large-language-model-1" class="level4 card-body">
+<h4 class="anchored" data-anchor-id="automating-clinical-history-extraction-for-flow-cytometry-panel-selection-using-an-ehr-integrated-large-language-model-1"><a href="https://doi.org/10.1002/cyto.b.70051" target="_blank">Automating clinical history extraction for flow cytometry panel selection using an EHR-integrated large language model</a></h4>
+<p>Rebecca Rojansky, <strong>Timothy Keyes</strong>, Jean Oak</p>
+<p><em>Cytometry Part B: Clinical Cytometry</em> · 2026</p>
+<a class="btn btn-sm btn-outline-secondary" href="https://doi.org/10.1002/cyto.b.70051" target="_blank"><i class="bi bi-link-45deg"></i> Link</a> <button class="btn btn-sm btn-outline-secondary copy-cite-btn" onclick="navigator.clipboard.writeText('Rojansky R, Keyes T, Oak J. Automating clinical history extraction for flow cytometry panel selection using an EHR-integrated large language model. Cytometry B Clin Cytom. Published online July 10, 2026. doi:10.1002/cyto.b.70051.').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.innerHTML='<i class=&quot;bi bi-clipboard&quot;></i> Cite';},1500)})" title="Copy citation"><i class="bi bi-clipboard"></i> Cite</button>
+<details>
+<summary>
+Abstract
+</summary>
+Flow cytometry immunophenotyping is essential for diagnosing hematologic malignancies, but accurate antibody panel selection depends on clinical context that is often fragmented across the electronic health record (EHR). At our institution, clinical laboratory scientists (CLS) use a standardized decision-tree algorithm incorporating specimen characteristics, laboratory values, and prior diagnoses to select panels. This process requires manual review and synthesis of longitudinal clinical documentation and remains time-intensive. We evaluated whether ChatEHR—an institutionally developed, EHR-integrated large language model (LLM) platform—could automate clinical history extraction and support flow cytometry panel selection across 100 cases. Performance was compared with the current CLS-driven workflow using hematopathologist-reviewed panel selections as the reference standard. ChatEHR achieved comparable accuracy to CLS in extracting and categorizing prior hematologic diagnoses (78% vs.&nbsp;78%). Average processing time was 20.3 s for ChatEHR versus 41 s for manual review, corresponding to an estimated annual reduction of approximately 120 staff hours. Direct panel selection accuracy was lower for ChatEHR (47% vs.&nbsp;78%), primarily due to errors in deterministic protocol execution and structured data interpretation. Integration of LLM-based clinical history extraction with rules-based laboratory algorithms provides a practical hybrid workflow that preserves diagnostic reliability while reducing manual chart review burden.
+</details>
+</section>
+</div>
+<div class="card mb-3">
+<section id="using-secure-artificial-intelligence-agents-integrated-within-the-electronic-medical-record-for-the-evaluation-of-blood-culture-appropriatenessnorthern-california-2025-1" class="level4 card-body">
+<h4 class="anchored" data-anchor-id="using-secure-artificial-intelligence-agents-integrated-within-the-electronic-medical-record-for-the-evaluation-of-blood-culture-appropriatenessnorthern-california-2025-1"><a href="https://doi.org/10.1017/ice.2025.10349" target="_blank">Using secure artificial intelligence agents integrated within the electronic medical record for the evaluation of blood culture appropriateness—Northern California, 2025</a></h4>
+<p>Guillermo Rodriguez-Nava, <strong>Timothy Keyes</strong>, Nerissa Ambers, Eugenia Miranti, Erika Paola Viana-Cardenas, Wajeeha Tariq, Mindy Marie Sampson, Jorge Luis Salinas</p>
+<p><em>Infection Control &amp; Hospital Epidemiology</em> · 2026</p>
+<a class="btn btn-sm btn-outline-primary" href="files/papers/blood_culture.pdf" target="_blank"><i class="bi bi-file-pdf"></i> PDF</a> <a class="btn btn-sm btn-outline-secondary" href="https://doi.org/10.1017/ice.2025.10349" target="_blank"><i class="bi bi-link-45deg"></i> Link</a> <button class="btn btn-sm btn-outline-secondary copy-cite-btn" onclick="navigator.clipboard.writeText('Rodriguez-Nava G, Keyes T, Ambers N, Miranti E, Viana-Cardenas EP, Tariq W, Sampson MM, Salinas JL. Using secure artificial intelligence agents integrated within the electronic medical record for the evaluation of blood culture appropriateness—Northern California, 2025. Infect Control Hosp Epidemiol. 2026;47(2):206-209. doi:10.1017/ice.2025.10349.').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.innerHTML='<i class=&quot;bi bi-clipboard&quot;></i> Cite';},1500)})" title="Copy citation"><i class="bi bi-clipboard"></i> Cite</button>
+<details>
+<summary>
+Abstract
+</summary>
+We evaluated large language model (LLM)-based agents integrated with the electronic medical record to assess blood culture appropriateness. While sensitivity was high, specificity remained low. Performance was shaped by prompt phrasing, sycophantic behavior, and semantic triggers, reflecting both the potential and limitations of LLMs in real-world clinical decision support.
 </details>
 </section>
 </div>
@@ -852,30 +953,44 @@ While large language models (LLMs) can support clinical documentation needs, sta
 </section>
 </div>
 <div class="card mb-3">
-<section id="monitoring-deployed-ai-systems-in-health-care-1" class="level4 card-body">
-<h4 class="anchored" data-anchor-id="monitoring-deployed-ai-systems-in-health-care-1"><a href="https://arxiv.org/abs/2512.09048" target="_blank">Monitoring Deployed AI Systems in Health Care</a></h4>
-<p><strong>Timothy Keyes</strong>†, Alison Callahan†, Abby S. Pandya†, Nerissa Ambers, Juan M. Banda, Miguel Fuentes, Carlene Lugtu, Pranav Masariya, Srikar Nallan, Connor O’Brien, Thomas Wang, Emily Alsentzer, Jonathan H. Chen, Dev Dash, Matthew A. Eisenberg, Patricia Garcia, Nikesh Kotecha, Anurang Revri, Michael A. Pfeffer, Nigam H. Shah, Sneha S. Jain</p>
-<p><em>arXiv</em> · 2025</p>
-<a class="btn btn-sm btn-outline-primary" href="files/papers/monitoring_deployed_systems_in_health_care.pdf" target="_blank"><i class="bi bi-file-pdf"></i> PDF</a> <a class="btn btn-sm btn-outline-secondary" href="https://arxiv.org/abs/2512.09048" target="_blank"><i class="bi bi-link-45deg"></i> Link</a> <button class="btn btn-sm btn-outline-secondary copy-cite-btn" onclick="navigator.clipboard.writeText('Keyes T, Callahan A, Pandya AS, Ambers N, Banda JM, Fuentes M, et al. Monitoring Deployed AI Systems in Health Care. arXiv. 2025. arXiv:2512.09048.').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.innerHTML='<i class=&quot;bi bi-clipboard&quot;></i> Cite';},1500)})" title="Copy citation"><i class="bi bi-clipboard"></i> Cite</button>
+<section id="holistic-evaluation-of-large-language-models-for-medical-tasks-with-medhelm-1" class="level4 card-body">
+<h4 class="anchored" data-anchor-id="holistic-evaluation-of-large-language-models-for-medical-tasks-with-medhelm-1"><a href="https://doi.org/10.1038/s41591-025-04151-2" target="_blank">Holistic evaluation of large language models for medical tasks with MedHELM</a></h4>
+<p>Suhana Bedi, Hejie Cui, Miguel Fuentes, Alyssa Unell, Michael Wornow, Juan M. Banda, Nikesh Kotecha, <strong>Timothy Keyes</strong>, Yifan Mai, Mert Oez, Hao Qiu, Shrey Jain, Leonardo Schettini, Mehr Kashyap, Jason Alan Fries, et al.</p>
+<p><em>Nature Medicine</em> · 2026</p>
+<a class="btn btn-sm btn-outline-primary" href="files/papers/medhelm.pdf" target="_blank"><i class="bi bi-file-pdf"></i> PDF</a> <a class="btn btn-sm btn-outline-secondary" href="https://doi.org/10.1038/s41591-025-04151-2" target="_blank"><i class="bi bi-link-45deg"></i> Link</a> <button class="btn btn-sm btn-outline-secondary copy-cite-btn" onclick="navigator.clipboard.writeText('Bedi S, Cui H, Fuentes M, Unell A, Wornow M, Banda JM, Kotecha N, Keyes T, et al. Holistic evaluation of large language models for medical tasks with MedHELM. Nat Med. 2026;32(3):943-951. doi:10.1038/s41591-025-04151-2.').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.innerHTML='<i class=&quot;bi bi-clipboard&quot;></i> Cite';},1500)})" title="Copy citation"><i class="bi bi-clipboard"></i> Cite</button>
 <details>
 <summary>
 Abstract
 </summary>
-Post-deployment monitoring of artificial intelligence (AI) systems in health care is essential to ensure their safety, quality, and sustained benefit-and to support governance decisions about which systems to update, modify, or decommission. Motivated by these needs, we developed a framework for monitoring deployed AI systems grounded in the mandate to take specific actions when they fail to behave as intended. This framework, which is now actively used at Stanford Health Care, is organized around three complementary principles: system integrity, performance, and impact. System integrity monitoring focuses on maximizing system uptime, detecting runtime errors, and identifying when changes to the surrounding IT ecosystem have unintended effects. Performance monitoring focuses on maintaining accurate system behavior in the face of changing health care practices (and thus input data) over time. Impact monitoring assesses whether a deployed system continues to have value in the form of benefit to clinicians and patients. Drawing on examples of deployed AI systems at our academic medical center, we provide practical guidance for creating monitoring plans based on these principles that specify which metrics to measure, when those metrics should be reviewed, who is responsible for acting when metrics change, and what concrete follow-up actions should be taken-for both traditional and generative AI. We also discuss challenges to implementing this framework, including the effort and cost of monitoring for health systems with limited resources and the difficulty of incorporating data-driven monitoring practices into complex organizations where conflicting priorities and definitions of success often coexist. This framework offers a practical template and starting point for health systems seeking to ensure that AI deployments remain safe and effective over time.
+<p>While large language models (LLMs) achieve near-perfect scores on medical licensing exams, these evaluations inadequately reflect the complexity and diversity of real-world clinical practice. Here we introduce MedHELM, an extensible evaluation framework with three contributions. First, a clinician-validated taxonomy organizing medical AI applications into five categories that mirror real clinical tasks–clinical decision support (diagnostic decisions, treatment planning), clinical note generation (visit documentation, procedure reports), patient communication (education materials, care instructions), medical research (literature analysis, clinical data analysis) and administration (scheduling, workflow coordination). These encompass 22 subcategories and 121 specific tasks reflecting daily medical practice. Second, a comprehensive benchmark suite of 37 evaluations covering all subcategories. Third, systematic comparison of nine frontier LLMs–Claude 3.5 Sonnet, Claude 3.7 Sonnet, DeepSeek R1, Gemini 1.5 Pro, Gemini 2.0 Flash, GPT-4o, GPT-4o mini, Llama 3.3 and o3-mini–using an automated LLM-jury evaluation method. Our LLM-jury uses multiple AI evaluators to assess model outputs against expert-defined criteria. Advanced reasoning models (DeepSeek R1, o3-mini) demonstrated superior performance with win rates of 66%, although Claude 3.5 Sonnet achieved comparable results at 15% lower computational cost. These results not only highlight current model capabilities but also demonstrate how MedHELM could enable evidence-based selection of medical AI systems for healthcare applications.</p>
 </details>
 </section>
 </div>
 <div class="card mb-3">
-<section id="use-of-a-large-language-model-integrated-within-the-electronic-medical-record-for-the-evaluation-of-surgical-site-infections-1" class="level4 card-body">
-<h4 class="anchored" data-anchor-id="use-of-a-large-language-model-integrated-within-the-electronic-medical-record-for-the-evaluation-of-surgical-site-infections-1"><a href="https://www.cambridge.org/core/journals/infection-control-and-hospital-epidemiology/article/use-of-a-large-language-model-integrated-within-the-electronic-medical-record-for-the-evaluation-of-surgical-site-infections-northern-california-2025/F2AF14E965608BC25367474685DA3949" target="_blank">Use of a large language model integrated within the electronic medical record for the evaluation of surgical site infections</a></h4>
-<p>Eugenia Miranti, <strong>Timothy Keyes</strong>, Alvaro Ayala, Nerissa Ambers, Gina Newman, Elmer de Leon, Erika Paola Viana-Cardenas, Wajeeha Tariq, Mindy Sampson, and Jorge L. Salinas</p>
-<p><em>Infection Control &amp; Hospital Epidemiology</em> · 2025</p>
-<a class="btn btn-sm btn-outline-primary" href="files/papers/ssi.pdf" target="_blank"><i class="bi bi-file-pdf"></i> PDF</a> <a class="btn btn-sm btn-outline-secondary" href="https://www.cambridge.org/core/journals/infection-control-and-hospital-epidemiology/article/use-of-a-large-language-model-integrated-within-the-electronic-medical-record-for-the-evaluation-of-surgical-site-infections-northern-california-2025/F2AF14E965608BC25367474685DA3949" target="_blank"><i class="bi bi-link-45deg"></i> Link</a> <button class="btn btn-sm btn-outline-secondary copy-cite-btn" onclick="navigator.clipboard.writeText('Miranti E, Keyes T, Ayala A, et al. Use of a large language model integrated within the electronic medical record for the evaluation of surgical site infections -- Northern California, 2025. Infection Control &amp; Hospital Epidemiology. Published online 2026:1-3. doi:10.1017/ice.2026.10432').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.innerHTML='<i class=&quot;bi bi-clipboard&quot;></i> Cite';},1500)})" title="Copy citation"><i class="bi bi-clipboard"></i> Cite</button>
+<section id="a-primer-on-evaluation-methods-for-large-language-models-in-healthcare-1" class="level4 card-body">
+<h4 class="anchored" data-anchor-id="a-primer-on-evaluation-methods-for-large-language-models-in-healthcare-1"><a href="https://arxiv.org/abs/2609.14819" target="_blank">A primer on evaluation methods for large language models in healthcare</a></h4>
+<p>Suzannah E. McKinney, Phuc Vu, Samuel A. Justice, Christopher Humphries, Alyssa Pradhan, <strong>Timothy J. Keyes</strong>, Sarah F. Mercaldo, James M. Hillis</p>
+<p><em>arXiv</em> · 2026</p>
+<a class="btn btn-sm btn-outline-secondary" href="https://arxiv.org/abs/2609.14819" target="_blank"><i class="bi bi-link-45deg"></i> Link</a> <button class="btn btn-sm btn-outline-secondary copy-cite-btn" onclick="navigator.clipboard.writeText('McKinney SE, Vu P, Justice SA, Humphries C, Pradhan A, Keyes TJ, Mercaldo SF, Hillis JM. A primer on evaluation methods for large language models in healthcare. arXiv. 2026. arXiv:2609.14819.').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.innerHTML='<i class=&quot;bi bi-clipboard&quot;></i> Cite';},1500)})" title="Copy citation"><i class="bi bi-clipboard"></i> Cite</button>
 <details>
 <summary>
 Abstract
 </summary>
-<p>Our study evaluated a large language model (gpt-4o-mini) for surgical site infection (SSI) adjudication, achieving 100% sensitivity but 69.4% specificity. While reducing the manual screening workload by 66%, the agent generated many false positives, underscoring the need for refined models to improve specificity without compromising accuracy.</p>
+Large language models (LLMs) have a growing range of applications in medicine, and their evaluation is critical for ensuring they provide benefit and not harm. This review covers four key areas of LLM evaluation: principles of study design, statistical methods, capability evaluation, and clinical context evaluation. Capability evaluation considers benchmarks including multiple-choice, agentic, and multi-turn benchmarks alongside operational metrics. Clinical context evaluation addresses the accuracy of free-text outputs through methods including human review and LLM-as-a-judge, as well as clinical trial approaches. The article emphasizes aligning evaluation methods with the research question.
+</details>
+</section>
+</div>
+<div class="card mb-3">
+<section id="challenges-in-ai-based-tumor-board-case-summarization-and-recommendations-1" class="level4 card-body">
+<h4 class="anchored" data-anchor-id="challenges-in-ai-based-tumor-board-case-summarization-and-recommendations-1"><a href="https://doi.org/10.21203/rs.3.rs-9916397/v1" target="_blank">Challenges in AI Based Tumor Board Case Summarization and Recommendations</a></h4>
+<p>Wen-wai Yim, Hendrik Damm, Tabea M. G. Pakull, Sam Preston, <strong>Timothy Keyes</strong>, Timothy J. Ellis-Caleo, Zhaoyi Sun, Meliha Yetisgen, Noel Codella, Mu Wei, Faraah Bekheet, Joel W. Neal, Nigam Shah, Bahadır Eryılmaz, Felix Nensa, Elisabeth Livingstone, Christoph M. Friedrich, Georg Lodde</p>
+<p><em>Research Square</em> · 2026</p>
+<a class="btn btn-sm btn-outline-secondary" href="https://doi.org/10.21203/rs.3.rs-9916397/v1" target="_blank"><i class="bi bi-link-45deg"></i> Link</a> <button class="btn btn-sm btn-outline-secondary copy-cite-btn" onclick="navigator.clipboard.writeText('Yim W, Damm H, Pakull TMG, Preston S, Keyes T, Ellis-Caleo TJ, et al. Challenges in AI Based Tumor Board Case Summarization and Recommendations. Research Square. 2026. doi:10.21203/rs.3.rs-9916397/v1.').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.innerHTML='<i class=&quot;bi bi-clipboard&quot;></i> Cite';},1500)})" title="Copy citation"><i class="bi bi-clipboard"></i> Cite</button>
+<details>
+<summary>
+Abstract
+</summary>
+Tumor boards assemble multiple cancer specialties to discuss oncologic care. This multi-institution study formalizes tumor board case summarization, options generation, and meeting-outcome prediction as AI problems and evaluates large language models across datasets from more than four medical institutions. Human-expert evaluations showed that models performed better on case summarization than on recommendation generation, and the study examined the limitations of reference-based automatic evaluation metrics.
 </details>
 </section>
 </div>
@@ -894,20 +1009,6 @@ Evaluating factual accuracy in Large Language Model (LLM)-generated clinical tex
 </section>
 </div>
 <div class="card mb-3">
-<section id="using-secure-artificial-intelligence-agents-integrated-within-the-electronic-medical-record-for-the-evaluation-of-blood-culture-appropriateness-1" class="level4 card-body">
-<h4 class="anchored" data-anchor-id="using-secure-artificial-intelligence-agents-integrated-within-the-electronic-medical-record-for-the-evaluation-of-blood-culture-appropriateness-1"><a href="https://www.cambridge.org/core/journals/infection-control-and-hospital-epidemiology/article/using-secure-artificial-intelligence-agents-integrated-within-the-electronic-medical-record-for-the-evaluation-of-blood-culture-appropriatenessnorthern-california-2025/A6FB095CF7E65BE6EEDD0423709EEEC4?utm_campaign=shareaholic&amp;utm_medium=copy_link&amp;utm_source=bookmark" target="_blank">Using secure artificial intelligence agents integrated within the electronic medical record for the evaluation of blood culture appropriateness</a></h4>
-<p>Guillermo Rodriguez-Nava, <strong>Timothy Keyes</strong>, Nerissa Ambers, Eugenia Miranti, Erika Paola Viana-Cardenas, Wajeeha Tariq, Mindy Marie Sampson, Jorge Luis Salinas</p>
-<p><em>Infection Control &amp; Hospital Epidemiology</em> · 2025</p>
-<a class="btn btn-sm btn-outline-primary" href="files/papers/blood_culture.pdf" target="_blank"><i class="bi bi-file-pdf"></i> PDF</a> <a class="btn btn-sm btn-outline-secondary" href="https://www.cambridge.org/core/journals/infection-control-and-hospital-epidemiology/article/using-secure-artificial-intelligence-agents-integrated-within-the-electronic-medical-record-for-the-evaluation-of-blood-culture-appropriatenessnorthern-california-2025/A6FB095CF7E65BE6EEDD0423709EEEC4?utm_campaign=shareaholic&amp;utm_medium=copy_link&amp;utm_source=bookmark" target="_blank"><i class="bi bi-link-45deg"></i> Link</a> <button class="btn btn-sm btn-outline-secondary copy-cite-btn" onclick="navigator.clipboard.writeText('Rodriguez-Nava G, Keyes T, Ambers N, Miranti E, Viana-Cardenas EP, Tariq W, Sampson MM, Salinas JL. Using secure artificial intelligence agents integrated within the electronic medical record for the evaluation of blood culture appropriateness. Infect Control Hosp Epidemiol. 2025:1-4.').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.innerHTML='<i class=&quot;bi bi-clipboard&quot;></i> Cite';},1500)})" title="Copy citation"><i class="bi bi-clipboard"></i> Cite</button>
-<details>
-<summary>
-Abstract
-</summary>
-We evaluated large language model (LLM)-based agents integrated with the electronic medical record to assess blood culture appropriateness. While sensitivity was high, specificity remained low. Performance was shaped by prompt phrasing, sycophantic behavior, and semantic triggers, reflecting both the potential and limitations of LLMs in real-world clinical decision support.
-</details>
-</section>
-</div>
-<div class="card mb-3">
 <section id="target-product-profile-to-evaluate-the-clinical-utility-financial-impact-and-ethical-implications-of-an-ai-based-hcm-detection-model-1" class="level4 card-body">
 <h4 class="anchored" data-anchor-id="target-product-profile-to-evaluate-the-clinical-utility-financial-impact-and-ethical-implications-of-an-ai-based-hcm-detection-model-1"><a href="https://www.ahajournals.org/doi/10.1161/circ.152.suppl_3.4363340" target="_blank">Target Product Profile to Evaluate the Clinical Utility, Financial Impact, and Ethical Implications of an AI-Based HCM Detection Model</a></h4>
 <p>Shyon Parsa, <strong>Timothy Keyes</strong>, Dev Dash, Michelle Mello, Heidi Salisbury, Alison Callahan, Shinichi Goto, Michael Salerno, Victoria Parikh, Kenneth Mahaffey, Euan Ashley, Nigam Shah, Sneha Jain</p>
@@ -918,20 +1019,6 @@ We evaluated large language model (LLM)-based agents integrated with the electro
 Abstract
 </summary>
 Hypertrophic cardiomyopathy (HCM) remains underdiagnosed despite effective therapies and accessible screening with electrocardiogram (ECG) and echocardiography. Multiple artificial intelligence (AI) tools show promise in identifying missed HCM cases; however, the path from a promising model to clinical impact remains unclear. Without clear performance thresholds and workflow integration parameters, health systems face uncertainty about which tool to adopt and how to responsibly deploy it. We propose the use of Target Product Profiles (TPPs), an extension of the Fair, Useful, Reliable (AI) Models (FURM) Assessment framework, to define the minimum and ideal requirements for AI tools while incorporating resource, financial, and ethical considerations under real-world constraints. We developed a TPP to guide evaluation of an AI-augmented program for improving HCM diagnosis. Using APLUS, a discrete-event simulation engine, we simulated an HCM screening workflow for 134,856 eligible patients within Stanford Health Care, a multi-hospital health system in California. The diagnostic workflow included primary care, echocardiography, triage, and HCM specialty clinic referral. We simulated multiple combinations of model sensitivity (0.5–0.975) and specificity (0.85–0.99), incorporating resource constraints (ex. HCM clinic capacity) and utility weights reflecting diagnostic delay, misdiagnosis, and mortality. Financial modeling included AI deployment costs and downstream care utilization. Ethical analysis was conducted through stakeholder interviews exploring issues such as perceived risks and benefits, equity, and patient consent. In our simulations, AI models with specificity &gt;=0.9 reduced HCM-related mortality using the proposed workflow, while lower specificity cutoffs overwhelmed referral capacity with false positive results (Figure 1). With a simulated 50% increase in HCM clinic capacity, a specificity of &gt;=0.85 was sufficient to achieve benefit. Financial models showed cost-effectiveness concentrated in true positive cases and a net positive effect for the hospital at low false-positive rates (Figure 2). Ethical review highlighted concerns and mitigation strategies around access disparities, patient anxiety from alerts, and subgroup representation. For HCM, a TPP integrating workflow modeling, financial constraints, and ethical insights may help clarify necessary performance metrics in context–offering a roadmap for actionable, deployment-ready AI-augmented programs.
-</details>
-</section>
-</div>
-<div class="card mb-3">
-<section id="holistic-evaluation-of-large-language-models-for-medical-tasks-with-medhelm-1" class="level4 card-body">
-<h4 class="anchored" data-anchor-id="holistic-evaluation-of-large-language-models-for-medical-tasks-with-medhelm-1"><a href="https://www.nature.com/articles/s41591-025-04151-2" target="_blank">Holistic evaluation of large language models for medical tasks with MedHELM</a></h4>
-<p>Suhana Bedi, Hejie Cui, Miguel Fuentes, Alyssa Unell, Michael Wornow, Juan M. Banda, Nikesh Kotecha, <strong>Timothy Keyes</strong>, Yifan Mai, Mert Oez, Hao Qiu, Shrey Jain, Leonardo Schettini, Mehr Kashyap, Jason Alan Fries, et al.</p>
-<p><em>Nature Medicine</em> · 2025</p>
-<a class="btn btn-sm btn-outline-primary" href="files/papers/medhelm.pdf" target="_blank"><i class="bi bi-file-pdf"></i> PDF</a> <a class="btn btn-sm btn-outline-secondary" href="https://www.nature.com/articles/s41591-025-04151-2" target="_blank"><i class="bi bi-link-45deg"></i> Link</a> <button class="btn btn-sm btn-outline-secondary copy-cite-btn" onclick="navigator.clipboard.writeText('Bedi S, Cui H, Fuentes M, Unell A, Wornow M, Banda JM, Kotecha N, Keyes T, et al. MedHELM: Holistic Evaluation of Large Language Models for Medical Tasks. arXiv. 2025. arXiv:2505.23802.').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.innerHTML='<i class=&quot;bi bi-clipboard&quot;></i> Cite';},1500)})" title="Copy citation"><i class="bi bi-clipboard"></i> Cite</button>
-<details>
-<summary>
-Abstract
-</summary>
-<p>While large language models (LLMs) achieve near-perfect scores on medical licensing exams, these evaluations inadequately reflect the complexity and diversity of real-world clinical practice. Here we introduce MedHELM, an extensible evaluation framework with three contributions. First, a clinician-validated taxonomy organizing medical AI applications into five categories that mirror real clinical tasks–clinical decision support (diagnostic decisions, treatment planning), clinical note generation (visit documentation, procedure reports), patient communication (education materials, care instructions), medical research (literature analysis, clinical data analysis) and administration (scheduling, workflow coordination). These encompass 22 subcategories and 121 specific tasks reflecting daily medical practice. Second, a comprehensive benchmark suite of 37 evaluations covering all subcategories. Third, systematic comparison of nine frontier LLMs–Claude 3.5 Sonnet, Claude 3.7 Sonnet, DeepSeek R1, Gemini 1.5 Pro, Gemini 2.0 Flash, GPT-4o, GPT-4o mini, Llama 3.3 and o3-mini–using an automated LLM-jury evaluation method. Our LLM-jury uses multiple AI evaluators to assess model outputs against expert-defined criteria. Advanced reasoning models (DeepSeek R1, o3-mini) demonstrated superior performance with win rates of 66%, although Claude 3.5 Sonnet achieved comparable results at 15% lower computational cost. These results not only highlight current model capabilities but also demonstrate how MedHELM could enable evidence-based selection of medical AI systems for healthcare applications.</p>
 </details>
 </section>
 </div>

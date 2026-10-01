@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -39,14 +42,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-4897d45d2f75ed4f519693be625836c5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-e6ec55d50a8571276e9da61ff62941ed.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-4897d45d2f75ed4f519693be625836c5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-55617497126496852ff9f5a59253c640.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-90b0ccabdf50233fb893b00cd6e33405.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-55617497126496852ff9f5a59253c640.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -337,12 +340,12 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>I’m an MD/PhD student at Stanford School of Medicine, currently completing my clinical clerkships. For the past two years, I’ve also worked as a data scientist on Stanford Health Care’s Technology &amp; Digital Solutions (TDS) team. This page is an introduction to me and the work I do across medicine, machine learning, and clinical AI. You can also browse my <strong><a href="cv.html">CV</a></strong> and <strong><a href="publications.html">publications</a></strong>.</p>
-<p>I came to Stanford to join its Medical Scientist Training Program (MSTP) and recently completed my PhD in computational cancer biology, applying machine learning to high-dimensional single-cell data in pediatric leukemia to identify disease-associated cell populations. Over the course of my graduate work, my interests broadened from model development in the laboratory to the harder problem of how machine learning systems actually function in clinical settings — questions about deployment, evaluation, monitoring, and governance that are difficult to study from outside an operating health system.</p>
-<p>That interest led me to an embedded role on Stanford Health Care’s clinical AI team, where I have spent the past two years helping to build, deploy, evaluate, and monitor LLM-powered tools used by clinicians across the health system. The experience has shaped my view that the gap between a working model and a working clinical tool is substantial, and that closing it is a discipline in its own right.</p>
-<p>A central focus of that work has been Stanford Health Care’s LLM-powered clinical AI platform, <strong><a href="https://arxiv.org/abs/2602.00074">ChatEHR</a></strong>. I contribute across several domains as a full-stack data scientist: evaluating model behavior, designing clinician-facing experiences, developing agentic workflows for chart review and abstraction, and helping translate technical systems into tools that can run in production. I have helped build and evaluate automations for tasks such as identifying patients who may benefit from specialty consults, screening surgical patients for elevated perioperative risk, supporting tumor board preparation, and detecting post-operative surgical-site infections.</p>
+<p>I’m an MD/PhD candidate at Stanford School of Medicine, currently completing my clinical clerkships. I also work as a senior data scientist on Stanford Health Care’s Technology &amp; Digital Solutions (TDS) team. This page is an introduction to me and the work I do across medicine, machine learning, and clinical AI. You can also browse my <strong><a href="cv.html">CV</a></strong> and <strong><a href="publications.html">publications</a></strong>.</p>
+<p>I came to Stanford to join its Medical Scientist Training Program (MSTP) and recently completed my PhD in computational cancer biology, applying machine learning to high-dimensional single-cell data in pediatric leukemia to identify disease-associated cell populations. That work also led me to build open-source bioinformatics tools, including <strong>tidytof</strong>, and to contribute to the broader <strong>tidyomics</strong> ecosystem. Over the course of my graduate work, my interests broadened from model development in the laboratory to the harder problem of how machine learning systems actually function in clinical settings — questions about deployment, evaluation, monitoring, and governance that are difficult to study from outside an operating health system.</p>
+<p>That interest led me to an embedded role on Stanford Health Care’s clinical AI team, where I help design, deploy, evaluate, and monitor AI systems used by clinicians across the health system. I have helped design, deploy, and monitor nine production AI systems currently in use at Stanford Health Care. This experience has shaped my view that the gap between a working model and a working clinical tool is substantial, and that closing it is a discipline in its own right.</p>
+<p>A central focus of that work has been Stanford Health Care’s LLM-powered clinical AI platform, <strong><a href="https://arxiv.org/abs/2602.00074">ChatEHR</a></strong>. I work across the clinical AI systems stack: model and system evaluation, clinician-facing application design, agentic workflows, harnesses and orchestration, clinical data and tool integration, deployment, and post-deployment monitoring. I have helped translate prototypes into production workflows for tasks such as identifying patients who may benefit from specialty consults, screening surgical patients for elevated perioperative risk, supporting tumor board preparation, and detecting post-operative surgical-site infections.</p>
 <p>My broader interest is in the practical work of making AI useful in health care: deciding which clinical problems are worth solving, designing systems that fit into real workflows, measuring whether they are safe and effective, and building governance structures that allow them to improve over time. Much of my work focuses on the space between model development and clinical impact — evaluation, monitoring, implementation, and the design choices that determine whether an AI system actually helps the people it is meant to support.</p>
-<p>I am now completing my clinical training. Next, I’m working toward a faculty career in academic medicine or a director-level role in industry at the intersection of clinical medicine, machine learning, and health system operations. If you are working on related problems, please feel free to <a href="mailto:tkeyes@stanford.edu">contact me</a>.</p>
+<p>I am now completing my clinical training while continuing this work. Over time, I hope to help define and lead the emerging clinical and technical discipline responsible for designing, deploying, and overseeing AI-enabled care at the intersection of medicine, machine learning, engineering, and health-system operations. The precise shape of that path is still evolving. If you are working on related problems, please feel free to <a href="mailto:tkeyes@stanford.edu">contact me</a>.</p>
 
 
 

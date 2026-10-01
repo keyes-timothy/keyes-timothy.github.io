@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -39,14 +42,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-d0ae9245876894da5ac7e18953ecc5cc.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-4897d45d2f75ed4f519693be625836c5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-e6ec55d50a8571276e9da61ff62941ed.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-4897d45d2f75ed4f519693be625836c5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-55617497126496852ff9f5a59253c640.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-90b0ccabdf50233fb893b00cd6e33405.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-55617497126496852ff9f5a59253c640.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -318,7 +321,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#clinical-ai-llm-evaluation" id="toc-clinical-ai-llm-evaluation" class="nav-link active" data-scroll-target="#clinical-ai-llm-evaluation">Clinical AI &amp; LLM Evaluation</a></li>
+  <li><a href="#clinical-ai-systems" id="toc-clinical-ai-systems" class="nav-link active" data-scroll-target="#clinical-ai-systems">Clinical AI Systems</a>
+  <ul class="collapse">
+  <li><a href="#clinical-ai-platforms-and-infrastructure" id="toc-clinical-ai-platforms-and-infrastructure" class="nav-link" data-scroll-target="#clinical-ai-platforms-and-infrastructure">Clinical AI platforms and infrastructure</a></li>
+  <li><a href="#agentic-workflows-and-harness-engineering" id="toc-agentic-workflows-and-harness-engineering" class="nav-link" data-scroll-target="#agentic-workflows-and-harness-engineering">Agentic workflows and harness engineering</a></li>
+  <li><a href="#evaluation-monitoring-and-governance" id="toc-evaluation-monitoring-and-governance" class="nav-link" data-scroll-target="#evaluation-monitoring-and-governance">Evaluation, monitoring, and governance</a></li>
+  </ul></li>
   <li><a href="#computational-cancer-biology" id="toc-computational-cancer-biology" class="nav-link" data-scroll-target="#computational-cancer-biology">Computational Cancer Biology</a></li>
   <li><a href="#open-source-bioinformatics" id="toc-open-source-bioinformatics" class="nav-link" data-scroll-target="#open-source-bioinformatics">Open-Source Bioinformatics</a></li>
   <li><a href="#medical-education" id="toc-medical-education" class="nav-link" data-scroll-target="#medical-education">Medical Education</a></li>
@@ -349,22 +357,32 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>My research spans clinical AI systems, computational cancer biology, open-source bioinformatics, and medical education. Below is a summary of the major threads of my work.</p>
-<section id="clinical-ai-llm-evaluation" class="level2">
-<h2 class="anchored" data-anchor-id="clinical-ai-llm-evaluation">Clinical AI &amp; LLM Evaluation</h2>
-<p>My current work at Stanford Health Care focuses on building, deploying, and monitoring AI systems that operate in real clinical environments. A central project is <strong>ChatEHR</strong>, Stanford Health Care’s proprietary LLM-powered clinical AI platform, which enables both interactive and automated use of large language models with full patient timelines in the electronic health record.</p>
-<p>I contribute across the ChatEHR ecosystem—from evaluation and design recommendations for clinician-facing experiences to building automated and “agentic” workflows for specific chart review and abstraction tasks. These include workflows to identify patients who may benefit from a palliative medicine consult, detect post-operative surgical-site infections, triage surgical patients for co-management, and generate case summaries for tumor board conferences.</p>
-<p>I’ve also led efforts around <strong>continuous monitoring of deployed AI systems</strong>—developing frameworks for what to measure, how often to measure it, who responds, and what “actionable” looks like in practice. This work has been described in several recent publications:</p>
+<section id="clinical-ai-systems" class="level2">
+<h2 class="anchored" data-anchor-id="clinical-ai-systems">Clinical AI Systems</h2>
+<p>My current work at Stanford Health Care focuses on the design, engineering, deployment, evaluation, monitoring, and governance of AI systems embedded in clinical workflows. I am particularly interested in the infrastructure and engineering practices required to translate promising prototypes into durable clinical systems.</p>
+<section id="clinical-ai-platforms-and-infrastructure" class="level3">
+<h3 class="anchored" data-anchor-id="clinical-ai-platforms-and-infrastructure">Clinical AI platforms and infrastructure</h3>
+<p>A central project is <strong>ChatEHR</strong>, Stanford Health Care’s proprietary LLM-powered clinical AI platform, which supports both interactive and automated use of large language models with longitudinal patient data from the electronic health record. My work includes EHR integration, model and tool interfaces, clinician-facing application design, and the production infrastructure needed to operate these systems reliably.</p>
+</section>
+<section id="agentic-workflows-and-harness-engineering" class="level3">
+<h3 class="anchored" data-anchor-id="agentic-workflows-and-harness-engineering">Agentic workflows and harness engineering</h3>
+<p>I design and evaluate workflows that coordinate models, clinical data, and tools for specific chart review and abstraction tasks. This includes decisions about tool use, progressive disclosure of context, orchestration, and when deterministic versus agentic harness patterns are appropriate. Applications include identifying patients who may benefit from a palliative medicine consult, detecting post-operative surgical-site infections, triaging surgical patients for co-management, and preparing case summaries for tumor board conferences.</p>
+</section>
+<section id="evaluation-monitoring-and-governance" class="level3">
+<h3 class="anchored" data-anchor-id="evaluation-monitoring-and-governance">Evaluation, monitoring, and governance</h3>
+<p>My work also includes <strong>model and system evaluation</strong> and <strong>continuous monitoring of deployed AI systems</strong>—developing frameworks for what to measure, how often to measure it, who responds, and what “actionable” looks like in practice. This spans pre-deployment evaluation through real-world clinical assessment and post-deployment oversight, with attention to system integrity, performance, and impact. Related work includes:</p>
 <ul>
-<li><p><strong><a href="https://arxiv.org/abs/2512.09048">Monitoring Deployed AI Systems in Health Care</a></strong> — A framework for continuous monitoring of clinical AI. <em>Preprint</em> (2025).</p></li>
-<li><p><strong><a href="https://arxiv.org/abs/2602.00074">ChatEHR: Deployment and Evaluation of an EHR-integrated LLM-Powered Tool</a></strong> — Adoption and evaluation of Stanford Health Care’s clinical AI platform. <em>Preprint</em> (2026).</p></li>
-<li><p><strong><a href="https://www.nature.com/articles/s41591-025-04151-2">MedHELM</a></strong> — Holistic evaluation of large language models for medical tasks. <em>Nature Medicine</em> (2025).</p></li>
-<li><p><strong><a href="https://arxiv.org/abs/2504.14556">MedAgentBrief</a></strong> — A multi-step workflow for generating source-grounded clinical summaries. <em>Preprint</em> (2025).</p></li>
+<li><p><strong><a href="https://doi.org/10.1056/CAT.25.0372">Why and How to Monitor Deployed AI Systems in Health Care</a></strong> — A framework for continuous monitoring of clinical AI. <em>NEJM Catalyst Innovations in Care Delivery</em> (2026).</p></li>
+<li><p><strong><a href="https://arxiv.org/abs/2602.00074">Adoption and Use of LLMs at an Academic Medical Center</a></strong> — Adoption and evaluation of Stanford Health Care’s clinical AI platform. <em>Preprint</em> (2026).</p></li>
+<li><p><strong><a href="https://www.nature.com/articles/s41591-025-04151-2">MedHELM</a></strong> — Holistic evaluation of large language models for medical tasks. <em>Nature Medicine</em> (2026).</p></li>
+<li><p><strong><a href="https://doi.org/10.1001/jamanetworkopen.2026.16556">Physician-Reported Safety Outcomes of AI-Generated Hospital Course Summaries</a></strong> — Prospective evaluation of MedAgentBrief in clinical use. <em>JAMA Network Open</em> (2026).</p></li>
 </ul>
+</section>
 </section>
 <section id="computational-cancer-biology" class="level2">
 <h2 class="anchored" data-anchor-id="computational-cancer-biology">Computational Cancer Biology</h2>
 <p>During my PhD in the laboratories of <a href="https://med.stanford.edu/kldavislab.html">Kara Davis</a> (Department of Pediatrics) and <a href="http://web.stanford.edu/group/nolan/">Garry Nolan</a> (Department of Pathology) at Stanford, I focused on applying machine learning to high-dimensional single-cell data in the context of <strong>pediatric leukemia</strong>.</p>
-<p>Using mass cytometry (CyTOF) and other single-cell technologies, I built predictive models of patient outcomes that operate at the time of diagnosis. This work involved generalized linear models, various forms of clustering, deep learning, and a method for deconvolving lineage-specific and cancer-specific features in single-cell data to improve relapse prediction in pediatric acute myeloid leukemia.</p>
+<p>Using mass cytometry (CyTOF) and other single-cell technologies, I built predictive models of patient outcomes that operate at the time of diagnosis. In collaboration with Erin Craig, Robert Tibshirani, and colleagues, I helped develop <strong><a href="https://www.science.org/doi/10.1126/sciadv.adv5019">mixture modeling for multiple-instance learning (MMIL)</a></strong>, a statistical framework that identifies disease-relevant cells using patient-level labels when cell-level labels are unavailable. Applied to acute leukemia, MMIL distinguished leukemia cells from nonleukemic cells—including rare measurable residual disease—and identified biologically relevant features with performance approaching that of a hematopathologist.</p>
 <p>A key output of this work was the development of <strong><a href="https://keyes-timothy.github.io/tidytof/">tidytof</a></strong>, an R package providing a user-friendly, tidy interface for scalable and reproducible analysis of high-dimensional cytometry data.</p>
 </section>
 <section id="open-source-bioinformatics" class="level2">
